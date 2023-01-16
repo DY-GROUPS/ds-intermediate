@@ -1,0 +1,52 @@
+.entries {
+
+    p-tabview {
+
+        .ui-tabview {
+            height: 93%;
+
+            .ui-tabview-nav li.ui-state-active {
+                background-color: unset;
+                border: unset;
+                border-bottom: 2px solid #95CED1;
+
+                .ui-tabview-title {
+
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 22px;
+                    letter-spacing: 0.01em;
+                    color: #393A3D !important;
+                }
+            }
+
+            .ui-tabview-nav li {
+                background-color: unset;
+                border: none;
+            }
+
+            .ui-tabview-nav li:hover {
+                background-color: unset;
+                border: none;
+            }
+
+            .ui-tabview-panels {
+
+                height: 100%;
+                padding: unset;
+
+                .ui-tabview-panel {
+                    height: 100%;
+                }
+
+            }
+
+
+        }
+
+        
+    }
+
+}
