@@ -13,7 +13,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 export class KeyLockerComponent implements OnInit {
 
   @ViewChild('agGrid', { static: true }) agGrid: AgGridAngular;
-  currentView = "Contracts Won"
+  currentView = "Entries"
 
   activeColumnDefs = [
     {  
