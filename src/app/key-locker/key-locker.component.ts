@@ -301,56 +301,71 @@ export class KeyLockerComponent implements OnInit {
   ]
 
   // Charts
-  data: any;
+  chartData: any;
   chartOptions: any;
-  barData: any;
+  chartHeight: number = 550;
 
   constructor() { 
-    this.data = {
-      labels: ['08/2023', '09/2023', '10/2023', '11/2023', '12/2023', '13/2023', '14/2023'],
-      datasets: [
-        {
-          data: [50, 150, 150, 200, 500, 500, 800],
-          fill: false,
-          borderColor: '#F9A369',
-          pointBackgroundColor: '#72CDC2',
-          pointBorderColor: '#72CDC2',
-          lineTension: 0
-        }
-      ]
+
+    this.chartData = {
+
+      cashSpent: {
+        labels: ['08/2023', '09/2023', '10/2023', '11/2023', '12/2023', '13/2023', '14/2023'],
+        datasets: [
+          {
+            data: [50, 150, 150, 200, 500, 500, 800],
+            fill: false,
+            borderColor: '#F9A369',
+            pointBackgroundColor: '#72CDC2',
+            pointBorderColor: '#72CDC2',
+            lineTension: 0
+          }
+        ]
+
+      },
+      contractsWon: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [
+          {
+            label: 'My First dataset',
+            backgroundColor: '#42A5F5',
+            borderColor: '#1E88E5',
+            data: [65, 59, 80, 81, 56, 55, 40]
+          },
+          {
+            label: 'My Second dataset',
+            backgroundColor: '#9CCC65',
+            borderColor: '#7CB342',
+            data: [28, 48, 40, 19, 86, 27, 90]
+          }
+        ]
+
+      }
+
     }
 
     this.chartOptions = {
-      legend: {display: false},
-      maintainAspectRatio: false,
-      scales: {
-        x: [{
-          ticks: {
-            padding: {
-              left: 20
+
+      cashSpent: {
+        legend: {display: false},
+        maintainAspectRatio: false,
+        scales: {
+          x: [{
+            ticks: {
+              padding: {
+                left: 20
+              }
             }
-          }
-        }]
+          }]
+        }
+      },
+      contractsWon: {
+
       }
+
     }
 
-    this.barData = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [
-          {
-              label: 'My First dataset',
-              backgroundColor: '#42A5F5',
-              borderColor: '#1E88E5',
-              data: [65, 59, 80, 81, 56, 55, 40]
-          },
-          {
-              label: 'My Second dataset',
-              backgroundColor: '#9CCC65',
-              borderColor: '#7CB342',
-              data: [28, 48, 40, 19, 86, 27, 90]
-          }
-      ]
-  }
+
   }
 
   ngOnInit(): void {
