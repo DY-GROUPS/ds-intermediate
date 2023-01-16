@@ -126,7 +126,12 @@
             <p-chart type="doughnut" [data]="chartData.bids" [width]="chartWidth" [height]="chartHeight" [responsive]="false"></p-chart>
         </div>
 
-        <div *ngIf="currentView == 'Contracts Won'" style="height: 100%;">
+        <div class="contracts" *ngIf="currentView == 'Contracts Won'" style="height: 100%;">
+
+            <div class="header">
+                Contracts Won
+            </div>
+
             <p-chart type="bar" [data]="chartData.contractsWon" [width]="chartWidth" [responsive]="false" [height]="chartHeight" [options]="chartOptions.contractsWon"></p-chart>
         </div>
 

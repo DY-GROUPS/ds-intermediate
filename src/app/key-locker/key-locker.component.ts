@@ -305,7 +305,7 @@ export class KeyLockerComponent implements OnInit {
   // Charts
   chartData: any;
   chartOptions: any;
-  chartHeight: number = 550;
+  chartHeight: number = 450;
   chartWidth: number = 1050;
 
   constructor() { 
@@ -369,11 +369,14 @@ export class KeyLockerComponent implements OnInit {
         legend: {display: false},
         maintainAspectRatio: false,
         scales: {
-          x: [{
+          xAxes: [{
             ticks: {
-              padding: {
-                left: 20
-              }
+              // padding: {
+              //   left: 20
+              // }
+            },
+            gridLines : {
+              display : false
             }
           }]
         }
@@ -383,12 +386,22 @@ export class KeyLockerComponent implements OnInit {
         maintainAspectRatio: false,
         scales: {
           xAxes: [{
-            maxBarThickness: 40
+            maxBarThickness: 40,
+            gridLines : {
+              display : false
+            },
+            ticks: {
+              fontFamily: 'Roboto', 
+              fontSize: 12, 
+              fontWeight: 400,
+            }
           }],
           yAxes: [{
             ticks: {
               fontFamily: 'Roboto', 
               fontSize: 12, 
+              fontWeight: 400,
+              beginAtZero: true,
               callback: (value)=> {
                 return '$' + value
               }
