@@ -304,6 +304,7 @@ export class KeyLockerComponent implements OnInit {
   chartData: any;
   chartOptions: any;
   chartHeight: number = 550;
+  chartWidth: number = 1050;
 
   constructor() { 
 
@@ -380,10 +381,6 @@ export class KeyLockerComponent implements OnInit {
           }],
           yAxes: [{
             ticks: {
-              
-              beginAtZero: true,
-              max: 500,
-              min: 0,
               fontFamily: 'Roboto', 
               fontSize: 12, 
               callback: (value)=> {
