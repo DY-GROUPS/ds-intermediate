@@ -11,7 +11,7 @@ import { ICard, IInvites } from '../ds-components/ds-types';
 export class KeyLockerComponent implements OnInit {
 
   @ViewChild('agGrid', { static: true }) agGrid: AgGridAngular;
-  currentView = "Entries"
+  currentView = "Contracts Won"
 
   activeColumnDefs = [
     {  
@@ -303,6 +303,7 @@ export class KeyLockerComponent implements OnInit {
   // Charts
   data: any;
   chartOptions: any;
+  barData: any;
 
   constructor() { 
     this.data = {
@@ -332,6 +333,24 @@ export class KeyLockerComponent implements OnInit {
         }]
       }
     }
+
+    this.barData = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+          {
+              label: 'My First dataset',
+              backgroundColor: '#42A5F5',
+              borderColor: '#1E88E5',
+              data: [65, 59, 80, 81, 56, 55, 40]
+          },
+          {
+              label: 'My Second dataset',
+              backgroundColor: '#9CCC65',
+              borderColor: '#7CB342',
+              data: [28, 48, 40, 19, 86, 27, 90]
+          }
+      ]
+  }
   }
 
   ngOnInit(): void {
