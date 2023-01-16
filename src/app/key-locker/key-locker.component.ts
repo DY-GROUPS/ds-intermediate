@@ -378,10 +378,24 @@ export class KeyLockerComponent implements OnInit {
         }
       },
       contractsWon: {
-
+        legend: {display: false},
+        maintainAspectRatio: false,
+        scales: {
+          yAxes: [{
+            ticks: {
+               
+              fontFamily: 'Roboto', 
+              fontSize: 12, 
+              callback: (value)=> {
+                return '$' + value
+              }
+              
+            }
+          }]
+        }
       },
       bids: {
-        
+
       }
 
     }
