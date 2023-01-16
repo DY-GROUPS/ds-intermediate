@@ -340,6 +340,24 @@ export class KeyLockerComponent implements OnInit {
           }
         ]
 
+      },
+      bids: {
+        labels: ['A','B','C'],
+        datasets: [
+          {
+            data: [300, 50, 100],
+            backgroundColor: [
+              "#FF6384",
+              "#36A2EB",
+              "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+              "#FF6384",
+              "#36A2EB",
+              "#FFCE56"
+            ]
+          }
+        ]    
       }
 
     }
@@ -361,6 +379,9 @@ export class KeyLockerComponent implements OnInit {
       },
       contractsWon: {
 
+      },
+      bids: {
+        
       }
 
     }
