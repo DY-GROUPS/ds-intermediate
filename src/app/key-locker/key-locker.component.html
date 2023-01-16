@@ -127,7 +127,7 @@
         </div>
 
         <div *ngIf="currentView == 'Contracts Won'" style="height: 100%;">
-            Contracts Won
+            <p-chart type="bar" [data]="barData"></p-chart>
         </div>
 
     </div>
