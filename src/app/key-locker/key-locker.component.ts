@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ICard, IInvites } from '../ds-components/ds-types';
+import * as Chart from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 @Component({
   selector: 'app-key-locker',
@@ -342,19 +344,23 @@ export class KeyLockerComponent implements OnInit {
 
       },
       bids: {
-        labels: ['A','B','C'],
+        labels: ['Pioneer Contract,','STL Division','Trailblazer Contract', 'Sectional Contract', 'ATL Division'],
         datasets: [
           {
-            data: [300, 50, 100],
+            data: [300, 50, 100, 45, 38],
             backgroundColor: [
-              "#FF6384",
-              "#36A2EB",
-              "#FFCE56"
+              "#95CED1",
+              "#FCDA61",
+              "#F9A369",
+              '#EB9FA6',
+              '#F6CBC6'
             ],
             hoverBackgroundColor: [
-              "#FF6384",
-              "#36A2EB",
-              "#FFCE56"
+              "#95CED1",
+              "#FCDA61",
+              "#F9A369",
+              '#EB9FA6',
+              '#F6CBC6'
             ]
           }
         ]    
@@ -395,6 +401,33 @@ export class KeyLockerComponent implements OnInit {
         }
       },
       bids: {
+        plugins: {
+          // datalabels: {
+          //   /* show value in percents */
+          //   // formatter: (value, ctx) => {
+          //   //   let sum = 0;
+          //   //   const dataArr = ctx.chart.data.datasets[0].data;
+          //   //   dataArr.map(data => {
+          //   //         sum += data;
+          //   //   });
+          //   //   const percentage = (value * 100 / sum); 
+          //   //   return percentage !== 0 ? percentage.toFixed(2) + '%' : '';
+          //   // },
+          //   color: 'red',
+          //   align: 'top'
+          // },
+
+          
+        },
+        legend: {
+          display: true,
+          labels: {
+            color: 'rgb(255, 99, 132)'
+          },
+          position: 'right',
+          fullSize: true,
+          borderWidth: 10
+        }
 
       }
 
@@ -404,9 +437,6 @@ export class KeyLockerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    if(this.agGrid)
-      this.agGrid.getRowHeight = () => 55;
 
   }
 

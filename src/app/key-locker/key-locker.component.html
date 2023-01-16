@@ -123,7 +123,7 @@
         </div>
 
         <div *ngIf="currentView == 'Bid Placed'" style="height: 100%;">
-            <p-chart type="doughnut" [data]="chartData.bids" [height]="chartHeight"></p-chart>
+            <p-chart type="doughnut" [data]="chartData.bids" [height]="chartHeight" [options]="chartOptions.bids"></p-chart>
         </div>
 
         <div *ngIf="currentView == 'Contracts Won'" style="height: 100%;">
