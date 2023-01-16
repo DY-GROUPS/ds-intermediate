@@ -46,7 +46,7 @@
         </div>
 
         <div class="cash-spent" *ngIf="currentView == 'Cash Spent'" style="height: 100%;">
-            <p-chart type="line" [data]="data" [height]="550" [options]="chartOptions"></p-chart>
+            <p-chart type="line" [data]="chartData.cashSpent" [height]="chartHeight" [options]="chartOptions.cashSpent"></p-chart>
         </div>
 
         <div class="invites" *ngIf="currentView == 'Successful Invites'" style="height: 100%;">
@@ -127,7 +127,7 @@
         </div>
 
         <div *ngIf="currentView == 'Contracts Won'" style="height: 100%;">
-            <p-chart type="bar" [data]="barData"></p-chart>
+            <p-chart type="bar" [data]="chartData.contractsWon" [height]="chartHeight"></p-chart>
         </div>
 
     </div>
