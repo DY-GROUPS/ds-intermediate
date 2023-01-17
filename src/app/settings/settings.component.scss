@@ -1,52 +1,124 @@
-.entries {
+.tab-panel{
+    height: 100%;
+    width: 100%;
+        
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        // width: 100%;
+        // max-width: 2000px;
+        padding: 40px 40px 0px 40px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #393A3D;
+        
+        input{
+            height: 44px;
+            border: 1px solid #B9B9B9;
+            border-radius: 4px;
+        }
 
-    p-tabview {
-
-        .ui-tabview {
-            height: 93%;
-
-            .ui-tabview-nav li.ui-state-active {
-                background-color: unset;
-                border: unset;
-                border-bottom: 2px solid #95CED1;
-
-                .ui-tabview-title {
-
-                    font-family: 'Open Sans';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 16px;
-                    line-height: 22px;
-                    letter-spacing: 0.01em;
-                    color: #393A3D !important;
-                }
+        button{
+            font-family: 'Be Vietnam Pro';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 24px;
+            text-align: center;
+            color: #FFFFFF;
+            width: 126px;
+            height: 32px;
+            background: #F9A369;
+            border:1px solid #F9A369;
+        }
+        .new-password{
+            display: flex;
+            padding-top: 50px;
+            // justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            
+            .new-password-title{
+                font-size: 15px;
+                line-height: 20px;
+                margin-right: 300px;
             }
-
-            .ui-tabview-nav li {
-                background-color: unset;
-                border: none;
+            input{
+                
+                width: 72%;
             }
+           
+        }
 
-            .ui-tabview-nav li:hover {
-                background-color: unset;
-                border: none;
+        .confirm-password{
+            display: flex;
+            // justify-content: space-between;
+            padding-top: 50px;
+            align-items: center;
+            width: 100%;
+
+            .confirm-password-title{
+                font-size: 15px;
+                line-height: 20px;
+                margin-right: 280px;
+                
             }
-
-            .ui-tabview-panels {
-
-                height: 100%;
-                padding: unset;
-
-                .ui-tabview-panel {
-                    height: 100%;
-                }
-
+            .confirm-password-text{
+                display: flex;
+                flex-direction: column;
+                
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
             }
+            input{
+                width: 100%
+            }
+           
+        }
+        .save-changes{
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 50px;
+        }
 
+        .phone-verification{
+            display: flex;
+            // justify-content: space-between;
+            padding-top: 50px;
+            width: 100%;
+           
+            .phone-verification-text{
+                display: flex;
+                // justify-content: space-between;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                // width: 100%;
+                margin-left: 100px; 
+            }
 
         }
 
-        
-    }
+        .security-question{
+            display: flex;
+            // flex-direction: column;
+            // justify-content: space-between;
+            padding-top: 50px;
+           
+            .security-question-text{
+                display: flex;
 
+                font-weight: 400 ;
+                font-size: 15px;
+                line-height: 20px;
+            // flex-direction: column;
+            }
+        }
+    }
+    
 }
