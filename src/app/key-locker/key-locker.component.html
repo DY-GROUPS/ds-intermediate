@@ -1,12 +1,29 @@
 <div class="keylocaker-container">
 
-    <!-- <div class="top-bar"></div> -->
-
     <div class="details-area">
 
         <div class="entries" *ngIf="currentView == 'Entries'" style="height: 100%;">
 
-            <p-tabView>
+            <div class="top-bar">
+
+                <div class="icon" (click)="changeInternalViews('entriesChart')">
+                    <img *ngIf="!showEntriesChart" src="./assets/key-locker/top-bar/icon-1.png">
+                    <img *ngIf="showEntriesChart" src="./assets/key-locker/top-bar/icon-1-blue.png">
+                </div>
+        
+                <div class="icon" (click)="changeInternalViews('duplexCharts')">
+                    <img *ngIf="!showDuplexCharts" src="./assets/key-locker/top-bar/icon-2.png">
+                    <img *ngIf="showDuplexCharts" src="./assets/key-locker/top-bar/icon-2-blue.png">
+                </div>
+        
+                <div class="icon" (click)="changeInternalViews('entriesGrid')">
+                    <img *ngIf="!showEntriesGrid" src="./assets/key-locker/top-bar/icon-3.png">
+                    <img *ngIf="showEntriesGrid" src="./assets/key-locker/top-bar/icon-3-blue.png">
+                </div>
+        
+            </div>
+
+            <p-tabView *ngIf="showEntriesGrid">
 
                 <p-tabPanel header="Your Active Bidding Rooms">
                    
@@ -43,10 +60,182 @@
     
             </p-tabView>
 
+            <div *ngIf="showEntriesChart" style="height: 100%;">
+
+                <div class="header">
+                    <label>
+                        Single - Auction House - 01
+                    </label>
+                    <div>
+    
+                    </div>
+                </div>
+    
+                <div class="titles">
+    
+                    <div class="item">
+                        S01
+                    </div>
+    
+                    <div class="item">
+                        Username
+                    </div>
+    
+                    <div class="item">
+                        Bid $
+                    </div>
+    
+                    <div class="item">
+                        Bid #
+                    </div>
+    
+                    <div class="item">
+                        Date
+                    </div>
+    
+                    <div class="item">
+                        Time
+                    </div>
+    
+                </div>
+    
+                <p-chart type="line" [data]="chartData.biddingRooms" [width]="chartWidth" [responsive]="false" [height]="chartHeight" [options]="chartOptions.biddingRooms"></p-chart>
+    
+            </div>
+
+            <div class="duplex-charts-container" *ngIf="showDuplexCharts" style="height: 100%;">
+
+                <div class="header">
+
+                    <label>
+                        Single - Auction House - 01
+                    </label>
+
+                    <div class="box-1"></div>
+
+                    <div class="box-2"></div>
+
+                </div>
+    
+                <div class="duplex-charts">
+
+                    <div class="chart1">
+
+                        <div class="titles">
+    
+                            <div class="item">
+                                S01
+                            </div>
+            
+                            <div class="item">
+                                Username
+                            </div>
+            
+                            <div class="item">
+                                Bid $
+                            </div>
+            
+                            <div class="item">
+                                Bid #
+                            </div>
+            
+                            <div class="item">
+                                Date
+                            </div>
+            
+                            <div class="item">
+                                Time
+                            </div>
+            
+                        </div>
+            
+                        <p-chart type="line" [data]="chartData.duplexChart1" [width]="800" [responsive]="false" [height]="chartHeight" [options]="chartOptions.duplexChart1"></p-chart>
+
+                    </div>
+ 
+
+                    <div class="chart2">
+
+                        <div class="titles">
+    
+                            <div class="item">
+                                01
+                            </div>
+            
+                            <div class="item">
+                                Username
+                            </div>
+            
+                            <div class="item">
+                                Bid $
+                            </div>
+            
+                            <div class="item">
+                                Bid #
+                            </div>
+            
+                            <div class="item">
+                                Date
+                            </div>
+            
+                            <div class="item">
+                                Time
+                            </div>
+            
+                        </div>
+            
+                        <p-chart type="line" [data]="chartData.duplexChart2" [width]="800" [responsive]="false" [height]="chartHeight" [options]="chartOptions.duplexChart2"></p-chart>
+                        
+                    </div>
+
+                </div>
+
+    
+            </div>
+
         </div>
 
         <div class="cash-spent" *ngIf="currentView == 'Cash Spent'" style="height: 100%;">
+
+            <div class="header">
+                <label>
+                    Single - Auction House - 01
+                </label>
+                <div>
+
+                </div>
+            </div>
+
+            <div class="titles">
+
+                <div class="item">
+                    S01
+                </div>
+
+                <div class="item">
+                    Username
+                </div>
+
+                <div class="item">
+                    Bid $
+                </div>
+
+                <div class="item">
+                    Bid #
+                </div>
+
+                <div class="item">
+                    Date
+                </div>
+
+                <div class="item">
+                    Time
+                </div>
+
+            </div>
+
             <p-chart type="line" [data]="chartData.cashSpent" [width]="chartWidth" [responsive]="false" [height]="chartHeight" [options]="chartOptions.cashSpent"></p-chart>
+
         </div>
 
         <div class="invites" *ngIf="currentView == 'Successful Invites'" style="height: 100%;">
@@ -122,8 +311,14 @@
 
         </div>
 
-        <div *ngIf="currentView == 'Bid Placed'" style="height: 100%;">
-            <p-chart type="doughnut" [data]="chartData.bids" [width]="chartWidth" [height]="chartHeight" [responsive]="false"></p-chart>
+        <div class="bidPlaced" *ngIf="currentView == 'Bid Placed'" style="height: 100%;">
+
+            <div class="header">
+                Bids Placed
+            </div>
+
+            <p-chart type="doughnut" [data]="chartData.bids" [options]="chartOptions.bids" [width]="chartWidth" [height]="chartHeight" [responsive]="false"></p-chart>
+
         </div>
 
         <div class="contracts" *ngIf="currentView == 'Contracts Won'" style="height: 100%;">
@@ -134,6 +329,7 @@
 
             <p-chart type="bar" [data]="chartData.contractsWon" [width]="chartWidth" [responsive]="false" [height]="chartHeight" [options]="chartOptions.contractsWon"></p-chart>
         </div>
+
 
     </div>
 

@@ -10,7 +10,6 @@ body {
     background-color: rgb(252, 252, 252);
 
 
-
     .ui-dialog-visible {
         padding-bottom: 22px !important;
 
@@ -213,6 +212,77 @@ body {
     
 
     }
+
+
+
+    .ui-tabview {
+
+        height: 93%;
+
+        .ui-tabview-nav {
+
+            .ui-tabview-title {
+
+                font-family: 'Open Sans' !important;
+                font-style: normal !important;
+                font-weight: 700 !important;
+                font-size: 16px !important;
+                line-height: 22px !important;
+                letter-spacing: 0.01em !important;
+
+            
+            }
+
+            li {
+                .ui-tabview-title {
+                    color: rgba(57, 58, 61, 0.7) !important;
+                }
+            }
+
+            li.ui-state-active {
+
+                background-color: unset !important;
+                border: unset !important;
+                border-bottom: 2px solid #95CED1 !important;
+
+                .ui-tabview-title {
+                    color: #393A3D !important;
+                }
+            }
+
+
+        } 
+
+
+    }
+
+
+    .ui-tabview-nav li {
+        
+        background-color: unset !important;
+        border: none !important;
+    }
+
+    .ui-tabview-nav li:hover {
+        background-color: unset !important;
+    }
+
+    .ui-tabview-panels {
+
+        height: 100%;
+        padding: unset !important;
+        background-color: unset !important;
+        border: 1px solid #fcfcfc !important;
+
+        .ui-tabview-panel {
+            height: 100%;
+            padding-top: 35px !important;
+        }
+
+    }
+
+        
+    
 
 
 }

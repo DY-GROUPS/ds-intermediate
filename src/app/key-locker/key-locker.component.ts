@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ICard, IInvites } from '../ds-components/ds-types';
 import * as Chart from 'chart.js';
@@ -7,8 +7,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 @Component({
   selector: 'app-key-locker',
   templateUrl: './key-locker.component.html',
-  styleUrls: ['./key-locker.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./key-locker.component.scss']
 })
 export class KeyLockerComponent implements OnInit {
 
@@ -305,8 +304,12 @@ export class KeyLockerComponent implements OnInit {
   // Charts
   chartData: any;
   chartOptions: any;
-  chartHeight: number = 450;
+  chartHeight: number = 400;
   chartWidth: number = 1050;
+
+  showEntriesGrid: boolean = true;
+  showEntriesChart: boolean = false;
+  showDuplexCharts: boolean = false;
 
   constructor() { 
 
@@ -359,6 +362,47 @@ export class KeyLockerComponent implements OnInit {
             ]
           }
         ]    
+      },
+      biddingRooms: {
+        labels: ['08/2023', '09/2023', '10/2023', '11/2023', '12/2023', '13/2023', '14/2023'],
+        datasets: [
+          {
+            data: [100, 125, 75, 300, 475, 475, 850],
+            fill: false,
+            borderColor: '#F9A369',
+            pointBackgroundColor: '#72CDC2',
+            pointBorderColor: '#72CDC2',
+            lineTension: 0
+          }
+        ]
+      },
+      duplexChart1: {
+        labels: ['08/2023', '09/2023', '10/2023', '11/2023', '12/2023', '13/2023', '14/2023'],
+        datasets: [
+          {
+            data: [50, 150, 150, 200, 500, 500, 800],
+            fill: false,
+            borderColor: '#F9A369',
+            pointBackgroundColor: '#72CDC2',
+            pointBorderColor: '#72CDC2',
+            lineTension: 0
+          }
+        ]
+
+      },
+      duplexChart2: {
+        labels: ['08/2023', '09/2023', '10/2023', '11/2023', '12/2023', '13/2023', '14/2023'],
+        datasets: [
+          {
+            data: [75, 225, 150, 500, 500, 500, 800],
+            fill: false,
+            borderColor: '#F9A369',
+            pointBackgroundColor: '#72CDC2',
+            pointBorderColor: '#72CDC2',
+            lineTension: 0
+          }
+        ]
+
       }
 
     }
@@ -414,15 +458,15 @@ export class KeyLockerComponent implements OnInit {
         plugins: {
           // datalabels: {
           //   /* show value in percents */
-          //   // formatter: (value, ctx) => {
-          //   //   let sum = 0;
-          //   //   const dataArr = ctx.chart.data.datasets[0].data;
-          //   //   dataArr.map(data => {
-          //   //         sum += data;
-          //   //   });
-          //   //   const percentage = (value * 100 / sum); 
-          //   //   return percentage !== 0 ? percentage.toFixed(2) + '%' : '';
-          //   // },
+          //   formatter: (value, ctx) => {
+          //     let sum = 0;
+          //     const dataArr = ctx.chart.data.datasets[0].data;
+          //     dataArr.map(data => {
+          //           sum += data;
+          //     });
+          //     const percentage = (value * 100 / sum); 
+          //     return percentage !== 0 ? percentage.toFixed(2) + '%' : '';
+          //   },
           //   color: 'red',
           //   align: 'top'
           // },
@@ -430,15 +474,63 @@ export class KeyLockerComponent implements OnInit {
           
         },
         legend: {
-          display: true,
-          labels: {
-            color: 'rgb(255, 99, 132)'
-          },
           position: 'right',
-          fullSize: true,
-          borderWidth: 10
+          labels: {
+            boxWidth: 18,
+            fontFamily: "Open Sans",
+            fontSize: 16,
+            fontWeight: 400,
+          }
         }
 
+      },
+      biddingRooms : {
+        legend: {display: false},
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [{
+            ticks: {
+              // padding: {
+              //   left: 20
+              // }
+            },
+            gridLines : {
+              display : false
+            }
+          }]
+        }
+      },
+      duplexChart1: {
+        legend: {display: false},
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [{
+            ticks: {
+              // padding: {
+              //   left: 20
+              // }
+            },
+            gridLines : {
+              display : false
+            }
+          }]
+        }
+      },
+      duplexChart2: {
+        legend: {display: false},
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [{
+            ticks: {
+              // padding: {
+              //   left: 20
+              // }
+            },
+            gridLines : {
+              display : false
+            }
+          }]
+        }
       }
 
     }
@@ -505,6 +597,29 @@ export class KeyLockerComponent implements OnInit {
         el.background = ''
     })
 
+
+  }
+
+  changeInternalViews(viewName){
+
+    switch(viewName){
+      case 'entriesGrid': 
+        this.showEntriesGrid = true;
+        this.showEntriesChart = false;
+        this.showDuplexCharts = false;
+      break;
+
+      case 'entriesChart':
+        this.showEntriesChart = true
+        this.showEntriesGrid = false;
+        this.showDuplexCharts = false;
+      break;
+
+      case 'duplexCharts': 
+        this.showDuplexCharts = true;
+        this.showEntriesChart = false;
+        this.showEntriesGrid = false;
+    }
 
   }
 
