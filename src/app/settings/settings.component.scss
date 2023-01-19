@@ -1,52 +1,180 @@
-.entries {
+.tab-panel{
+    height: 100%;
+    width: 100%;
+        
+    .container{
+        
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-width: 60%;
+        min-width: 60%;
 
-    p-tabview {
+        .title {
 
-        .ui-tabview {
-            height: 93%;
-
-            .ui-tabview-nav li.ui-state-active {
-                background-color: unset;
-                border: unset;
-                border-bottom: 2px solid #95CED1;
-
-                .ui-tabview-title {
-
-                    font-family: 'Open Sans';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 16px;
-                    line-height: 22px;
-                    letter-spacing: 0.01em;
-                    color: #393A3D !important;
-                }
-            }
-
-            .ui-tabview-nav li {
-                background-color: unset;
-                border: none;
-            }
-
-            .ui-tabview-nav li:hover {
-                background-color: unset;
-                border: none;
-            }
-
-            .ui-tabview-panels {
-
-                height: 100%;
-                padding: unset;
-
-                .ui-tabview-panel {
-                    height: 100%;
-                }
-
-            }
-
+            width: 100%;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            color: #393A3D;
+            margin-top: 74px;
 
         }
 
+        .new-password{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 55px;
+            
+            .new-password-title{
+
+                flex-grow: 1;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 20px;
+                color: #393A3D;
+
+            }
+
+           
+        }
+
+        .confirm-password{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 31px;
+
+            .confirm-password-title{
+
+                flex-grow: 1;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 20px;
+                color: #393A3D;
+                margin-top: -55px;
+                
+            }
+
+            .confirm-password-text{
+
+                display: flex;
+                flex-direction: column;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                width: 693px;
+
+                .hint {
+                    width: 100%;
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 20px;
+                    color: #444B5C;
+                    margin-top: 31px;
+                }
+
+            }
+
+
+           
+        }
+
+        .save-changes{
+
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 50px;
+
+        }
+
+        .phone-verification{
+
+            display: flex;
+            // justify-content: space-between;
+            padding-top: 50px;
+            width: 100%;
+           
+            .phone-verification-text{
+
+                display: flex;
+                // justify-content: space-between;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                // width: 100%;
+                margin-left: 100px; 
+
+            }
+
+        }
+
+        .security-question{
+
+            display: flex;
+            // flex-direction: column;
+            // justify-content: space-between;
+            padding-top: 50px;
+           
+            .security-question-text{
+
+                display: flex;
+                font-weight: 400 ;
+                font-size: 15px;
+                line-height: 20px;
+                // flex-direction: column;
+
+            }
+        }
         
+        input{
+
+            width: 693px;
+            height: 44px;
+            border: 1px solid #B9B9B9;
+            border-radius: 4px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            text-align: justify;
+
+        }
+
+        button{
+
+            font-family: 'Be Vietnam Pro';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 24px;
+            text-align: center;
+            color: #FFFFFF;
+            width: 126px;
+            height: 32px;
+            background: #F9A369;
+            border:1px solid #F9A369;
+
+        }
+
+
     }
 
+    
 }

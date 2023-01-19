@@ -1,32 +1,73 @@
-<div>
-    <div class="entries">
+<div class="tab-panel">
 
-        <p-tabView>
+	<p-tabView>
 
-            <p-tabPanel header="Security">
-               
-                <div></div>
+		<p-tabPanel header="Security">
 
+			<div class="container">
 
-            </p-tabPanel>
+				<div class="title">SET PASSWORD</div>
 
-            <p-tabPanel header="Notifications">
-                
-                <div>
+				<div class="new-password">
 
-                </div>
+					<div class="new-password-title">New Password</div>
+					<input id="input" type="text" size="30" pInputText>
 
-            </p-tabPanel>
+				</div>
 
-            <p-tabPanel header="Payment methods">
-                
-                <div>
+				<div class="confirm-password">
 
-                </div>
+					<div class="confirm-password-title">Confirm Password</div>
 
-            </p-tabPanel>
+					<div class="confirm-password-text">
+						<input id="input" type="text" size="50" pInputText> 
+						<div class="hint">8 characters or longer. Combine upper and lowercase letters and numbers.</div>
+					</div>
 
-        </p-tabView>
+				</div>
 
-    </div>
+				<!-- <div class="save-changes">
+					<button pButton type="button" label="Save Changes" >Save Changes</button>
+				</div>
+				<div class="phone-verification">
+					<div class="phone-verification-title">PHONE VERIFICATION</div>
+					<div class="phone-verification-text">
+						<div>Your phone is verified with DreamStakes. Click Edit to change your phone number</div> 
+						<button pButton type="button" label="Edit" >Edit</button>
+					</div>
+				</div>
+				<div class="security-question">
+					<div class="security-question-title">SECURITY QUESTION</div>
+					<div class="security-question-text">
+						<div>
+							By creating a security question, you will add an additional layer of 
+							protection for your revenue withdrawals and for changing your 
+							password.
+						</div>
+						<button pButton type="button" label="Edit" >Edit</button>
+					</div>
+				</div> -->
+
+			</div>
+
+		</p-tabPanel>
+
+		<p-tabPanel header="Notifications">
+				
+			<div>
+
+			</div>
+
+		</p-tabPanel>
+
+		<p-tabPanel header="Payment methods">
+				
+			<div>
+
+			</div>
+
+		</p-tabPanel>
+
+	</p-tabView>
+
 </div>
