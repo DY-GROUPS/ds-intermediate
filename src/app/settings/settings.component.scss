@@ -342,5 +342,43 @@
 
     }
   }
+
+  .payment-methods-container{
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 60%;
+    min-width: 60%;
+    margin: 83px 59px 162px 52px;
+
+    .payment-methods-title{
+
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      color: #393A3D;
+
+    }
+
+    .payment-methods-body{
+
+      .paypal{
+
+      }
+
+      .visa-card{
+
+      }
+
+      .add-new{
+
+      }
+      
+    }
+
+  }
  
 }
