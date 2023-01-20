@@ -1,8 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
-import { ICard, IInvites } from '../ds-components/ds-types';
-import * as Chart from 'chart.js';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { ICard, IInvites, KeyLockerViews } from '../ds-components/ds-types';
 
 @Component({
   selector: 'app-key-locker',
@@ -12,7 +10,9 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 export class KeyLockerComponent implements OnInit {
 
   @ViewChild('agGrid', { static: true }) agGrid: AgGridAngular;
-  currentView = "Entries"
+
+  Views = KeyLockerViews;
+  currentView: string = KeyLockerViews.entries;
 
   activeColumnDefs = [
     {  
@@ -234,8 +234,145 @@ export class KeyLockerComponent implements OnInit {
     }
   ];
 
+  auctionColumnDefs = [
+    {  
+      headerName: '#ID',
+      field: 'ID',
+      width: 150,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'Room Number',
+      field: 'RoomNumber',
+      width: 300,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'Entry Date',
+      field: 'EntryDate',
+      width: 300,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'Payment',
+      field: 'Payment',
+      width: 300,
+      resizable: true,
+      sort: 'asc'
+    }
+  ];
+
+  auctionRowData = [
+    {
+      ID: '1.1',
+      RoomNumber: '1.1-4',
+      EntryDate: 'Sep 10, 2010',
+      Payment: '$629.43'
+    },
+    {
+      ID: '1.1',
+      RoomNumber: '1.1-4',
+      EntryDate: 'Sep 10, 2010',
+      Payment: '$629.43'
+    },
+    {
+      ID: '1.1',
+      RoomNumber: '1.1-4',
+      EntryDate: 'Sep 10, 2010',
+      Payment: '$629.43'
+    },
+    {
+      ID: '1.1',
+      RoomNumber: '1.1-4',
+      EntryDate: 'Sep 10, 2010',
+      Payment: '$629.43'
+    },
+    {
+      ID: '1.1',
+      RoomNumber: '1.1-4',
+      EntryDate: 'Sep 10, 2010',
+      Payment: '$629.43'
+    },
+    {
+      ID: '1.1',
+      RoomNumber: '1.1-4',
+      EntryDate: 'Sep 10, 2010',
+      Payment: '$629.43'
+    },
+    {
+      ID: '1.1',
+      RoomNumber: '1.1-4',
+      EntryDate: 'Sep 10, 2010',
+      Payment: '$629.43'
+    },
+    {
+      ID: '1.1',
+      RoomNumber: '1.1-4',
+      EntryDate: 'Sep 10, 2010',
+      Payment: '$629.43'
+    }
+
+  ];
+
+  contractColumnDefs = [
+    {  
+      headerName: 'DATE',
+      field: 'DATE',
+      width: 175,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'FOR',
+      field: 'FOR',
+      width: 700,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'CLAIM',
+      field: 'CLAIM',
+      width: 200,
+      resizable: true,
+      sort: 'asc'
+    }
+  ];
+
+  contractRowData = [
+    {
+      DATE: 'Nov 16, 2020',
+      FOR: 'Single Auction House ( Funds Pending Clearance )',
+      CLAIM: '$260'
+    },
+    {
+      DATE: 'Nov 16, 2020',
+      FOR: 'Single Auction House ( Funds Pending Clearance )',
+      CLAIM: '$260'
+    },
+    {
+      DATE: 'Nov 16, 2020',
+      FOR: 'Single Auction House ( Funds Pending Clearance )',
+      CLAIM: '$260'
+    },
+    {
+      DATE: 'Nov 16, 2020',
+      FOR: 'Single Auction House ( Funds Pending Clearance )',
+      CLAIM: '$260'
+    },
+    {
+      DATE: 'Nov 16, 2020',
+      FOR: 'Single Auction House ( Funds Pending Clearance )',
+      CLAIM: '$260'
+    }
+
+  ];
+
   cards: ICard[] = [
     {
+      id: KeyLockerViews.entries,
       icon: './assets/dasboard/home.png',
       title: 'Entries',
       info: '35',
@@ -243,24 +380,28 @@ export class KeyLockerComponent implements OnInit {
       background: './assets/key-locker/selected-background.png'
     },
     {
+      id: KeyLockerViews.cashSpent,
       icon: './assets/dasboard/users.png',
       title: 'Cash Spent',
       info: '$3,435',
       infoIcon: ''
     },
     {
+      id: KeyLockerViews.invites,
       icon: './assets/dasboard/users.png',
       title: 'Successful Invites',
       info: '189',
       infoIcon: ''
     },
     {
+      id: KeyLockerViews.bidPlaced,
       icon: './assets/dasboard/settings.png',
       title: 'Bid Placed',
       info: '50',
       infoIcon: ''
     },
     {
+      id: KeyLockerViews.contractWon,
       icon: './assets/dasboard/send.png',
       title: 'Contracts Won',
       info: '187',
@@ -311,7 +452,13 @@ export class KeyLockerComponent implements OnInit {
   showEntriesChart: boolean = false;
   showDuplexCharts: boolean = false;
 
-  constructor() { 
+  showAcutionChart: boolean = true;
+  showAuctionGrid: boolean = true;
+
+  showContractChart: boolean = true;
+  showContractDetails: boolean = false;
+
+  constructor(private cdr: ChangeDetectorRef) { 
 
     this.chartData = {
 
@@ -539,7 +686,7 @@ export class KeyLockerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.changeInternalViews('contractChart');
   }
 
   buttonRenderer(params:any){
@@ -588,10 +735,20 @@ export class KeyLockerComponent implements OnInit {
 
   viewChange(aCard){
 
-    this.currentView = aCard.title;
+    this.currentView = aCard.id;
+
+    // Set inner view
+    switch(aCard.id){
+
+      case KeyLockerViews.entries: this.changeInternalViews('entriesGrid'); break;
+      case KeyLockerViews.cashSpent: this.changeInternalViews('auctionChart'); break;
+      case KeyLockerViews.contractWon: this.changeInternalViews('contractChart'); break;
+      
+    }
+
     this.cards.forEach(el => {
 
-      if(el.title === aCard.title)
+      if(el.id === aCard.id)
         el.background = './assets/key-locker/selected-background.png';
       else
         el.background = ''
@@ -600,9 +757,12 @@ export class KeyLockerComponent implements OnInit {
 
   }
 
+
+
   changeInternalViews(viewName){
 
     switch(viewName){
+
       case 'entriesGrid': 
         this.showEntriesGrid = true;
         this.showEntriesChart = false;
@@ -619,7 +779,31 @@ export class KeyLockerComponent implements OnInit {
         this.showDuplexCharts = true;
         this.showEntriesChart = false;
         this.showEntriesGrid = false;
+      break;
+
+      case 'auctionChart':
+        this.showAcutionChart = true;
+        this.showAuctionGrid = false;
+      break;
+
+      case 'auctionGrid':
+        this.showAcutionChart = false;
+        this.showAuctionGrid = true;
+      break;
+
+      case 'contractChart':
+        this.showContractChart = true;
+        this.showContractDetails = false;
+      break;
+
+      case 'contractGrid':
+        this.showContractDetails = true;
+        this.showContractChart = false;
+      break;
+
     }
+
+    this.cdr.detectChanges();
 
   }
 

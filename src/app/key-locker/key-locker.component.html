@@ -2,7 +2,7 @@
 
     <div class="details-area">
 
-        <div class="entries" *ngIf="currentView == 'Entries'" style="height: 100%;">
+        <div class="entries" *ngIf="currentView == Views.entries" style="height: 100%;">
 
             <div class="top-bar">
 
@@ -195,7 +195,22 @@
 
         </div>
 
-        <div class="cash-spent" *ngIf="currentView == 'Cash Spent'" style="height: 100%;">
+        <div class="cash-spent" *ngIf="currentView == Views.cashSpent" style="height: 100%;">
+
+            <div class="top-bar">
+
+                <div class="icon" (click)="changeInternalViews('auctionChart')">
+                    <img *ngIf="!showAcutionChart" src="./assets/key-locker/top-bar/icon-1.png">
+                    <img *ngIf="showAcutionChart" src="./assets/key-locker/top-bar/icon-1-blue.png">
+                </div>
+        
+        
+                <div class="icon" (click)="changeInternalViews('auctionGrid')">
+                    <img *ngIf="!showAuctionGrid" src="./assets/key-locker/top-bar/icon-3.png">
+                    <img *ngIf="showAuctionGrid" src="./assets/key-locker/top-bar/icon-3-blue.png">
+                </div>
+        
+            </div>
 
             <div class="header">
                 <label>
@@ -206,112 +221,158 @@
                 </div>
             </div>
 
-            <div class="titles">
-
-                <div class="item">
-                    S01
+            <div *ngIf="showAcutionChart">
+    
+                <div class="titles">
+    
+                    <div class="item">
+                        S01
+                    </div>
+    
+                    <div class="item">
+                        Username
+                    </div>
+    
+                    <div class="item">
+                        Bid $
+                    </div>
+    
+                    <div class="item">
+                        Bid #
+                    </div>
+    
+                    <div class="item">
+                        Date
+                    </div>
+    
+                    <div class="item">
+                        Time
+                    </div>
+    
                 </div>
-
-                <div class="item">
-                    Username
-                </div>
-
-                <div class="item">
-                    Bid $
-                </div>
-
-                <div class="item">
-                    Bid #
-                </div>
-
-                <div class="item">
-                    Date
-                </div>
-
-                <div class="item">
-                    Time
-                </div>
+    
+                <p-chart type="line" [data]="chartData.cashSpent" [width]="chartWidth" [responsive]="false" [height]="chartHeight" [options]="chartOptions.cashSpent"></p-chart>
 
             </div>
-
-            <p-chart type="line" [data]="chartData.cashSpent" [width]="chartWidth" [responsive]="false" [height]="chartHeight" [options]="chartOptions.cashSpent"></p-chart>
-
-        </div>
-
-        <div class="invites" *ngIf="currentView == 'Successful Invites'" style="height: 100%;">
             
-            <div class="list-area">
 
-                <div class="header">
-                    Successful Invites
-                </div>
-    
-                <div class="sub-header">
-                    Sent Invites
-                </div>
-    
-                <div class="list">
-    
-                    <div class="item" *ngFor="let anInvite of invites">
-    
-                        <div class="details-area">
-        
-                            <div class="username">
-                                {{ anInvite.name }}
-                            </div>
-        
-                            <div class="email">
-                                {{ anInvite.email }}
-                            </div>
-        
-                        </div>
-        
-                        <div class="status" [style.color]="anInvite.status == 'Pending' ? '#D9534F' : '#5CB85C'">
-                            {{ anInvite.status }}
-                        </div>
-                    </div>
-    
-                </div>
-
+            <div *ngIf="showAuctionGrid" class="common-ag-grid-styles" style="width: 100%; height: 100%;">
+                    
+                <ag-grid-angular #agGrid 
+                    style="width: 100%; height: 100%; font-size: 12px;" 
+                    class="ag-theme-alpine"
+                    [rowData]="auctionRowData"
+                    [columnDefs]="auctionColumnDefs"
+                >
+                </ag-grid-angular>
 
             </div>
 
-            <div class="ref-area">
+        </div>
 
-                <div class="header">
-                    Referrals
+        <div class="invites-area" *ngIf="currentView == Views.invites" style="height: 100%;">
+            
+            <div class="top-bar">        
+        
+                <div class="icon">
+                    <img src="./assets/key-locker/top-bar/icon-3-blue.png">
                 </div>
+        
+            </div>
 
-                <div class="send-invites">
+            <div class="invites">
 
-                    <div class="title">
-                        Refer a friend Give $10, Get $10 
+                <div class="list-area">
+
+                    <div class="header">
+                        Successful Invites
                     </div>
-
-                    <div class="info">
-                        Spread the Summersalt love! You’ll get $10 for each friend who orders.
-                        Only new customers are valid for the referral.
+        
+                    <div class="sub-header">
+                        Sent Invites
                     </div>
-
-                    <div class="act-area">
-                        <input id="input" type="text" size="30" pInputText placeholder="Your Friends’ emails (separated by commas)"> 
-                        <img src="./assets/key-locker/btn-send.png">
+        
+                    <div class="list">
+        
+                        <div class="item" *ngFor="let anInvite of invites">
+        
+                            <div class="details-area">
+            
+                                <div class="username">
+                                    {{ anInvite.name }}
+                                </div>
+            
+                                <div class="email">
+                                    {{ anInvite.email }}
+                                </div>
+            
+                            </div>
+            
+                            <div class="status" [style.color]="anInvite.status == 'Pending' ? '#D9534F' : '#5CB85C'">
+                                {{ anInvite.status }}
+                            </div>
+                        </div>
+        
                     </div>
-
-                    <div class="line"></div>
-
-                    <div class="share">
-                        <img src="./assets/key-locker/social-media-icons.png">
+    
+    
+                </div>
+    
+                <div class="ref-area">
+    
+                    <div class="header">
+                        Referrals
                     </div>
-
+    
+                    <div class="send-invites">
+    
+                        <div class="title">
+                            Refer a friend Give $10, Get $10 
+                        </div>
+    
+                        <div class="info">
+                            Spread the Summersalt love! You’ll get $10 for each friend who orders.
+                            Only new customers are valid for the referral.
+                        </div>
+    
+                        <div class="act-area">
+                            <input id="input" type="text" size="30" pInputText placeholder="Your Friends’ emails (separated by commas)"> 
+                            <img src="./assets/key-locker/btn-send.png">
+                        </div>
+    
+                        <div class="line"></div>
+    
+                        <div class="share">
+                            <img src="./assets/key-locker/social-media-icons.png">
+                        </div>
+    
+                    </div>
+    
                 </div>
 
             </div>
+
+
+
+
 
 
         </div>
 
-        <div class="bidPlaced" *ngIf="currentView == 'Bid Placed'" style="height: 100%;">
+        <div class="bidPlaced" *ngIf="currentView == Views.bidPlaced" style="height: 100%;">
+
+            <div class="top-bar">
+
+                <div class="icon">
+                    <img *ngIf="showAcutionChart" src="./assets/key-locker/top-bar/icon-1-blue.png">
+                </div>
+        
+        
+                <div class="icon">
+                    <img src="./assets/key-locker/top-bar/icon-3.png">
+                </div>
+        
+            </div>
 
             <div class="header">
                 Bids Placed
@@ -321,13 +382,137 @@
 
         </div>
 
-        <div class="contracts" *ngIf="currentView == 'Contracts Won'" style="height: 100%;">
+        <div class="contracts" *ngIf="currentView == Views.contractWon" style="height: 100%;">
 
-            <div class="header">
-                Contracts Won
+            <div class="top-bar">
+
+                <div class="icon" (click)="changeInternalViews('contractChart')">
+                    <img *ngIf="!showContractChart" src="./assets/key-locker/top-bar/icon-1.png">
+                    <img *ngIf="showContractChart" src="./assets/key-locker/top-bar/icon-1-blue.png">
+                </div>
+        
+                <div class="icon">
+                    <img src="./assets/key-locker/top-bar/icon-2.png">
+                </div>
+        
+                <div class="icon" (click)="changeInternalViews('contractGrid')">
+                    <img *ngIf="!showContractDetails" src="./assets/key-locker/top-bar/icon-3.png">
+                    <img *ngIf="showContractDetails" src="./assets/key-locker/top-bar/icon-3-blue.png">
+                </div>
+        
             </div>
 
-            <p-chart type="bar" [data]="chartData.contractsWon" [width]="chartWidth" [responsive]="false" [height]="chartHeight" [options]="chartOptions.contractsWon"></p-chart>
+            <div *ngIf="showContractChart">
+
+                <div class="header">
+                    Contracts Won
+                </div>
+    
+                <p-chart type="bar" [data]="chartData.contractsWon" [width]="chartWidth" [responsive]="false" [height]="chartHeight" [options]="chartOptions.contractsWon"></p-chart>
+
+            </div>
+
+            <div class="contract-details" *ngIf="showContractDetails">
+
+                <div class="summery">
+
+                    <div class="fixed-box" style="border-right: 1px solid rgba(44, 44, 44, 0.2);">
+                    
+                        <div class="header-text">
+                            Contract Value
+                        </div>
+                        
+                        <div class="details">
+                            $1,069.56
+                        </div>
+
+                    </div>
+
+                    <div class="dynamic-box" style="border-right: 1px solid rgba(44, 44, 44, 0.2);">
+                    
+                        <div class="header-text">
+                            Application Price ( Winning Bid Price )
+                        </div>
+                        
+                        <div class="details">
+                            $840.45
+                        </div>
+
+                    </div>
+
+                    <div class="fixed-box">
+
+                        <div class="header-text">
+                            Pending Clearance
+                        </div>
+                        
+                        <div class="details">
+                            $229.11
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="tabs-area">
+                    
+                    <p-tabView>
+
+                        <p-tabPanel header="All">
+                           
+                            <div class="common-ag-grid-styles" style="width: 100%; height: 100%;">
+                            
+                                <ag-grid-angular #agGrid 
+                                    style="width: 100%; height: 100%; font-size: 12px;" 
+                                    class="ag-theme-alpine"
+                                    [rowData]="contractRowData"
+                                    [columnDefs]="contractColumnDefs"
+                                >
+                                </ag-grid-angular>
+            
+                            </div>
+            
+            
+                        </p-tabPanel>
+            
+                        <p-tabPanel header="Claims">
+                            
+                            <div class="common-ag-grid-styles" style="width: 100%; height: 100%;">
+                            
+                                <ag-grid-angular #agGrid 
+                                    style="width: 100%; height: 100%; font-size: 12px;" 
+                                    class="ag-theme-alpine"
+                                    [rowData]="contractRowData"
+                                    [columnDefs]="contractColumnDefs"
+                                >
+                                </ag-grid-angular>
+            
+                            </div>
+            
+                        </p-tabPanel>
+
+                        <p-tabPanel header="Claimed">
+                            
+                            <div class="common-ag-grid-styles" style="width: 100%; height: 100%;">
+                            
+                                <ag-grid-angular #agGrid 
+                                    style="width: 100%; height: 100%; font-size: 12px;" 
+                                    class="ag-theme-alpine"
+                                    [rowData]="contractRowData"
+                                    [columnDefs]="contractColumnDefs"
+                                >
+                                </ag-grid-angular>
+            
+                            </div>
+            
+                        </p-tabPanel>
+            
+                    </p-tabView>
+
+                </div>
+
+            </div>
+
         </div>
 
 

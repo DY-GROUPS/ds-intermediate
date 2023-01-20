@@ -34,6 +34,7 @@ export interface IPopupConfigs {
 }
 
 export interface ICard {
+    id?: string,
     icon: string,
     title: string,
     info: string,
@@ -45,4 +46,12 @@ export interface IInvites {
     name: string,
     email: string,
     status: string
+}
+
+export enum KeyLockerViews {
+    entries = 'entries',
+    cashSpent = 'cashSpent',
+    invites = 'invites',
+    bidPlaced = 'bidPlaced',
+    contractWon = 'contractWon'
 }
