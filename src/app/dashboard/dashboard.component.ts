@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IPopupConfigs, IPopupCpmmands, ICard } from '../ds-components/ds-types';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +8,10 @@ import { IPopupConfigs, IPopupCpmmands, ICard } from '../ds-components/ds-types'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
+  @ViewChild('dragbtn') dragbtn: ElementRef;
+  @ViewChild('drop') drop: ElementRef;
+  isOk: boolean = false;
 
   placeBid: boolean = false;
   currentPopopWindowIdx: number = 0;
@@ -222,6 +227,25 @@ export class DashboardComponent implements OnInit {
 
     
 
+  }
+
+  dragEnd() {
+    // console.log('end');
+    var BoxPosition = this.drop.nativeElement;
+    var iconPosition = this.dragbtn.nativeElement;
+  
+    var getPositionBox = BoxPosition.getBoundingClientRect();
+    var getPositionIcon = iconPosition.getBoundingClientRect();
+  
+    var xBox = getPositionBox.x + getPositionBox.width;
+    var xIcon = getPositionIcon.x + getPositionIcon.width;
+  
+    if (xBox == xIcon) {
+       this.isOk = true;
+    }
+    else {
+      this.isOk = false;
+    }
   }
 
 }

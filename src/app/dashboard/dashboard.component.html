@@ -95,6 +95,34 @@
             </div>
 
             <div class="buttons-area">
+              
+                <div class= "silde-btn"  id="silde-btn" #drop>
+
+                  <div
+                    #dragbtn
+                    id="dragbtn"
+                    class="dragbtn"
+                    cdkDragBoundary=".silde-btn"
+                    cdkDragLockAxis="x"
+                    cdkDrag 
+                    (cdkDragEnded)="dragEnd()"> 
+
+                    <img src="https://w7.pngwing.com/pngs/161/164/png-transparent-arrow-computer-icons-button-right-arrow-angle-black-internet.png"/>
+
+                  </div>
+
+                  <div class="text">
+                    
+                    <div *ngIf="!isOk">
+                      <!-- <div>Release</div> -->
+                      <div>Silde to fast bid</div>
+                    </div>
+                    
+                    <div *ngIf="isOk">Confirmed!</div>
+
+                  </div>
+                    
+                </div>
 
                 <div class="custom-bid-btn" (click)="showPlaceBid()">
                     Custom Bid

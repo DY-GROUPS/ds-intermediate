@@ -189,6 +189,63 @@
                 .buttons-area {
 
                     width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    
+
+                    .silde-btn {
+
+                      display: flex;
+                      flex-direction: row;
+                      width: 133px;
+                      height: 32px;
+                      max-width: 100%;
+                      border-radius: 5px;
+                      background: linear-gradient(90.4deg, #727272 11.2%, #B0B0B0 103.06%);
+                      margin-right: 18px;
+
+                      .dragbtn {
+
+                        width: 26px;
+                        height: 26px;
+                        color: rgba(0, 0, 0, 0.87);
+                        cursor: move;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        z-index: 1;
+                        transition: box-shadow 10000ms cubic-bezier(0, 0, 0.2, 1);
+                        margin-top: 2px;
+                        margin-left: 2px;
+
+                        img {
+
+                          width: 26px;
+                          height: 26px;
+                          align-items: center;
+                          border: solid 1px #ccc;
+                          border-radius: 5px;
+                        }
+                      }
+
+                      .text {
+
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        margin-left: 8px;
+                        font-family: 'Open Sans';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 32px;
+                        text-align: justify;
+                        color: #434343;
+
+                        
+                      }
+                    }
 
                     .custom-bid-btn {
 
