@@ -327,12 +327,16 @@
         }
         
         .main{
+          
+          display: flex;
+          flex-direction: column;
           width: 100%;
           height: 100%;
           background-color: burlywood;
 
           .time-area{
-          
+
+            display: flex;
             width: 792px;
             height: 356px;
             background-color: #F9A369;
@@ -342,6 +346,7 @@
   
           .info-area{
 
+            display: flex;
             width: 792px;
             height: 169px;
             background-color: #79778A;
@@ -349,9 +354,9 @@
           }
 
           .grow-area{
-             
+            
+            display: flex;
             width: 792px;
-            height: 100%;
             background-color: #95CED1;
 
           }
