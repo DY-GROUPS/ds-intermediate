@@ -231,16 +231,16 @@ export class DashboardComponent implements OnInit {
 
   dragEnd() {
     // console.log('end');
-    var BoxPosition = this.drop.nativeElement;
-    var iconPosition = this.dragbtn.nativeElement;
+    var slideButton = this.drop.nativeElement;
+    var arrowIcon = this.dragbtn.nativeElement;
   
-    var getPositionBox = BoxPosition.getBoundingClientRect();
-    var getPositionIcon = iconPosition.getBoundingClientRect();
+    var slideButtonPosition = slideButton.getBoundingClientRect();
+    var arrowIconPosition = arrowIcon.getBoundingClientRect();
   
-    var xBox = getPositionBox.x + getPositionBox.width;
-    var xIcon = getPositionIcon.x + getPositionIcon.width;
+    var slideButtonPositionCount = slideButtonPosition.x + slideButtonPosition.width;
+    var arrowIconPositionCount = arrowIconPosition.x + arrowIconPosition.width;
   
-    if (xBox == xIcon) {
+    if (slideButtonPositionCount == arrowIconPositionCount) {
        this.isOk = true;
     }
     else {
