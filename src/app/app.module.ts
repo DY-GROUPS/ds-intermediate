@@ -15,6 +15,7 @@ import { RightPanalComponent } from './ui-containers/right-panal/right-panal.com
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { KeyLockerComponent } from './key-locker/key-locker.component';
 import { AgGridModule } from 'ag-grid-angular';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 // -------------------------------- PrimeNG ----------------------------------------
 import {InputTextModule} from 'primeng/inputtext';
@@ -52,7 +53,8 @@ import { SettingsComponent } from './settings/settings.component';
     CheckboxModule,
     TabViewModule,
     AgGridModule,
-    ChartModule
+    ChartModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

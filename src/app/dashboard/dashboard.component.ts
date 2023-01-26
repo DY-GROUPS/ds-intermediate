@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IPopupConfigs, IPopupCpmmands, ICard } from '../ds-components/ds-types';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +8,10 @@ import { IPopupConfigs, IPopupCpmmands, ICard } from '../ds-components/ds-types'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
+  @ViewChild('dragbtn') dragbtn: ElementRef;
+  @ViewChild('drop') drop: ElementRef;
+  isOk: boolean = false;
 
   placeBid: boolean = false;
   currentPopopWindowIdx: number = 0;
@@ -189,7 +194,7 @@ export class DashboardComponent implements OnInit {
 
     this.currentPopupPage = this.popupData[0];
     this.selectedHouse = this.houses[0].value;
-    this.currentRoom = this.rooms[0];
+    this.currentRoom = this.rooms[1];
 
   }
 
@@ -222,6 +227,25 @@ export class DashboardComponent implements OnInit {
 
     
 
+  }
+
+  dragEnd() {
+    // console.log('end');
+    var slideButton = this.drop.nativeElement;
+    var arrowIcon = this.dragbtn.nativeElement;
+  
+    var slideButtonPosition = slideButton.getBoundingClientRect();
+    var arrowIconPosition = arrowIcon.getBoundingClientRect();
+  
+    var slideButtonPositionCount = slideButtonPosition.x + slideButtonPosition.width;
+    var arrowIconPositionCount = arrowIconPosition.x + arrowIconPosition.width;
+  
+    if (slideButtonPositionCount == arrowIconPositionCount) {
+       this.isOk = true;
+    }
+    else {
+      this.isOk = false;
+    }
   }
 
 }

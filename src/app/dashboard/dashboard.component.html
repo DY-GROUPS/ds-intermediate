@@ -96,6 +96,36 @@
 
             <div class="buttons-area">
 
+                <div class= "silde-btn"  id="silde-btn" #drop>
+
+                  <div
+                    #dragbtn
+                    id="dragbtn"
+                    class="dragbtn"
+                    cdkDragBoundary=".silde-btn"
+                    cdkDragLockAxis="x"
+                    cdkDrag 
+                    (cdkDragEnded)="dragEnd()">
+                    
+                    <div class="img-background">
+                      <img src="./assets/dasboard/icons/slider-arrow-btn.png"/>
+                    </div>
+
+                  </div>
+
+                  <div class="text">
+                    
+                    <div *ngIf="!isOk">
+                      <!-- <div>Release</div> -->
+                      <div>Silde to fast bid</div>
+                    </div>
+                    
+                    <div *ngIf="isOk">Confirmed!</div>
+
+                  </div>
+                    
+                </div>
+
                 <div class="custom-bid-btn" (click)="showPlaceBid()">
                     Custom Bid
                 </div>
@@ -131,5 +161,16 @@
 </ng-template>
 
 <ng-template #conclude>
-    Coming Soon
+    
+    <div class="main">
+
+        <div class="time-area"></div>
+
+        <div class="info-area"></div>
+
+        <div class="grow-area"></div>
+
+    </div>
+    
+    
 </ng-template>
