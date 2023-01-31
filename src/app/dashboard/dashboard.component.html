@@ -165,20 +165,17 @@
     <div class="main">
 
         <div class="time-area">
+          
             <div class="time-area-title">Will conclude in</div>
 
-            <div class="timer">
-
+            <div class="timer" >
 
               <div class="hours" id="hours">
 
-                <div class="hours-amount">
+                <div  class="hours-amount-background">
 
-                  <div  class="hours-amount-background" style="background-image: url('./assets/dasboard/timer-frame.png');">1</div>
-                  <div  class="hours-amount-background" style="background-image: url('./assets/dasboard/timer-frame.png');">1</div>
+                  <span *ngIf="timerHours < 10"> 0 </span> {{timerHours}} </div>
 
-                </div>
-  
                 <div class="hours-title">HOURS</div>
 
               </div>
@@ -186,13 +183,10 @@
 
               <div class="minutes" id="minutes">
 
-                <div class="minutes-amount">
+                <div  class="minutes-amount-background">
 
-                  <div  class="minutes-amount-background" style="background-image: url('./assets/dasboard/timer-frame.png');">2</div>
-                  <div  class="minutes-amount-background" style="background-image: url('./assets/dasboard/timer-frame.png');">8</div>
+                  <span *ngIf="timerMin < 10" > 0  </span> {{timerMin}}</div>
 
-                </div>
-                
                 <div class="minutes-title">MINUTES</div>
 
               </div>
@@ -200,17 +194,13 @@
 
               <div class="seconds" id="seconds">
 
-                <div class="seconds-amount">
+                <div  class="seconds-amount-background">
 
-                  <div  class="seconds-amount-background" style="background-image: url('./assets/dasboard/timer-frame.png');">0</div>
-                  <div  class="seconds-amount-background" style="background-image: url('./assets/dasboard/timer-frame.png');">8</div>
-
-                </div>
-               
+                  <span *ngIf="timerSec < 10"> 0 </span> {{timerSec}}</div>
+                 
                 <div class="seconds-title">SECONDS</div>
 
               </div>
-
 
             </div>
 

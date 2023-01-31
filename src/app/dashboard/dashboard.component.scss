@@ -363,36 +363,31 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                margin-right: 53px;
-
-                .hours-amount{
+               
+                .hours-amount-background{
 
                   display: flex;
-                  flex-direction: row;
-
-                  .hours-amount-background{
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-family: 'Quantico';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 100px;
-                    line-height: 143px;
-                    color: #FBFFF7;
-                    width: 99.57px;
-                    height: 130.06px;
-                    margin: 3.5px;
-                    
+                  align-items: center;
+                  background-image: url('^assets/dasboard/timer-frame.png');
+                  font-family: 'Quantico';
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 100px;
+                  line-height: 143px;
+                  color: #FBFFF7;
+                  width: 202.72px;
+                  height: 130.06px;
+                  letter-spacing: 50px;
+                  margin-right: 53px;
+                  padding-left: 25px;
+                  
                   }
-
-                }
 
                 .hours-title{
                   
                   width: 103px;
                   height: 43px;
+                  margin-right: 57px;
                   font-family: 'Quantico';
                   font-style: normal;
                   font-weight: 400;
@@ -410,38 +405,33 @@
 
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                margin-right: 53px;
 
-                .minutes-amount{
+                .minutes-amount-background{
 
                   display: flex;
-                  flex-direction: row;
-                
-
-                  .minutes-amount-background{
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-family: 'Quantico';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 100px;
-                    line-height: 143px;
-                    color: #FBFFF7;
-                    width: 99.57px;
-                    height: 130.06px;
-                    margin: 3.5px;
-                    
-                  }
-
+                  align-items: center;
+                  background-image: url('^assets/dasboard/timer-frame.png');
+                  font-family: 'Quantico';
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 100px;
+                  line-height: 143px;
+                  color: #FBFFF7;
+                  width: 202.72px;
+                  height: 130.06px;
+                  letter-spacing: 50px;
+                  margin-right: 53px;
+                  padding-left: 25px;
+                  
                 }
 
                 .minutes-title{
                   
                   width: 131px;
                   height: 43px;
+                  margin-right: 57px;
                   font-family: 'Quantico';
                   font-style: normal;
                   font-weight: 400;
@@ -459,31 +449,25 @@
 
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
                 
-                .seconds-amount{
+                .seconds-amount-background{
 
                   display: flex;
-                  flex-direction: row;
-                
-
-                  .seconds-amount-background{
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-family: 'Quantico';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 100px;
-                    line-height: 143px;
-                    color: #FBFFF7;
-                    width: 99.57px;
-                    height: 130.06px;
-                    margin: 3.5px;
-                    
-                  }
-
+                  align-items: center;
+                  background-image: url('^assets/dasboard/timer-frame.png');
+                  font-family: 'Quantico';
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 100px;
+                  line-height: 143px;
+                  color: #FBFFF7;
+                  width: 202.72px;
+                  height: 130.06px;
+                  letter-spacing: 50px;
+                  padding-left: 25px;
+                  
                 }
 
                 .seconds-title{

@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild('dragbtn') dragbtn: ElementRef;
   @ViewChild('drop') drop: ElementRef;
+  // @ViewChild('basicTimer')basicTimer: ElementRef;
   isOk: boolean = false;
 
   placeBid: boolean = false;
@@ -18,6 +19,10 @@ export class DashboardComponent implements OnInit {
   popupData: IPopupConfigs[];
   currentPopupPage: IPopupConfigs;
   currentRoom;
+
+  timerHours = 23;
+  timerMin = 59;
+  timerSec = 59;
 
   cards: ICard[] = [
     {
@@ -196,6 +201,10 @@ export class DashboardComponent implements OnInit {
     this.selectedHouse = this.houses[0].value;
     this.currentRoom = this.rooms[1];
 
+    setInterval(() => {
+      this.clockTicking();
+    }, 1000) 
+
   }
 
   showPlaceBid(){
@@ -246,6 +255,34 @@ export class DashboardComponent implements OnInit {
     else {
       this.isOk = false;
     }
+  }
+
+  clockTicking(){
+	
+    this.timerSec --;
+   
+    if(this.timerSec === 0){
+
+      this.timerSec = 59;
+      this.timerMin --;
+
+    }
+
+
+    if(this.timerMin === 0){
+    
+      this.timerMin = 59;
+      this.timerHours --;
+       
+    }
+
+    
+    if(this.timerHours === 0){
+
+      this.timerHours = 23;
+      
+    }
+ 
   }
 
 }
