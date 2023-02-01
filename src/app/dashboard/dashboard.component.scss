@@ -332,11 +332,13 @@
           flex-direction: column;
           width: 100%;
           height: 100%;
+          margin-left: 40px;
           
           .time-area{
 
             width: 792px;
             height: 356px;
+            
 
             .time-area-title{
 
@@ -355,7 +357,7 @@
               display: flex;
               flex-direction: row;
               width: 714px;
-              margin-left: 40px;
+              
 
               .hours{
 
@@ -489,12 +491,56 @@
 
             }
 
+            .progress-bar{
+
+              margin-top: 50px;
+              width: 715px;
+             
+            }
+
           }
   
           .info-area{
 
+            display: flex;
+            flex-direction: row;
             width: 792px;
             height: 169px;
+
+            .image-area{
+              width: 169px;
+              height: 169px;
+              margin-right: 50px;
+              background-image: url('^assets/dasboard/detailsimg.png');
+    
+            }
+
+            .details-area{
+
+              display: flex;
+              flex-direction: column;
+              flex-grow: 1;
+              
+              .detais-title{
+                background-color: rgb(107, 111, 189);
+                // width: 272px;
+                height: 28px;
+
+              }
+
+              .details{
+                background-color: rgb(107, 189, 144);
+                // width: 399px;
+                height: 48px;
+              }
+
+              .button-area{
+                
+                background-color: rgb(189, 107, 186);
+                flex-grow: 1;
+
+              }
+            }
             
           }
 

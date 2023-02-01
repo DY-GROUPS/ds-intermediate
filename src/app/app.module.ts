@@ -24,6 +24,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {CheckboxModule} from 'primeng/checkbox';
 import {TabViewModule} from 'primeng/tabview';
 import {ChartModule} from 'primeng/chart';
+import {ProgressBarModule} from 'primeng/progressbar';
+
 import { SettingsComponent } from './settings/settings.component';
 
 
@@ -55,7 +57,8 @@ import { SettingsComponent } from './settings/settings.component';
     TabViewModule,
     AgGridModule,
     ChartModule,
-    DragDropModule
+    DragDropModule,
+    ProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
