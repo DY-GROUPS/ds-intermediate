@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
-import { ICard, IInvites, KeyLockerViews } from '../ds-components/ds-types';
+import { ICard, IInvites, IPopupConfigs, IPopupCpmmands, KeyLockerViews } from '../ds-components/ds-types';
 
 @Component({
   selector: 'app-key-locker',
@@ -13,6 +13,7 @@ export class KeyLockerComponent implements OnInit {
 
   Views = KeyLockerViews;
   currentView: string = KeyLockerViews.entries;
+  observeUI: boolean = true;
 
   activeColumnDefs = [
     {  
@@ -59,7 +60,6 @@ export class KeyLockerComponent implements OnInit {
       cellRenderer: this.buttonRenderer
     }
   ];
-
 
   activeRowData = [
     {
@@ -544,6 +544,10 @@ export class KeyLockerComponent implements OnInit {
   showBidPlacedChart: boolean = true;
   showBidPlacedGrid: boolean = false;
 
+  popupData: IPopupConfigs[];
+  currentPopopWindowIdx: number = 0;
+  currentPopupPage: IPopupConfigs;
+
   constructor(private cdr: ChangeDetectorRef) { 
 
     this.chartData = {
@@ -772,7 +776,22 @@ export class KeyLockerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.changeInternalViews('contractChart');
+
+    this.popupData = [
+      {
+        header: 'Observe',
+        contentHeader: 'The observe window is a detailed window of the auction. And you can see last active 10 bidders details.',
+        content: ``,
+        bckButton: false,
+        nxtButton: false,
+        customContents: 'observe',
+        showFooter: false
+      }
+    ]
+
+    this.currentPopopWindowIdx = 0;
+    this.currentPopupPage = this.popupData[this.currentPopopWindowIdx];
+
   }
 
   buttonRenderer(params:any){
@@ -843,8 +862,6 @@ export class KeyLockerComponent implements OnInit {
 
   }
 
-
-
   changeInternalViews(viewName){
 
     switch(viewName){
@@ -900,6 +917,26 @@ export class KeyLockerComponent implements OnInit {
     }
 
     this.cdr.detectChanges();
+
+  }
+
+  recieveFromPopupDialog(e){
+    
+    switch(e.command){
+
+      case IPopupCpmmands.close:
+ 
+        this.currentPopopWindowIdx = 0;
+        this.observeUI = false; 
+
+      break;
+      case IPopupCpmmands.reviewBid: this.currentPopopWindowIdx++; break;
+
+    }
+
+    this.currentPopupPage = this.popupData[this.currentPopopWindowIdx];
+
+    
 
   }
 

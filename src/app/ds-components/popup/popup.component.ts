@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { AgGridAngular } from 'ag-grid-angular';
+
 import { IPopupConfigs, IPopupCpmmands } from '../ds-types';
 
 @Component({
@@ -18,6 +20,89 @@ export class PopupComponent implements OnInit {
 
   contentLines;
   paymenttype: string = '';
+
+  observeColumnDefs = [
+    {  
+      headerName: 'No',
+      field: 'No',
+      width: 200,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'User Name',
+      field: 'UserName',
+      width: 550,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'Last Bid',
+      field: 'LastBid',
+      width: 550,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'Increment',
+      field: 'Increment',
+      width: 525,
+      resizable: true,
+      sort: 'asc'
+    }
+  ];
+
+  observeRowData = [
+    {
+      No: '01.',
+      UserName: 'Esther Howard',
+      LastBid: '$319.25',
+      Increment: ''
+    },
+    {
+      No: '01.',
+      UserName: 'Esther Howard',
+      LastBid: '$319.25',
+      Increment: ''
+    },
+    {
+      No: '01.',
+      UserName: 'Esther Howard',
+      LastBid: '$319.25',
+      Increment: ''
+    },
+    {
+      No: '01.',
+      UserName: 'Esther Howard',
+      LastBid: '$319.25',
+      Increment: ''
+    },
+    {
+      No: '01.',
+      UserName: 'Esther Howard',
+      LastBid: '$319.25',
+      Increment: ''
+    },
+    {
+      No: '01.',
+      UserName: 'Esther Howard',
+      LastBid: '$319.25',
+      Increment: ''
+    },
+    {
+      No: '01.',
+      UserName: 'Esther Howard',
+      LastBid: '$319.25',
+      Increment: ''
+    },
+    {
+      No: '01.',
+      UserName: 'Esther Howard',
+      LastBid: '$319.25',
+      Increment: ''
+    }
+
+  ];
 
   constructor() { }
 

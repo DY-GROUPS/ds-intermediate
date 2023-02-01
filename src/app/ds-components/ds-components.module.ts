@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { CommonSliderComponent } from './common-slider/common-slider.component';
 import { CardSliderComponent } from './card-slider/card-slider.component';
 import { PopupComponent } from './popup/popup.component';
-import {DialogModule} from 'primeng/dialog';
-import {CheckboxModule} from 'primeng/checkbox';
-import {RadioButtonModule} from 'primeng/radiobutton';
-import {ButtonModule} from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { CheckboxModule } from 'primeng/checkbox';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { ButtonModule } from 'primeng/button';
 import { SafeHtmlPipe } from '../safe-html.pipe';
 import { FormsModule } from '@angular/forms';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     CheckboxModule,
     RadioButtonModule,
     ButtonModule,
-    FormsModule
+    FormsModule,
+    AgGridModule
   ],
   exports: [
     CommonSliderComponent,
