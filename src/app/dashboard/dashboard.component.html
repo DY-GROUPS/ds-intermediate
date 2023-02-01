@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" >
 
     <div class="cards-area">
 
@@ -164,9 +164,66 @@
     
     <div class="main">
 
-        <div class="time-area"></div>
+        <div class="time-area">
+          
+            <div class="time-area-title">Will conclude in</div>
 
-        <div class="info-area"></div>
+            <div class="timer" >
+
+              <div class="hours" id="hours">
+
+                <div  class="hours-amount-background">
+
+                  <span *ngIf="timerHours < 10"> 0 </span> {{timerHours}} </div>
+
+                <div class="hours-title">HOURS</div>
+
+              </div>
+
+
+              <div class="minutes" id="minutes">
+
+                <div  class="minutes-amount-background">
+
+                  <span *ngIf="timerMin < 10" > 0  </span> {{timerMin}}</div>
+
+                <div class="minutes-title">MINUTES</div>
+
+              </div>
+
+
+              <div class="seconds" id="seconds">
+
+                <div  class="seconds-amount-background">
+
+                  <span *ngIf="timerSec < 10"> 0 </span> {{timerSec}}</div>
+                 
+                <div class="seconds-title">SECONDS</div>
+
+              </div>
+
+            </div>
+
+            <div class="progress-bar">
+                <p-progressBar [style]="{'border-radius': '8px'}" 
+                [value]="80" [showValue]='false' ></p-progressBar>
+            </div>
+
+        </div>
+
+        <div class="info-area">
+
+            <div class="image-area"></div>
+
+            <div class="details-area">
+
+                <div class="detais-title"></div>
+                <div class="details"></div>
+                <div class="button-area"></div>
+
+            </div>
+
+        </div>
 
         <div class="grow-area"></div>
 

@@ -293,7 +293,17 @@ body {
 
     }
         
+    .ui-progressbar{
+
+        height: 18px;
+    }
+
     
+    .ui-progressbar .ui-progressbar-value{
+
+        background:linear-gradient(0deg, #F99958, #F99958), #F9A369 !important;
+    }
+
 
 
 }
