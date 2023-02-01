@@ -370,6 +370,89 @@ export class KeyLockerComponent implements OnInit {
 
   ];
 
+  bidPlacedtColumnDefs = [
+    {  
+      headerName: '#ID',
+      field: 'ID',
+      width: 175,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'Entry Date',
+      field: 'EntryDate',
+      width: 700,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'Auction Type',
+      field: 'AuctionType',
+      width: 200,
+      resizable: true,
+      sort: 'asc'
+    },
+    {  
+      headerName: 'Bids (times)',
+      field: 'Bids',
+      width: 200,
+      resizable: true,
+      sort: 'asc'
+    }
+  ];
+
+  bidPlacedRowData = [
+    {
+      ID: '1.2',
+      EntryDate: 'Nov 16, 2020',
+      AuctionType: 'Duplex',
+      Bids: '10'
+    },
+    {
+      ID: '1.2',
+      EntryDate: 'Nov 16, 2020',
+      AuctionType: 'Duplex',
+      Bids: '10'
+    },
+    {
+      ID: '1.2',
+      EntryDate: 'Nov 16, 2020',
+      AuctionType: 'Duplex',
+      Bids: '10'
+    },
+    {
+      ID: '1.2',
+      EntryDate: 'Nov 16, 2020',
+      AuctionType: 'Duplex',
+      Bids: '10'
+    },
+    {
+      ID: '1.2',
+      EntryDate: 'Nov 16, 2020',
+      AuctionType: 'Duplex',
+      Bids: '10'
+    },
+    {
+      ID: '1.2',
+      EntryDate: 'Nov 16, 2020',
+      AuctionType: 'Duplex',
+      Bids: '10'
+    },
+    {
+      ID: '1.2',
+      EntryDate: 'Nov 16, 2020',
+      AuctionType: 'Duplex',
+      Bids: '10'
+    },
+    {
+      ID: '1.2',
+      EntryDate: 'Nov 16, 2020',
+      AuctionType: 'Duplex',
+      Bids: '10'
+    },
+
+  ];
+
   cards: ICard[] = [
     {
       id: KeyLockerViews.entries,
@@ -457,6 +540,9 @@ export class KeyLockerComponent implements OnInit {
 
   showContractChart: boolean = true;
   showContractDetails: boolean = false;
+
+  showBidPlacedChart: boolean = true;
+  showBidPlacedGrid: boolean = false;
 
   constructor(private cdr: ChangeDetectorRef) { 
 
@@ -799,6 +885,16 @@ export class KeyLockerComponent implements OnInit {
       case 'contractGrid':
         this.showContractDetails = true;
         this.showContractChart = false;
+      break;
+
+      case 'showBidPlacedChart':
+        this.showBidPlacedChart = true;
+        this.showBidPlacedGrid = false;
+      break;
+
+      case 'showBidPlacedGrid':
+        this.showBidPlacedGrid = true;
+        this.showBidPlacedChart = false;
       break;
 
     }

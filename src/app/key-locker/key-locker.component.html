@@ -274,9 +274,9 @@
             
             <div class="top-bar">        
         
-                <div class="icon">
+                <!-- <div class="icon">
                     <img src="./assets/key-locker/top-bar/icon-3-blue.png">
-                </div>
+                </div> -->
         
             </div>
 
@@ -363,13 +363,15 @@
 
             <div class="top-bar">
 
-                <div class="icon">
-                    <img *ngIf="showAcutionChart" src="./assets/key-locker/top-bar/icon-1-blue.png">
+                <div class="icon" (click)="changeInternalViews('showBidPlacedChart')">
+                    <img *ngIf="!showBidPlacedChart" src="./assets/key-locker/top-bar/icon-1.png">
+                    <img *ngIf="showBidPlacedChart" src="./assets/key-locker/top-bar/icon-1-blue.png">
                 </div>
         
         
-                <div class="icon">
-                    <img src="./assets/key-locker/top-bar/icon-3.png">
+                <div class="icon" (click)="changeInternalViews('showBidPlacedGrid')">
+                    <img *ngIf="!showBidPlacedGrid" src="./assets/key-locker/top-bar/icon-3.png">
+                    <img *ngIf="showBidPlacedGrid" src="./assets/key-locker/top-bar/icon-3-blue.png">
                 </div>
         
             </div>
@@ -378,7 +380,21 @@
                 Bids Placed
             </div>
 
-            <p-chart type="doughnut" [data]="chartData.bids" [options]="chartOptions.bids" [width]="chartWidth" [height]="chartHeight" [responsive]="false"></p-chart>
+            <div *ngIf="showBidPlacedChart">
+                <p-chart type="doughnut" [data]="chartData.bids" [options]="chartOptions.bids" [width]="chartWidth" [height]="chartHeight" [responsive]="false"></p-chart>
+            </div>
+
+            <div *ngIf="showBidPlacedGrid" class="common-ag-grid-styles" style="width: 100%; height: 100%;">
+
+                <ag-grid-angular #agGrid 
+                    style="width: 100%; height: 100%; font-size: 12px;" 
+                    class="ag-theme-alpine"
+                    [rowData]="bidPlacedRowData"
+                    [columnDefs]="bidPlacedtColumnDefs"
+                >
+                </ag-grid-angular>
+
+            </div>
 
         </div>
 
@@ -389,10 +405,6 @@
                 <div class="icon" (click)="changeInternalViews('contractChart')">
                     <img *ngIf="!showContractChart" src="./assets/key-locker/top-bar/icon-1.png">
                     <img *ngIf="showContractChart" src="./assets/key-locker/top-bar/icon-1-blue.png">
-                </div>
-        
-                <div class="icon">
-                    <img src="./assets/key-locker/top-bar/icon-2.png">
                 </div>
         
                 <div class="icon" (click)="changeInternalViews('contractGrid')">
