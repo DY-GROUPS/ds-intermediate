@@ -11,7 +11,6 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild('dragbtn') dragbtn: ElementRef;
   @ViewChild('drop') drop: ElementRef;
-  // @ViewChild('basicTimer')basicTimer: ElementRef;
   isOk: boolean = false;
 
   placeBid: boolean = false;
@@ -199,7 +198,7 @@ export class DashboardComponent implements OnInit {
 
     this.currentPopupPage = this.popupData[0];
     this.selectedHouse = this.houses[0].value;
-    this.currentRoom = this.rooms[1];
+    this.currentRoom = this.rooms[0];
 
     setInterval(() => {
       this.clockTicking();

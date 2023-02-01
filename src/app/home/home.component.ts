@@ -10,7 +10,7 @@ import { MainViews } from '../app.types';
 export class HomeComponent implements OnInit {
 
   title = 'dream-stakes';
-  currentMainView: number = MainViews.dashboard;
+  currentMainView: number = MainViews.enterScreen;
   rightPanal: boolean = false;
   _MainViews = MainViews;
   

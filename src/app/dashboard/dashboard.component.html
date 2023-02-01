@@ -170,35 +170,35 @@
 
             <div class="timer" >
 
-              <div class="hours" id="hours">
+              <div class="time-wrapper" id="hours">
 
-                <div  class="hours-amount-background">
+                <div  class="clock">
 
                   <span *ngIf="timerHours < 10"> 0 </span> {{timerHours}} </div>
 
-                <div class="hours-title">HOURS</div>
+                <div class="title" style="padding-left: 48px;">HOURS</div>
 
               </div>
 
 
-              <div class="minutes" id="minutes">
+              <div class="time-wrapper" id="minutes">
 
-                <div  class="minutes-amount-background">
+                <div  class="clock">
 
                   <span *ngIf="timerMin < 10" > 0  </span> {{timerMin}}</div>
 
-                <div class="minutes-title">MINUTES</div>
+                <div class="title" style="padding-left: 38px;">MINUTES</div>
 
               </div>
 
 
-              <div class="seconds" id="seconds">
+              <div class="time-wrapper" id="seconds">
 
-                <div  class="seconds-amount-background">
+                <div  class="clock">
 
                   <span *ngIf="timerSec < 10"> 0 </span> {{timerSec}}</div>
                  
-                <div class="seconds-title">SECONDS</div>
+                <div class="title" style="padding-left: 33px;">SECONDS</div>
 
               </div>
 
