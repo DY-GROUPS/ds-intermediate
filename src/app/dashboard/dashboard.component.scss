@@ -1,496 +1,202 @@
 .container {
 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 40px 40px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 40px 40px 0px 40px;
 
-    .cards-area {
+  .cards-area {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    max-width: 787px;
+
+    .a-card {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 174px;
+      height: 188px;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 10px 0px 10px 0px;
+
+      .icon {
+
+        width: 64px;
+        height: 64px;
+
+        img {
+
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+
+
+      .title {
+
+        width: 100%;
+        font-family: 'Be Vietnam Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #79778A;
+        text-align: center;
+
+      }
+
+
+      .info {
 
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100%;
+        font-family: 'Be Vietnam Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 23px;
+        line-height: 20px;
+        color: #95CED1;
+
+        img {
+
+          width: 13px;
+          height: 13px;
+          margin-left: 3px;
+
+        }
+
+      }
+
+    }
+    
+  }
+
+  .rooms-area {
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+
+    .room-count {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 75px;
+
+        .drpdwn-area {
+            margin-right: 32px;
+        }
+
+        .count-area{
+
+            font-family: 'Be Vietnam Pro';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #95CED1;
+
+        }
+    }
+
+    .bidding-area {
+
+        display: flex;
+        flex-direction: row;
         width: 100%;
         height: 200px;
-        max-width: 787px;
+        margin-bottom: 55px;
+        
 
-        .a-card {
+        .left {
+            display: flex;
+            align-items: center;
+            width: 200px;
+            height: 100%;
+
+            img {
+                width: 169px;
+                height: 169px;
+                border-radius: 10px;
+            }
+        }
+
+        .right {
 
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 174px;
-            height: 188px;
-            background: #FFFFFF;
-            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 10px 0px 10px 0px;
-
-            .icon {
-                width: 64px;
-                height: 64px;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
+            flex-grow: 1;
+            height: 100%;
+            justify-content: center;
 
             .title {
+
                 width: 100%;
-                font-family: 'Be Vietnam Pro';
+                font-family: 'Open Sans';
                 font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 20px;
-                color: #79778A;
-                text-align: center;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 28px;
+                color: #95CED1;
+                margin-bottom: 23px;
+
             }
 
             .info {
 
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
                 width: 100%;
-                font-family: 'Be Vietnam Pro';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 23px;
-                line-height: 20px;
-                color: #95CED1;
+                margin-bottom: 18px;
 
-                img {
-
-                    width: 13px;
-                    height: 13px;
-                    margin-left: 3px;
+                .start, .high, .total {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 55px;
                 }
-            }
 
-        }
-    }
+                .info-title {
 
-    .rooms-area {
+                    font-family: 'Be Vietnam Pro';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 20px;
+                    color: #9997AE;
+                    margin-bottom: 5px;
 
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        width: 100%;
-
-        .room-count {
-
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            width: 100%;
-            height: 75px;
-
-            .drpdwn-area {
-                margin-right: 32px;
-            }
-
-            .count-area{
-
-                font-family: 'Be Vietnam Pro';
-                font-style: normal;
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 20px;
-                color: #95CED1;
-
-            }
-        }
-
-        .bidding-area {
-
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 200px;
-            margin-bottom: 55px;
-            
-
-            .left {
-                display: flex;
-                align-items: center;
-                width: 200px;
-                height: 100%;
-
-                img {
-                    width: 169px;
-                    height: 169px;
-                    border-radius: 10px;
                 }
-            }
 
-            .right {
+                .desc {
 
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1;
-                height: 100%;
-                justify-content: center;
-
-                .title {
-
-                    width: 100%;
-                    font-family: 'Open Sans';
+                    font-family: 'Be Vietnam Pro';
                     font-style: normal;
                     font-weight: 600;
-                    font-size: 20px;
-                    line-height: 28px;
-                    color: #95CED1;
-                    margin-bottom: 23px;
-
-                }
-
-                .info {
-
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
-                    margin-bottom: 18px;
-
-                    .start, .high, .total {
-                        display: flex;
-                        flex-direction: column;
-                        margin-right: 55px;
-                    }
-
-                    .info-title {
-
-                        font-family: 'Be Vietnam Pro';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 18px;
-                        line-height: 20px;
-                        color: #9997AE;
-                        margin-bottom: 5px;
-
-                    }
-
-                    .desc {
-
-                        font-family: 'Be Vietnam Pro';
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 18px;
-                        line-height: 24px;
-                        color: #231F20;
-
-                    }
-
-                }
-
-                .buttons-area {
-
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    
-
-                    .silde-btn {
-
-                      display: flex;
-                      flex-direction: row;
-                      width: 133px;
-                      height: 32px;
-                      max-width: 100%;
-                      border-radius: 5px;
-                      background: linear-gradient(90.4deg, #727272 11.2%, #B0B0B0 103.06%);
-                      margin-right: 18px;
-
-
-                      .dragbtn {
-
-                        width: 26px;
-                        height: 26px;
-                        z-index: 1;
-                        transition: box-shadow 10000ms cubic-bezier(0, 0, 0.2, 1);
-                        margin-top: 3px;
-                        margin-left: 2px;
-
-                        .img-background {
-
-                          display: flex;
-                          justify-content: center;
-                          align-items: center;
-                          width: 26px;
-                          height: 26px;
-                          background: #D7D7D7;
-                          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-                          border-radius: 5px;
-
-                          img{
-
-                            width: 10px;
-                            height: 10px;
-                          }
-
-                        }
-
-                      }
-
-                      .text {
-
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        margin-left: 8px;
-                        font-family: 'Open Sans';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 12px;
-                        line-height: 32px;
-                        text-align: justify;
-                        color: #434343;
-
-                        
-                      }
-                    }
-
-                    .custom-bid-btn {
-
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        width: 109px;
-                        height: 32px;
-                        border-radius: 5px;
-                        border: 2px solid #F9A369;
-                        font-family: 'Be Vietnam Pro';
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 12px;
-                        line-height: 24px;
-                        text-align: center;
-                        color: #F9A369;
-                        cursor: pointer;
-                    }
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: #231F20;
 
                 }
 
             }
 
-        }
-
-        .bidding-info{
-
-            width: 100%;
-            flex-grow: 1;
-
-            .info-title {
-
-                display: flex;
-                flex-direction: row;
-                width: 100%;
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 20px;
-                line-height: 28px;
-                color: #95CED1;
-                margin-bottom: 18px;
-
-                img {
-
-                    width: 13px;
-                    height: 13px;
-                    margin-left: 3px;
-                    margin-top: 5px;
-                }
-
-            }
-
-            .desc{
-
-                width: 100%;
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 32px;
-                text-align: justify;
-                color: #2C2C2C;
-
-                ol {
-                    padding-inline-start: 18px;
-                }
-            }
-
-
-        }
-        
-        .main{
-
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          height: 100%;
-          padding-left: 40px;
-          
-          .time-area{
-
-            width: 792px;
-            height: 356px;
-
-            .time-area-title{
-
-              position: relative;
-              left: -28px;
-              margin-bottom: 26px;
-              font-family: 'Open Sans';
-              font-style: normal;
-              font-weight: 600;
-              font-size: 26px;
-              line-height: 35px;
-              text-align: center;
-              color: #2C2C2C;
-
-            }
-
-            .timer{
-
-              display: flex;
-              flex-direction: row;
-              width: 714px;
-              
-              .time-wrapper {
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-right: 10px;
-
-                .clock {
-
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: flex-start;
-                  align-items: center;
-                  background-image: url('^assets/dasboard/timer-frame.png');
-                  font-family: 'Quantico';
-                  font-style: normal;
-                  font-weight: 700;
-                  font-size: 100px;
-                  line-height: 143px;
-                  color: #FBFFF7;
-                  width: 202.72px;
-                  height: 130.06px;
-                  letter-spacing: 37px;
-                  margin-right: 53px;
-                  padding-left: 19px;
-
-                }
-
-                .title {
-          
-                  height: 43px;
-                  width: 100%;
-                  font-family: 'Quantico';
-                  font-style: normal;
-                  font-weight: 400;
-                  font-size: 30px;
-                  line-height: 43px;
-                  background: linear-gradient(96.87deg, #85DFE3 0%, #95CED1 80.78%), linear-gradient(96.87deg, #F9A369 0%, #EB8643 80.78%), linear-gradient(96.87deg, rgba(74, 137, 152, 0.69) 0%, rgba(62, 89, 127, 0.96) 80.78%), #FBFFF7;
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  background-clip: text;
-                  margin-top: 13px;
-                  
-                }
-
-              }
-
-            }
-
-            .progress-bar{
-
-              margin-top: 50px;
-              width: 735px;
-             
-            }
-
-
-          }
-  
-          .info-area{
-
-            display: flex;
-            flex-direction: row;
-            width: 608px;
-            height: 169px;
-
-            .image-area{
-              width: 169px;
-              height: 169px;
-              margin-right: 50px;
-              background-image: url('^assets/dasboard/detailsimg.png');
-    
-            }
-
-            .details-area{
-
-              display: flex;
-              flex-direction: column;
-              flex-grow: 1;
-              
-              .detais-title{
-                
-                width: 285px;
-                height: 28px;
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 20px;
-                line-height: 28px;
-                color: #2E2E2E;
-                margin-bottom: 22px;
-
-              }
-
-              .details{
-
-                display: flex;
-                flex-direction: row;
-                width: 399px;
-                height: 48px;
-                margin-bottom: 18px;
-
-                .details-sub-title{
-                  
-                  width: 150px;
-                  font-family: 'Be Vietnam Pro';
-                  font-style: normal;
-                  font-weight: 400;
-                  font-size: 18px;
-                  line-height: 20px;
-                  color: #9997AE;
-
-
-                }
-
-                .details-sub-details{
-
-                  
-                  font-family: 'Be Vietnam Pro';
-                  font-style: normal;
-                  font-weight: 600;
-                  font-size: 18px;
-                  line-height: 24px;
-                  color: #231F20;
-
-                }
-
-              }
-
-              .buttons-area {
+            .buttons-area {
 
                 width: 100%;
                 display: flex;
@@ -578,45 +284,349 @@
                 }
 
             }
+
+        }
+
+    }
+
+    .bidding-info{
+
+        width: 100%;
+        flex-grow: 1;
+
+        .info-title {
+
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #95CED1;
+            margin-bottom: 18px;
+
+            img {
+
+                width: 13px;
+                height: 13px;
+                margin-left: 3px;
+                margin-top: 5px;
             }
-            
-          }
 
-          .grow-area{
-            
-            flex-grow: 1;
-            width: 792px;
-            margin-top: 51px;
+        }
 
-            .grow-area-title{
+        .desc{
+
+            width: 100%;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 32px;
+            text-align: justify;
+            color: #2C2C2C;
+
+            ol {
+                padding-inline-start: 18px;
+            }
+        }
+
+
+    }
+    
+    .main{
+
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding-left: 40px;
+      
+      .time-area{
+
+        width: 792px;
+        height: 356px;
+
+        .time-area-title{
+
+          position: relative;
+          left: -28px;
+          margin-bottom: 26px;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 26px;
+          line-height: 35px;
+          text-align: center;
+          color: #2C2C2C;
+
+        }
+
+        .timer{
+
+          display: flex;
+          flex-direction: row;
+          width: 714px;
+          
+          .time-wrapper {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+
+            .clock {
+
               display: flex;
-              justify-content: space-between;
-              
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
+              background-image: url('^assets/dasboard/timer-frame.png');
+              font-family: 'Quantico';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 100px;
+              line-height: 143px;
+              color: #FBFFF7;
+              width: 202.72px;
+              height: 130.06px;
+              letter-spacing: 37px;
+              margin-right: 53px;
+              padding-left: 19px;
 
-              .grow-area-title-text{
-                
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 600;
-                font-size: 20px;
-                line-height: 28px;
-                color: #95CED1;
-              }
             }
 
-            .grow-area-text{
-
-              display: none;
-              overflow: hidden;
-              background-color: #f1f1f1;
+            .title {
+      
+              height: 43px;
+              width: 100%;
+              font-family: 'Quantico';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 30px;
+              line-height: 43px;
+              background: linear-gradient(96.87deg, #85DFE3 0%, #95CED1 80.78%), linear-gradient(96.87deg, #F9A369 0%, #EB8643 80.78%), linear-gradient(96.87deg, rgba(74, 137, 152, 0.69) 0%, rgba(62, 89, 127, 0.96) 80.78%), #FBFFF7;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              margin-top: 13px;
               
-
             }
 
           }
 
         }
+
+        .progress-bar{
+
+          margin-top: 50px;
+          width: 735px;
+          
+        }
+
+      }
+
+      .info-area{
+
+        display: flex;
+        flex-direction: row;
+        width: 608px;
+        height: 169px;
+
+        .image-area{
+
+          width: 169px;
+          height: 169px;
+          margin-right: 50px;
+          background-image: url('^assets/dasboard/detailsimg.png');
+
+        }
+
+        .details-area{
+
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          
+          .detais-title{
+            
+            width: 285px;
+            height: 28px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #2E2E2E;
+            margin-bottom: 22px;
+
+          }
+
+          .details{
+
+            display: flex;
+            flex-direction: row;
+            width: 399px;
+            height: 48px;
+            margin-bottom: 18px;
+
+            .details-sub-title{
+              
+              width: 150px;
+              font-family: 'Be Vietnam Pro';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 20px;
+              color: #9997AE;
+
+
+            }
+
+            .details-sub-details{
+
+              font-family: 'Be Vietnam Pro';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 24px;
+              color: #231F20;
+
+            }
+
+          }
+
+          .buttons-area {
+
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            
+
+            .silde-btn {
+
+              display: flex;
+              flex-direction: row;
+              width: 133px;
+              height: 32px;
+              max-width: 100%;
+              border-radius: 5px;
+              background: linear-gradient(90.4deg, #727272 11.2%, #B0B0B0 103.06%);
+              margin-right: 18px;
+
+
+              .dragbtn {
+
+                width: 26px;
+                height: 26px;
+                z-index: 1;
+                transition: box-shadow 10000ms cubic-bezier(0, 0, 0.2, 1);
+                margin-top: 3px;
+                margin-left: 2px;
+
+                .img-background {
+
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 26px;
+                  height: 26px;
+                  background: #D7D7D7;
+                  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+                  border-radius: 5px;
+
+                  img{
+
+                    width: 10px;
+                    height: 10px;
+                  }
+
+                }
+
+              }
+
+              .text {
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-left: 8px;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 32px;
+                text-align: justify;
+                color: #434343;
+
+                
+              }
+            }
+
+            .custom-bid-btn {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 109px;
+                height: 32px;
+                border-radius: 5px;
+                border: 2px solid #F9A369;
+                font-family: 'Be Vietnam Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 24px;
+                text-align: center;
+                color: #F9A369;
+                cursor: pointer;
+            }
+
+          }
+          
+        }
         
+      }
+
+      .grow-area{
+        
+        flex-grow: 1;
+        width: 792px;
+        margin-top: 51px;
+
+        .grow-area-title{
+          display: flex;
+          justify-content: space-between;
+          
+
+          .grow-area-title-text{
+            
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #95CED1;
+          }
+        }
+
+        .grow-area-text{
+
+          display: none;
+          overflow: hidden;
+          background-color: #f1f1f1;
+          
+
+        }
+
+      }
+
     }
+      
+  }
 
 }
