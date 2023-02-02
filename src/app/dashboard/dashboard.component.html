@@ -206,7 +206,7 @@
 
             <div class="progress-bar">
                 <p-progressBar [style]="{'border-radius': '8px'}" 
-                [value]="80" [showValue]='false' ></p-progressBar>
+                [value]="75" [showValue]='false' ></p-progressBar>
             </div>
 
         </div>
@@ -280,7 +280,35 @@
 
         </div>
 
-        <div class="grow-area"></div>
+        <div class="grow-area">
+
+          <div class="grow-area-title">
+
+            <div class="grow-area-title-text">Duplex Auction House</div>
+
+            <div class="grow-area-button">
+
+              <button type="button" (click)="dropdownText()" style="border: none;" *ngIf="!arrowUp">
+                <img src="../../assets/dasboard/icons/dropdown.png" >
+              </button>
+
+              <button type="button" (click)="dropdownText()" style="border: none;" *ngIf="arrowUp">
+                <img src="../../assets/dasboard/info.png" >
+              </button>
+              
+            </div>
+
+          </div>
+          
+          <div class="grow-area-text" #droptxt>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+          </div>
+
+        </div>
 
     </div>
     
