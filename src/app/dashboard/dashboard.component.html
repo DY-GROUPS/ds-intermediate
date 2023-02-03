@@ -43,7 +43,7 @@
         </div>
 
         <div *ngIf="currentRoom.type == 0">
-            <ng-container *ngTemplateOutlet="conclude;"></ng-container>
+            <ng-container *ngTemplateOutlet="conclude; context: {'currentRoom': currentRoom}"></ng-container>
         </div>
         
 
@@ -160,7 +160,7 @@
 
 </ng-template>
 
-<ng-template #conclude>
+<ng-template #conclude let-currentRoom="currentRoom">
     
     <div class="main">
 
@@ -206,81 +206,116 @@
 
             <div class="progress-bar">
                 <p-progressBar [style]="{'border-radius': '8px'}" 
-                [value]="80" [showValue]='false' ></p-progressBar>
+                [value]="75" [showValue]='false' ></p-progressBar>
             </div>
 
         </div>
 
         <div class="info-area">
 
-          <div class="image-area"></div>
+            <div class="image-area"></div>
 
-          <div class="details-area">
+            <div class="details-area">
 
             <div class="detais-title">Attention On Auction House</div>
 
             <div class="details">
 
-              <div>
+                <div>
                 <div class="details-sub-title">Starting Bid</div>
                 <div class="details-sub-details">$50.00</div>
-              </div>
-              
-              <div>
+                </div>
+                
+                <div>
                 <div class="details-sub-title">Highest Bid</div>
                 <div class="details-sub-details">$3259.00</div>
-              </div>
-                  
-              <div>
+                </div>
+                    
+                <div>
                 <div class="details-sub-title">Total Bids</div>
                 <div class="details-sub-details">17</div>
-              </div>
+                </div>
 
             </div>
 
             <div class="buttons-area">
 
-              <div class= "silde-btn"  id="silde-btn" #drop>
+                <div class= "silde-btn"  id="silde-btn" #drop>
 
                 <div
-                  #dragbtn
-                  id="dragbtn"
-                  class="dragbtn"
-                  cdkDragBoundary=".silde-btn"
-                  cdkDragLockAxis="x"
-                  cdkDrag 
-                  (cdkDragEnded)="dragEnd()">
-                  
-                  <div class="img-background">
+                    #dragbtn
+                    id="dragbtn"
+                    class="dragbtn"
+                    cdkDragBoundary=".silde-btn"
+                    cdkDragLockAxis="x"
+                    cdkDrag 
+                    (cdkDragEnded)="dragEnd()">
+                    
+                    <div class="img-background">
                     <img src="./assets/dasboard/icons/slider-arrow-btn.png"/>
-                  </div>
+                    </div>
 
                 </div>
 
                 <div class="text">
-                  
-                  <div *ngIf="!isOk">
+                    
+                    <div *ngIf="!isOk">
                     <!-- <div>Release</div> -->
                     <div>Silde to fast bid</div>
-                  </div>
-                  
-                  <div *ngIf="isOk">Confirmed!</div>
+                    </div>
+                    
+                    <div *ngIf="isOk">Confirmed!</div>
 
                 </div>
-                  
-              </div>
+                    
+                </div>
 
-              <div class="custom-bid-btn" (click)="showPlaceBid()">
-                  Custom Bid
-              </div>
+                <div class="custom-bid-btn" (click)="showPlaceBid()">
+                    Custom Bid
+                </div>
 
             </div>
             
-          </div>
+            </div>
 
         </div>
 
-        <div class="grow-area"></div>
+        <div class="grow-area">
+
+          <div class="grow-area-title">
+
+            <div class="grow-area-title-text"> {{currentRoom.biddingInfo.title}}
+
+              <img src="./assets/dasboard/info.png">
+
+            </div>
+
+            <div class="grow-area-button">
+
+              <button type="button" (click)="dropdownText()" style="border: none;  background-color: transparent;" *ngIf="!arrowUp">
+                <img src="./assets/dasboard/icons/dropdown.png" >
+              </button>
+
+              <button type="button" (click)="dropdownText()" style="border: none; background-color: transparent;" *ngIf="arrowUp">
+                <img src="./assets/dasboard/icons/dropdown2.png" >
+              </button>
+              
+            </div>
+
+          </div>
+          
+          <div class="grow-area-text" #droptxt>
+
+            {{currentRoom.biddingInfo.desc}}
+
+            <ol type="a">
+                <li *ngFor="let item of currentRoom.biddingInfo.list">{{item}}</li>
+            </ol>
+
+           
+          </div>
+
+        </div>
 
     </div>
     
