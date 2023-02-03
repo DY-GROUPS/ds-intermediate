@@ -556,6 +556,9 @@
 
     </div>
 
+    <app-popup [display]="observeUI" (notifyParent)="recieveFromPopupDialog($event)" [popupData]="popupData[0]"></app-popup>
+    <app-popup [display]="reviewUI" (notifyParent)="recieveFromPopupDialog($event)" [popupData]="popupData[1]"></app-popup>
+
 </div>
 
 

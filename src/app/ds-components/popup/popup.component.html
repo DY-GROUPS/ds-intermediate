@@ -366,6 +366,30 @@
 
         </div>
 
+        <div class="observe common-ag-grid-styles" *ngIf="popupData?.customContents == 'observe'" style="width: 100%; height: 91%;">
+
+            <ag-grid-angular #agGrid 
+                style="width: 100%; height: 100%; font-size: 12px;" 
+                class="ag-theme-alpine"
+                [rowData]="observeRowData"
+                [columnDefs]="observeColumnDefs"
+            >
+            </ag-grid-angular>
+
+        </div>
+
+        <div class="review common-ag-grid-styles" *ngIf="popupData?.customContents == 'review'" style="width: 100%; height: 91%;">
+
+            <ag-grid-angular #agGrid 
+                style="width: 100%; height: 100%; font-size: 12px;" 
+                class="ag-theme-alpine"
+                [rowData]="reviewRowData"
+                [columnDefs]="reviewColumnDefs"
+            >
+            </ag-grid-angular>
+
+        </div>
+
         <p-footer *ngIf="popupData?.showFooter">
 
             <div>
