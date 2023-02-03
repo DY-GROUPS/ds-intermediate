@@ -43,7 +43,7 @@
         </div>
 
         <div *ngIf="currentRoom.type == 0">
-            <ng-container *ngTemplateOutlet="conclude;"></ng-container>
+            <ng-container *ngTemplateOutlet="conclude; context: {'currentRoom': currentRoom}"></ng-container>
         </div>
         
 
@@ -160,7 +160,7 @@
 
 </ng-template>
 
-<ng-template #conclude>
+<ng-template #conclude let-currentRoom="currentRoom">
     
     <div class="main">
 
