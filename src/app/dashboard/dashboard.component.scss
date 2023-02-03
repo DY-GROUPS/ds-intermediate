@@ -344,6 +344,8 @@
       height: 100%;
       padding-left: 40px;
       
+     
+      
       .time-area{
 
         width: 792px;
@@ -442,6 +444,7 @@
           height: 169px;
           margin-right: 50px;
           background-image: url('^assets/dasboard/detailsimg.png');
+          border-radius: 10px;
 
         }
 
@@ -602,24 +605,47 @@
           display: flex;
           justify-content: space-between;
           
-
-          .grow-area-title-text{
+            .grow-area-title-text{
             
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 28px;
-            color: #95CED1;
-          }
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 28px;
+                color: #95CED1;
+                margin-bottom: 18px;
+
+                img {
+
+                    width: 13px;
+                    height: 13px;
+                    margin-left: 3px;
+                    margin-top: 5px;
+                }
+            }
+
         }
 
         .grow-area-text{
 
-          display: none;
-          overflow: hidden;
-          background-color: #f1f1f1;
-          
+            display: none;
+            width: 100%;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 32px;
+            text-align: justify;
+            color: #2C2C2C;
+
+            ol {
+
+                padding-inline-start: 18px;
+            }
+            
 
         }
 

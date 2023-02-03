@@ -98,6 +98,27 @@ export class DashboardComponent implements OnInit {
       type: 1
     },
     {
+      houseImage: './assets/dasboard/house.png',
+      title: 'Heffel Fine Art Auction House',
+      info: {
+        startBid: '50.00',
+        heighestBid: '4575.00',
+        totalBids: '89'
+      },
+      biddingInfo: {
+        title: 'Duplex Auction House',
+        desc: `Duplex means that we select two winners from this house by
+                holding two auctions, means two bidding rooms. One bidding room at a time
+                will start at 50$. The entrants will have to place their first bid for 50$ or
+                greater to be the first occupant (Winning Spot). The next highest bidder will
+                become the next occupant. After the number of paid entrants reach 50,000 a
+                48 hour clock starts counting down for when this bidding room ends. Highest
+                bidder after the 48 hour clock runs out moves on the Eligibility. In that Auction
+                House, the first bidding room is in Pending Status. Those 49,999+ from the
+                first bidding room are automatically moved to the final bidding room that
+                starts at 50$ and a 21 day timer automatically begins.`,
+        list: ['Duplex', '100$ entry fee', '2 total bidding rooms, 1 at a time.', 'After 50000 entrants, 48 hour countdown till end', '49,999+ rollover to 2nd bidding room.']
+      },
       type: 0
     }
   ]
