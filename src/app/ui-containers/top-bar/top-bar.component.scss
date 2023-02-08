@@ -127,10 +127,25 @@
                 height: 24px;
             }
         }
+
     }
 
     .section-1, .section-2, .section-3 {
         height: 48px;
+    }
+
+    .popup{
+        
+        display: none;
+        position: absolute;
+        overflow-y: scroll;
+        z-index: 10;
+        background-color: aqua;
+        width: 450px;
+        height: 750px;
+        top: 100px;
+        right: 45px;
+        
     }
 
 }

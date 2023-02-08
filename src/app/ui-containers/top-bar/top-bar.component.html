@@ -17,8 +17,15 @@
         </div>
 
         <div class="notifications">
-            <img src="./assets/notify-icon.png">
+            <button type="button" (click)="showNotification()" style="border: none;  background-color: transparent;">
+                <img src="./assets/notify-icon.png">
+            </button>
+           
         </div>
+
+        
     </div>
+
+    <div class="popup" #notificationPopup></div>
 
 </div>
