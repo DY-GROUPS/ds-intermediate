@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Interconnect, IMessageStream } from 'ng-interconnect';
 import { IPopupConfigs, IPopupCpmmands, ISliderConfig } from 'src/app/ds-components/ds-types';
+import { MainViews } from '../app.types';
 
 @Component({
   selector: 'app-enter-screen',
@@ -8,6 +10,7 @@ import { IPopupConfigs, IPopupCpmmands, ISliderConfig } from 'src/app/ds-compone
 })
 export class EnterScreenComponent implements OnInit {
 
+  private changeView: IMessageStream | Promise<IMessageStream>;
   sliderData: ISliderConfig[];
   popupData: IPopupConfigs[];
   customPopupContents: IPopupConfigs[];
@@ -19,7 +22,14 @@ export class EnterScreenComponent implements OnInit {
   showPrivacyPolicy: boolean = false;
   showRulesAndReg: boolean = false;
 
-  constructor() { }
+  constructor(private interconnect: Interconnect) {
+
+    this.changeView = interconnect.connectToListener('leftbar/changeView', 'topbar');
+    if (this.changeView['then']) {
+      this.changeView['then']((notifier) => this.changeView = notifier);
+    }
+
+  }
 
   ngOnInit(): void {
 
@@ -297,6 +307,7 @@ export class EnterScreenComponent implements OnInit {
       case IPopupCpmmands.submit:
         this.currentPopopWindowIdx = 0;
         this.showDialogUI = false;
+        this.showdasboard();
       break;
 
     }
@@ -305,6 +316,10 @@ export class EnterScreenComponent implements OnInit {
       this.currentPopupPage = this.popupData[this.currentPopopWindowIdx];
     
 
+  }
+
+  showdasboard(){
+    (this.changeView as IMessageStream).emit({viewId: MainViews.dashboard, showBackground: true, showCards:false});
   }
 
 }

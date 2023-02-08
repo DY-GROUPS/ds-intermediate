@@ -47,6 +47,8 @@ export class LeftPanalComponent implements OnInit {
       // Remove selected items
       Array.from(this.elem.nativeElement.querySelectorAll('.main-btns')).forEach((btn: any) => btn.classList.remove('select'));
 
+      this.buttonsIconChange(command.viewId);
+
 
 		})
 
