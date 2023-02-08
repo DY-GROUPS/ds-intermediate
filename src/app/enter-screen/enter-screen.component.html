@@ -62,11 +62,15 @@
 
     </div>
 
+    <div class="rules-and-reg" (click)="showRulesAndReg = true">Read DreamStakes Rules and Regulations</div>
+
     <!-- showDialogUI -->
     <app-popup [display]="showDialogUI" (notifyParent)="recieveFromPopupDialog($event)" [popupData]="currentPopupPage"></app-popup>
 
     <app-popup [display]="showTearms" (notifyParent)="recieveFromPopupDialog($event)" [popupData]="customPopupContents[0]"></app-popup>
 
     <app-popup [display]="showPrivacyPolicy" (notifyParent)="recieveFromPopupDialog($event)" [popupData]="customPopupContents[1]"></app-popup>
+
+    <app-popup [display]="showRulesAndReg" (notifyParent)="recieveFromPopupDialog($event)" [popupData]="dsRulesAndreg"></app-popup>
 
 </div>
