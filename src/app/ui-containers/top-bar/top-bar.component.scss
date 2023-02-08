@@ -149,7 +149,6 @@
         
         display: none;
         position: absolute;
-        overflow-y: scroll;
         z-index: 10;
         width: 397px;
         height: 506px;
@@ -158,6 +157,20 @@
         border-radius: 8px;
         top: 100px;
         right: 45px;
+
+        .notifications-container{
+
+            overflow-y: scroll;
+            height: 100%;
+
+        }
+
+        .inbox-container{
+
+            overflow-y: scroll;
+            height: 100%;
+
+        }
         
     }
 
