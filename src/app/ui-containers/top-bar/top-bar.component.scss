@@ -112,6 +112,7 @@
         }
 
         .notifications {
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -122,15 +123,55 @@
             box-shadow: 8px 10px 54px rgba(15, 13, 35, 0.03);
             border-radius: 16px;
 
-            img {
-                width: 24px;
-                height: 24px;
+            button{
+
+                border: none;  
+                background-color: transparent; 
+                cursor: pointer;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+
             }
+
+            
         }
+
     }
 
     .section-1, .section-2, .section-3 {
         height: 48px;
+    }
+
+    .popup{
+        
+        display: none;
+        position: absolute;
+        z-index: 10;
+        width: 397px;
+        height: 506px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        top: 100px;
+        right: 45px;
+
+        .notifications-container{
+
+            overflow-y: auto;
+            height: 100%;
+
+        }
+
+        .inbox-container{
+
+            overflow-y: auto;
+            height: 100%;
+
+        }
+        
     }
 
 }

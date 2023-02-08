@@ -17,8 +17,33 @@
         </div>
 
         <div class="notifications">
-            <img src="./assets/notify-icon.png">
+            <button type="button" (click)="showNotification()">
+                <img src="./assets/notify-icon.png">
+            </button>
+           
         </div>
+
+        
+    </div>
+
+    <div class="popup" #notificationPopup>
+
+        <p-tabView>
+
+            <p-tabPanel header="Notifications">
+
+                <div class="notifications-container">Notifications</div>
+
+            </p-tabPanel>
+
+            <p-tabPanel header="Inbox">
+
+                <div class="inbox-container">Indox</div>
+
+            </p-tabPanel>
+
+        </p-tabView>
+
     </div>
 
 </div>
