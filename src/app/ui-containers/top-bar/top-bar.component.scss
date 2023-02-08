@@ -158,19 +158,33 @@
         top: 100px;
         right: 45px;
 
-        .notifications-container{
-
-            overflow-y: auto;
-            height: 100%;
-
+        .notification-icon{
+            background-image: url('^assets/notification-icon.png');
+            height: 16px;
+            width: 16px;
+            margin-right: 5px;
         }
 
-        .inbox-container{
-
-            overflow-y: auto;
-            height: 100%;
-
+        .inbox-icon{
+            background-image: url('^assets/inbox-icon.png');
+            height: 16px;
+            width: 16px;
+            margin-right: 5px;
         }
+
+        // .notifications-container{
+
+        //     overflow-y: auto;
+        //     height: 100%;
+
+        // }
+
+        // .inbox-container{
+
+        //     overflow-y: auto;
+        //     height: 100%;
+
+        // }
         
     }
 
