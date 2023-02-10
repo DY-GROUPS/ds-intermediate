@@ -159,32 +159,36 @@
         right: 45px;
 
         .notification-icon{
-            background-image: url('^assets/notification-icon.png');
-            height: 16px;
-            width: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 5px;
+         
+            
         }
 
         .inbox-icon{
-            background-image: url('^assets/inbox-icon.png');
-            height: 16px;
-            width: 16px;
+
+            display: flex;
+            align-items: cener;
+            justify-content: center;
             margin-right: 5px;
+           
         }
 
-        // .notifications-container{
+        .notifications-container{
 
-        //     overflow-y: auto;
-        //     height: 100%;
+            overflow-y: auto;
+            height: 100%;
 
-        // }
+        }
 
-        // .inbox-container{
+        .inbox-container{
 
-        //     overflow-y: auto;
-        //     height: 100%;
+            overflow-y: auto;
+            height: 100%;
 
-        // }
+        }
         
     }
 

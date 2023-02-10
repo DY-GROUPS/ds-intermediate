@@ -10,9 +10,13 @@ import { MainViews } from 'src/app/app.types';
 export class TopBarComponent implements OnInit {
 
   @ViewChild('notificationPopup') notificationPopup: ElementRef;
+  @ViewChild('TabView') TabView: ElementRef;
 
   private changeView: IMessageStream | Promise<IMessageStream>;
   _MainViews = MainViews;
+
+  isSelected: boolean;
+  selectedIndex;
 
   constructor(private interconnect: Interconnect) {
 
@@ -24,7 +28,9 @@ export class TopBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   
   }
+
 
   userChangeView(viewId, showBackground: boolean, showCards: boolean){
 
@@ -44,10 +50,29 @@ export class TopBarComponent implements OnInit {
     } 
 
     else {
+        
       content.style.display = "block";
       
     }
   
   }
+
+  onChange($event) {
+
+    this.selectedIndex = $event.index;
+
+    if (this.selectedIndex){
+
+        this.isSelected = true;
+    }
+    else{
+
+        this.isSelected = false;
+    }
+    
+
+  }
+
+ 
 
 }
