@@ -15,7 +15,6 @@ export class TopBarComponent implements OnInit {
   private changeView: IMessageStream | Promise<IMessageStream>;
   _MainViews = MainViews;
 
-  isSelected: boolean;
   selectedIndex;
 
   constructor(private interconnect: Interconnect) {
@@ -50,7 +49,7 @@ export class TopBarComponent implements OnInit {
     } 
 
     else {
-        
+
       content.style.display = "block";
       
     }
@@ -60,16 +59,6 @@ export class TopBarComponent implements OnInit {
   onChange($event) {
 
     this.selectedIndex = $event.index;
-
-    if (this.selectedIndex){
-
-        this.isSelected = true;
-    }
-    else{
-
-        this.isSelected = false;
-    }
-    
 
   }
 
