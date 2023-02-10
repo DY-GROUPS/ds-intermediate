@@ -158,6 +158,24 @@
         top: 100px;
         right: 45px;
 
+        .notification-icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+         
+            
+        }
+
+        .inbox-icon{
+
+            display: flex;
+            align-items: cener;
+            justify-content: center;
+            margin-right: 5px;
+           
+        }
+
         .notifications-container{
 
             overflow-y: auto;

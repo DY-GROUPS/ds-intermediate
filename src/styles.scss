@@ -304,6 +304,39 @@ body {
         background:linear-gradient(0deg, #F99958, #F99958), #F9A369 !important;
     }
 
+    .popup{
+
+        .ui-tabview.ui-tabview-top .ui-tabview-nav li{
+
+            width: 192px;
+            text-align: center;
+        }
+
+        .ui-tabview.ui-tabview-top .ui-tabview-nav li a{
+
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: black !important;
+
+        }
+
+        .ui-tabview .ui-tabview-nav li.ui-state-active, .ui-tabview .ui-tabview-nav li.ui-state-active{
+
+            background-color: unset !important;
+            border: unset !important;
+            border-bottom: unset !important;
+
+        }
+
+        .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active a{
+            
+            color: #4A8998 !important;
+        }
+        
+    }
+    
+
 
 
 }

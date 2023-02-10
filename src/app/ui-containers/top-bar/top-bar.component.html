@@ -28,17 +28,39 @@
 
     <div class="popup" #notificationPopup>
 
-        <p-tabView>
+        <p-tabView (onChange)="onChange($event)" [activeIndex]="selectedIndex" #TabView>
 
-            <p-tabPanel header="Notifications">
+            <p-tabPanel [selected]="true">
 
-                <div class="notifications-container">Notifications</div>
+                <ng-template pTemplate="header">
 
+                    <div class="notification-icon">
+                        <img src="./assets/notification-icon-light.png" *ngIf = "!selectedIndex">
+                        <img src="./assets/notification-icon-dark.png" *ngIf = "selectedIndex">
+                    </div>
+
+                    <div class="header">Notifications (0)</div>
+
+                </ng-template>
+
+                <div class="notification-container">Indox</div>
+                
             </p-tabPanel>
 
-            <p-tabPanel header="Inbox">
+            <p-tabPanel>
 
-                <div class="inbox-container">Indox</div>
+                <ng-template pTemplate="header">
+
+                    <div class="inbox-icon">
+                        <img src="./assets/inbox-icon-dark.png"  *ngIf = "!selectedIndex ">
+                        <img src="./assets/inbox-icon-light.png" *ngIf = "selectedIndex  ">
+                    </div>
+
+                    <div class="header">Indox (0)</div>
+
+                    </ng-template>
+
+                    <div class="inbox-container">Indox</div>
 
             </p-tabPanel>
 
