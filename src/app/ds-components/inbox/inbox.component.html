@@ -1,0 +1,18 @@
+<div class="inbox-container" *ngFor="let inboxItem of messages">
+
+    <div class="inbox-image">
+
+        <img [src]="inboxItem.image">
+
+    </div>
+
+    <div class="inbox-info">
+
+        <div class="text">{{inboxItem.text}}</div>
+
+        <div class="time">{{inboxItem.time}}</div>
+
+    </div>
+    
+
+</div>

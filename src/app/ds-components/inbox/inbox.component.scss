@@ -1,20 +1,23 @@
-.notify-container{
+.inbox-container{
 
     display: flex;
     flex-direction: row;
-    border-bottom: 0.8px Solid #E4E5E7;
     margin-bottom: 15px;
+    height: 60px;
+    border-bottom: 0.8px Solid #E4E5E7;
 
-    .notification-image{
+    .inbox-image{
 
-        height: 45px;
-        width: 45px;
+        height: 46px;
+        width: 46px;
         margin-left: 25px;
         
     }
 
-    .notification-info{
-
+    .inbox-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         margin-left: 12px;
         margin-right: 40px;
 
@@ -26,10 +29,6 @@
             line-height: 17.5px;
             color: #62646A;
 
-            u{
-                
-                font-weight: 700;
-            }
         }
 
         .time{
