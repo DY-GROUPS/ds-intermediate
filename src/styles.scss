@@ -9,6 +9,26 @@ body {
     height: 100%;
     background-color: rgb(252, 252, 252);
 
+    ::-webkit-scrollbar {
+  
+            width: 5px;
+      }
+      
+      ::-webkit-scrollbar-track {
+
+        
+            background: rgba(0, 0, 0, 0.2);
+           
+            
+      }
+       
+      ::-webkit-scrollbar-thumb {
+            
+            background:#4A8998; 
+            border-radius: 10px;
+            
+      }
+
 
     .ui-dialog-visible {
         padding-bottom: 22px !important;
