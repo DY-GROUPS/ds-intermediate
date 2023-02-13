@@ -10,11 +10,13 @@ import { ButtonModule } from 'primeng/button';
 import { SafeHtmlPipe } from '../safe-html.pipe';
 import { FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
+import { NotificationComponent } from './notification/notification.component';
+import { InboxComponent } from './inbox/inbox.component';
 
 
 
 @NgModule({
-  declarations: [CommonSliderComponent, CardSliderComponent, PopupComponent, SafeHtmlPipe],
+  declarations: [CommonSliderComponent, CardSliderComponent, PopupComponent, SafeHtmlPipe, NotificationComponent, InboxComponent],
   imports: [
     CommonModule,
     DialogModule,
@@ -27,7 +29,9 @@ import { AgGridModule } from 'ag-grid-angular';
   exports: [
     CommonSliderComponent,
     CardSliderComponent,
-    PopupComponent
+    PopupComponent,
+    NotificationComponent,
+    InboxComponent
   ]
 })
 export class DsComponentsModule { }

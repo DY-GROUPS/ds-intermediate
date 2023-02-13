@@ -1,0 +1,20 @@
+<div class="notify-container" *ngFor="let notificationItem of notifications">
+
+    <div class="notification-image">
+
+        <img [src]="notificationItem.image">
+
+    </div>
+
+    <div class="notification-info">
+
+        <div class="text">{{notificationItem.text}}
+            <u>{{notificationItem.caption}}</u>
+        </div>
+
+        <div class="time">{{notificationItem.time}}</div>
+
+    </div>
+    
+
+</div>
