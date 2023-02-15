@@ -27,6 +27,7 @@ import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
 
 import { SettingsComponent } from './settings/settings.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -43,7 +44,8 @@ import { SettingsComponent } from './settings/settings.component';
     RightPanalComponent,
     UserProfileComponent,
     KeyLockerComponent,
-    SettingsComponent
+    SettingsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
