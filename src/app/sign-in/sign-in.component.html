@@ -1,4 +1,4 @@
-<div class="login-container">
+<div class="signin-container">
 
     <div class="logo">
         <img src="./assets/LOGO@3xDecision 2 1.png">
@@ -6,32 +6,20 @@
 
     <div class="content">
 
-        <div class="title">Sign up</div>
+        <div class="title">Sign In</div>
 
-        <div class="sub-text">If you already have an account register you can
-            <a>Login here !</a>
-        </div>
+        <div class="icon-area">
 
-        <div class="name">
+            <div class="icon">
 
-            <div>
-
-                <div style="margin-bottom: 8px;"> Name</div>
-
-                <input type="text" pInputText />
+                <img src="./assets/login/social-media-icon.png">
 
             </div>
 
-            <div>
-
-                <div style="margin-bottom: 8px;">Surname</div>
-
-                <input type="text" pInputText />
-                
-            </div>
-            
+            <div class="text">or sign in with your email</div>
 
         </div>
+
 
         <div class="email">
 
@@ -55,28 +43,28 @@
 
             <div class="ui-inputgroup">
 
-                <input type="password" pPassword />
-                <span class="ui-inputgroup-addon"><i class="pi pi-eye-slash"></i></span>  
-                      
+                <input type="password" #password pInputText />
+                
+                <span class="ui-inputgroup-addon"><i class="pi pi-eye" (click)="myFunction()"></i></span>  
+     
             </div>
+
+            
             
         </div>
 
-        <div class="check-box">
-            <p-checkbox name="groupname" value="val1" label="By Signing Up I agree with "></p-checkbox><label style="margin-left: 3px; cursor: pointer; font-family: 'Inter'; font-weight: 400; font-size: 15px; line-height: 18px; text-decoration-line: underline; color: #0266D6;">Terms and Conditions</label>
-        </div>
 
         <div class="button-area">
             <button type="button">Sign Up</button>
         </div>
 
-        <div class="sign-in">
+        <div class="sign-up">
 
-            <div>Already have an Account?</div> 
+            <div>New to App?</div> 
 
             <div>
 
-                <a [routerLink]="'/signin'">Sign In</a>
+                <a [routerLink]="'/signin'">Sign Up</a>
 
             </div>
 

@@ -28,6 +28,7 @@ import {ProgressBarModule} from 'primeng/progressbar';
 
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 
@@ -45,7 +46,8 @@ import { LoginComponent } from './login/login.component';
     UserProfileComponent,
     KeyLockerComponent,
     SettingsComponent,
-    LoginComponent
+    LoginComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

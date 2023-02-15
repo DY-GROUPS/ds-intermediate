@@ -1,4 +1,4 @@
-.login-container{
+.signin-container{
 
     display: flex;
     flex-direction: column;
@@ -40,37 +40,32 @@
             margin-bottom: 24px;
         }
 
-        .sub-text{
-
-            font-family: Poppins;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            margin-bottom: 70px;
-
-            a{
-                font-weight: 600;
-                text-decoration-line: underline; 
-                color: #4A8998;
-            }
-            
-        }
-
-        .name{
+        .icon-area{
 
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 400px;
-            margin-left: 44px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-            div{
+            .icon{
+
+                margin-bottom: 40px;
+
+            }
+
+            .text{
 
                 font-family: Inter;
+                font-weight: 400;
                 font-size: 15px;
-                font-weight: 800;
                 line-height: 18px;
+                color: #000000;
+                margin-bottom: 48px;
+                
+
+                
             }
+
         }
 
         .email, .password{
@@ -111,19 +106,22 @@
 
             }
 
+            // input{
+
+            //     font-family: Inter;
+            //     font-weight: 400;
+            //     font-size: 15px;
+            //     line-height: 18px;
+            //     border-color: rgba(0, 0, 0, 0.35);
+            //     border-radius: 8px;
+            //     height: 48px;
+            //     width: 400px;
+                
+            // }
+
         }
 
-        .check-box{
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 375px;
-            margin-left: 44px;
-            margin-top: 20px;
-
-        }
-
+       
         button{
 
             width: 400px;
@@ -140,7 +138,7 @@
             line-height: 19px;
         }
 
-        .sign-in{
+        .sign-up{
 
             display: flex;
             justify-content: center;
