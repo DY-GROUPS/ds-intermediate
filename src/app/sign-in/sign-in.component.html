@@ -12,7 +12,9 @@
 
             <div class="icon">
 
-                <img src="./assets/login/social-media-icon.png">
+                <div><img src="./assets/login/Facebook.png"></div>
+                <div><img src="./assets/login/apple.png"></div>
+                <div><img src="./assets/login/google.png"></div>
 
             </div>
 
@@ -43,9 +45,9 @@
 
             <div class="ui-inputgroup">
 
-                <input type="password" #password pInputText />
+                <input type="password" #pwd pInputText />
                 
-                <span class="ui-inputgroup-addon"><i class="pi pi-eye" (click)="myFunction()"></i></span>  
+                <span class="ui-inputgroup-addon"><i class="pi pi-eye-slash" (click)="showPassword()" #icon></i></span>  
      
             </div>
 
@@ -55,7 +57,7 @@
 
 
         <div class="button-area">
-            <button type="button">Sign Up</button>
+            <button type="button">Sign In</button>
         </div>
 
         <div class="sign-up">
@@ -64,7 +66,7 @@
 
             <div>
 
-                <a [routerLink]="'/signin'">Sign Up</a>
+                <a [routerLink]="'/home'">Sign Up</a>
 
             </div>
 

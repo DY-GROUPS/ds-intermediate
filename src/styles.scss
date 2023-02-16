@@ -372,39 +372,7 @@ body {
             border-radius: 8px;
         }
 
-
-        .email, .password{
-
-            .ui-inputtext{
-
-                width: 400px;
-                
-            }
-
-            .pi {
-            
-                font-size: 16px;
-                margin: 10px
-            }
-    
-            .ui-inputgroup .ui-inputgroup-addon {
-    
-                border-left: none;
-                background-color: transparent; 
-                color: #848484;
-                padding: 5px;
-                
-            }
-    
-            .ui-inputgroup .ui-inputgroup-addon:last-child {
-                border-top-right-radius: 8px;
-                border-bottom-right-radius: 8px;
-            }
-    
-
-        }
-
-        
+ 
         p-checkbox {
 
             .ui-chkbox-label {
@@ -448,6 +416,7 @@ body {
             }
             
         }
+
     }
 
     .signin-container{
@@ -463,35 +432,7 @@ body {
             width: 400px;
             
         }
-
-        .ui-corner-all {
-
-            border-radius: 8px;
-        }
-
-        .pi {
-            
-            font-size: 16px;
-            margin: 10px
-        }
-
-        .ui-inputgroup .ui-inputgroup-addon {
-
-            border-left: none;
-            background-color: transparent; 
-            color: #848484;
-            padding: 5px;
-            
-        }
-
-        .ui-inputgroup .ui-inputgroup-addon:last-child {
-            border-top-right-radius: 8px;
-            border-bottom-right-radius: 8px;
-        }
-        
+       
     }
-        
-
-
 
 }
