@@ -7,32 +7,31 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  
-  @ViewChild('pwd') pwd: ElementRef;
-  @ViewChild('icon') icon: ElementRef;
 
-  year;
-  
+    @ViewChild('pwd') pwd: ElementRef;
+    @ViewChild('icon') icon: ElementRef;
 
-  constructor() { }
+    year;
 
-  ngOnInit(): void {
 
-    this.year =  new Date().getFullYear();
-  }
+    constructor() { }
 
-  
-  showPassword(){
+    ngOnInit(): void {
 
-    
-    const password = this.pwd.nativeElement;
-    const eyeIcon = this.icon.nativeElement;
+        this.year =  new Date().getFullYear();
+    }
 
-    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
 
-    eyeIcon.classList.toggle("pi-eye");
-          
-  }
+    showPassword(){
+
+        const password = this.pwd.nativeElement;
+        const eyeIcon = this.icon.nativeElement;
+
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        eyeIcon.classList.toggle("pi-eye");
+            
+    }
 
 }

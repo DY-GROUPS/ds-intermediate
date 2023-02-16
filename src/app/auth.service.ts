@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { SignInComponent } from './sign-in/sign-in.component';
 
 @Injectable({
-  providedIn: 'root'
+    
+    providedIn: 'root'
 })
+
 export class AuthService {
 
     isValidaded;
 
-    constructor(
-    ) {}
+    constructor() {}
 
 
     public isAuthenticated(): boolean {

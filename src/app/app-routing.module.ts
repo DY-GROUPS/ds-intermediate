@@ -7,25 +7,28 @@ import { SignInComponent } from './sign-in/sign-in.component';
 
 
 const routes: Routes = [
-  {
-    path: 'login', 
-    component: LoginComponent
-  },
 
-  {
-    path: 'signin', 
-    component: SignInComponent
-  },
+    {
+        path: 'login', 
+        component: LoginComponent
+    },
 
-  {
-    path: '', 
-    component: HomeComponent,
-    canActivate: [AuthGuard], 
-  }
+    {
+        path: 'signin', 
+        component: SignInComponent
+    },
+
+    {
+        path: '', 
+        component: HomeComponent,
+        canActivate: [AuthGuard], 
+    }
+    
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
