@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,19 +10,44 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class SignInComponent implements OnInit {
 
   @ViewChild('pwd') pwd: ElementRef;
+  @ViewChild('email') email: ElementRef;
   @ViewChild('icon') icon: ElementRef;
 
   year;
-  
+  userEmail : string = "example@gmail.com";
+  userPassword : string ='123';
 
-  constructor() { }
+  
+  constructor(
+
+    public authService: AuthService,
+  ) { }
 
   ngOnInit(): void {
 
     this.year =  new Date().getFullYear();
   }
 
-  
+  login(){
+    
+    const email = this.email.nativeElement.value;
+    const password = this.pwd.nativeElement.value;
+
+
+    if(this.userEmail == email && this.userPassword == password){
+
+      this.authService.isValidaded = true;
+
+    }
+
+    else{
+
+      alert("error");
+
+    }
+
+  }
+
   showPassword(){
 
     

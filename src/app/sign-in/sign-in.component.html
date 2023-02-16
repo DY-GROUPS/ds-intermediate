@@ -27,7 +27,7 @@
 
             <div class="email-title">Email Address</div>
 
-            <input type="text" pInputText />
+            <input type="text" #email pInputText [(ngModel)]= "userEmail" name="userEmail" />
             
         </div>
 
@@ -45,7 +45,7 @@
 
             <div class="ui-inputgroup">
 
-                <input type="password" #pwd pInputText />
+                <input type="password" #pwd pInputText [(ngModel)]= "userPassword" name="userPassword" />
                 
                 <span class="ui-inputgroup-addon"><i class="pi pi-eye-slash" (click)="showPassword()" #icon></i></span>  
      
@@ -57,7 +57,7 @@
 
 
         <div class="button-area">
-            <button type="button"  [routerLink]="'/home'" >Sign In</button>
+            <button type="button"  [routerLink]="''" (click)="login()">Sign In</button>
         </div>
 
         <div class="sign-up">
