@@ -10,12 +10,14 @@ export class SignInComponent implements OnInit {
   @ViewChild('pwd') pwd: ElementRef;
   @ViewChild('icon') icon: ElementRef;
 
-  
+  year;
   
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.year =  new Date().getFullYear();
   }
 
   
