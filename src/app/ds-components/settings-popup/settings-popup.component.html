@@ -16,7 +16,7 @@
 
         <div class="content">
 
-            <div class="test1" *ngIf="screen == 'test1'">
+            <div class="add-new-card" *ngIf="screen == popupScreen.addNewCard">
 
                 <div class="input-wrapper">
         
@@ -78,13 +78,13 @@
         
                 </div>
 
-                <div style="margin-top: 25px; margin-bottom: 65px;">
+                <div style="margin-top: 30px; margin-bottom: 25px;">
                     <p-button label="Add card" class="p-button-warning"></p-button>
                 </div>
         
             </div>
         
-            <div class="test2" *ngIf="screen == 'test2'">
+            <div class="change-paypal" *ngIf="screen == popupScreen.changePayPal">
 
                 <div class="title">Let’s Verify It’s You</div>
 
@@ -99,15 +99,19 @@
         
             </div>
 
+            <div class="almost-done" *ngIf="screen == popupScreen.almost-done">
+
+
+            </div>
+
+            <div class="something-went-wrong" *ngIf="screen == popupScreen.something-went-wrong">
+
+
+            </div>
+
         </div>
 
 
-
-
     </div>
-
-
-
-
 
 </div>

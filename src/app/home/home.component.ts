@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Interconnect } from 'ng-interconnect';
 import { MainViews } from '../app.types';
+import { settingPopupScreen } from '../ds-components/ds-types';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   rightPanal: boolean = false;
   _MainViews = MainViews;
   showSettingsDialog: boolean = true;
-  popupScreen = 'test2';
+  popupScreen = settingPopupScreen.changePayPal;
   showCaption = 'hidden';
   
   

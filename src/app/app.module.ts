@@ -31,6 +31,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {TabViewModule} from 'primeng/tabview';
 import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
+import {ButtonModule} from 'primeng/button';
 
 
 
@@ -66,7 +67,8 @@ import {ProgressBarModule} from 'primeng/progressbar';
     AgGridModule,
     ChartModule,
     DragDropModule,
-    ProgressBarModule
+    ProgressBarModule,
+    ButtonModule
   ],
   providers: [
     AuthGuard
