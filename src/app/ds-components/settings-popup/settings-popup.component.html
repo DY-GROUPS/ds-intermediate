@@ -1,11 +1,98 @@
 <div class="settings-popup">
 
-    <div class="test1" *ngIf="screen == 'test1'">
+    <div class="popup-container">
+
+        <div class="header">
+
+            <div class="caption">
+                Add new Card
+            </div>
+    
+            <div class="close-btn">
+                <img src="./assets/settings/close-btn.png">
+            </div>
+            
+        </div>
+
+        <div class="content">
+
+            <div class="test1" *ngIf="screen == 'test1'">
+
+                <div class="input-wrapper">
+        
+                    <span class="button-label">Card number</span>
+        
+                    <div class="ui-inputgroup">
+                        <input type="text" pInputText placeholder="0000 0000 0000 0000" class="common-txt">   
+                        <span class="ui-inputgroup-addon" style="padding-top: 17px;">
+                            <img src="./assets/popup-btns/cc.png" style="width: 22px; height: 15px;">
+                        </span>  
+                    </div>
+        
+                </div>
+        
+        
+                <div style="display: flex; justify-content: space-between;">
+        
+                    <div class="input-wrapper" style="width: 200px;">
+        
+                        <span class="button-label">Expiry date</span>
+        
+                        <div class="ui-inputgroup">
+        
+                            <input type="text" pInputText placeholder="MM/YY" class="common-txt">   
+                            <span class="ui-inputgroup-addon">
+                                <img src="./assets/popup-btns/calender.png" style="width: 18px; height: 19px; position: relative; top: 9px;">
+                            </span> 
+        
+                        </div>
+        
+                    </div>
+        
+                    <div class="input-wrapper" style="width: 200px;">
+        
+                        <span class="button-label">CVC/CVV</span>
+        
+                        <div  class="ui-inputgroup">
+                            <input type="text" pInputText placeholder="..." class="common-txt">   
+                            <span class="ui-inputgroup-addon">
+                                <img src="./assets/popup-btns/info.png" style="width: 16px; height: 16px; position: relative; top: 10px;">
+                            </span> 
+                        </div>
+             
+                    </div>
+        
+                </div>
+        
+        
+                <div class="input-wrapper">
+        
+                    <span class="button-label">Cardholder name</span>
+        
+                    <div class="ui-inputgroup" style="margin-bottom: 22px;">
+                        <input type="text" pInputText placeholder="Enter cardholder’s full name" style="width: 100%;" class="common-txt">   
+                        <span class="ui-inputgroup-addon" style="padding-top: 19px;">
+                            <img src="./assets/popup-btns/cc.png" style="width: 22px; height: 15px;">
+                        </span>  
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+            <div class="test2" *ngIf="screen == 'test2'">
+        
+            </div>
+
+        </div>
+
+
+
 
     </div>
 
-    <div class="test2" *ngIf="screen == 'test2'">
 
-    </div>
+
+
 
 </div>
