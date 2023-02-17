@@ -20,7 +20,7 @@ import { KeyLockerComponent } from './key-locker/key-locker.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SettingsComponent } from './settings/settings.component';
-import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './signup/signup.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SettingsPopupComponent } from './ds-components/settings-popup/settings-popup.component';
 
@@ -50,7 +50,7 @@ import {ButtonModule} from 'primeng/button';
     UserProfileComponent,
     KeyLockerComponent,
     SettingsComponent,
-    LoginComponent,
+    SignUpComponent,
     SignInComponent,
     SettingsPopupComponent
   ],

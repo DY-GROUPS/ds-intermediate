@@ -11,7 +11,7 @@ import { settingPopupScreen } from '../ds-components/ds-types';
 export class HomeComponent implements OnInit {
 
   title = 'dream-stakes';
-  currentMainView: number = MainViews.settings;
+  currentMainView: number = MainViews.enterScreen;
   rightPanal: boolean = false;
   _MainViews = MainViews;
   showSettingsDialog: boolean = false;
