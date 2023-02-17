@@ -30,6 +30,6 @@
     <app-right-panal></app-right-panal>
   </div>
 
-  <app-settings-popup [screen]="'test1'"></app-settings-popup>
+  <app-settings-popup *ngIf="showSettingsDialog" [screen]="'test1'" (closeDialog)="closeDialog()"></app-settings-popup>
 
 </div>

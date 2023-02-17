@@ -4,11 +4,11 @@
 
         <div class="header">
 
-            <div class="caption">
+            <div *ngIf="caption" class="caption">
                 Add new Card
             </div>
     
-            <div class="close-btn">
+            <div class="close-btn" (click)="close()">
                 <img src="./assets/settings/close-btn.png">
             </div>
             
@@ -76,6 +76,10 @@
                         </span>  
                     </div>
         
+                </div>
+
+                <div style="margin-top: 25px; margin-bottom: 65px;">
+                    <p-button label="Add card" class="p-button-warning"></p-button>
                 </div>
         
             </div>

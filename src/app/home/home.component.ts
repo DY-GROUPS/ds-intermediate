@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   currentMainView: number = MainViews.settings;
   rightPanal: boolean = false;
   _MainViews = MainViews;
+  showSettingsDialog: boolean = true;
   
   constructor(
 	  private interconnect: Interconnect
@@ -32,6 +33,10 @@ export class HomeComponent implements OnInit {
 			
 		})
 
+  }
+
+  closeDialog(){
+    this.showSettingsDialog = false;
   }
 
 }
