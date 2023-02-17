@@ -96,7 +96,7 @@
 
             <div class="buttons-area">
 
-                <div class= "silde-btn"  id="silde-btn" #drop>
+                <div class= "silde-btn"  id="silde-btn" #drop *ngIf="!isOk">
 
                   <div
                     #dragbtn
@@ -105,7 +105,8 @@
                     cdkDragBoundary=".silde-btn"
                     cdkDragLockAxis="x"
                     cdkDrag 
-                    (cdkDragEnded)="dragEnd()">
+                    (cdkDragEnded)="dragEnd()"
+                    [cdkDragFreeDragPosition]="dragPosition">
                     
                     <div class="img-background">
                       <img src="./assets/dasboard/icons/slider-arrow-btn.png"/>
@@ -115,15 +116,19 @@
 
                   <div class="text">
                     
-                    <div *ngIf="!isOk">
+                    <div >
                       <!-- <div>Release</div> -->
                       <div>Silde to fast bid</div>
                     </div>
                     
-                    <div *ngIf="isOk">Confirmed!</div>
+                    <!-- <div *ngIf="isOk">Confirmed!</div> -->
 
                   </div>
                     
+                </div>
+
+                <div class= "silde-btn" *ngIf="isOk">
+                  <img src="../../assets/dasboard/comfiremd.png" >
                 </div>
 
                 <div class="custom-bid-btn" (click)="showPlaceBid()">
@@ -242,7 +247,7 @@
 
                 <div class= "silde-btn"  id="silde-btn" #drop>
 
-                <div
+                <div 
                     #dragbtn
                     id="dragbtn"
                     class="dragbtn"

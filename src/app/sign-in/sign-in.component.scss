@@ -49,8 +49,11 @@
 
             .icon{
 
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
                 margin-bottom: 40px;
-
+                width: 165px;
             }
 
             .text{
@@ -106,18 +109,48 @@
 
             }
 
-            // input{
+            .pi {
+            
+                position: relative;
+                right: 12px;
+            }
 
-            //     font-family: Inter;
-            //     font-weight: 400;
-            //     font-size: 15px;
-            //     line-height: 18px;
-            //     border-color: rgba(0, 0, 0, 0.35);
-            //     border-radius: 8px;
-            //     height: 48px;
-            //     width: 400px;
+            .ui-corner-all {
+
+                border-radius: 8px;
+            }
+    
+            .ui-inputgroup {
+                display: flex;
+                width: 438px;
+            }
+
+            .ui-inputgroup .ui-inputgroup-addon {
+    
+                position: relative;
+                left: -45px;
+                border: none;
+                background-color: transparent; 
+                color: black;
+                padding-left: 11px;
+                padding-top: 15px;
                 
-            // }
+            }
+    
+            .ui-inputgroup .ui-inputgroup-addon:last-child {
+    
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+
+            .ui-inputgroup .ui-inputtext:not(:last-child) {
+    
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                border-right-width: 1px;
+                
+                
+            }
 
         }
 

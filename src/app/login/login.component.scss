@@ -42,17 +42,29 @@
 
         .sub-text{
 
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             font-family: Poppins;
             font-weight: 400;
             font-size: 16px;
             line-height: 24px;
             margin-bottom: 70px;
 
-            a{
-                font-weight: 600;
-                text-decoration-line: underline; 
-                color: #4A8998;
+            div{
+                
+                margin-left: 5px;
+
+                a{
+                    font-weight: 600;
+                    text-decoration-line: underline; 
+                    color: #4A8998;
+                }
+
             }
+            
+
             
         }
 
@@ -111,6 +123,56 @@
 
             }
 
+            .ui-inputtext{
+
+                width: 400px;
+                
+            }
+            
+
+            .pi {
+            
+                position: relative;
+                right: 12px;
+            }
+
+            .ui-corner-all {
+
+                border-radius: 8px;
+            }
+    
+            .ui-inputgroup {
+                display: flex;
+                width: 438px;
+            }
+            
+            .ui-inputgroup .ui-inputgroup-addon {
+    
+                position: relative;
+                left: -45px;
+                border: none;
+                background-color: transparent; 
+                color: black;
+                padding-left: 11px;
+                padding-top: 15px;
+                
+            }
+    
+            .ui-inputgroup .ui-inputgroup-addon:last-child {
+    
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+
+            .ui-inputgroup .ui-inputtext:not(:last-child) {
+    
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                border-right-width: 1px;
+                
+                
+            }
+
         }
 
         .check-box{
@@ -121,6 +183,7 @@
             width: 375px;
             margin-left: 44px;
             margin-top: 20px;
+            
 
         }
 
@@ -155,14 +218,16 @@
                 
                 margin-right: 10px;
 
-            }
-
-            a{
+                a{
                 
-                text-decoration-line: underline; 
-                color: #0266D6;
+                    text-decoration-line: underline; 
+                    color: #0266D6;
+                }
+    
+
             }
 
+           
         }
 
     }
