@@ -1,4 +1,4 @@
-<div class="login-container">
+<div class="signup-container">
 
     <div class="logo">
         <img src="./assets/LOGO@3xDecision 2 1.png">
@@ -10,8 +10,8 @@
 
         <div class="sub-text">If you already have an account register you can
 
-            <div>
-                <a>Login here !</a>
+            <div [routerLink]="'/signin'">
+                <a> Login here !</a>
             </div>
             
         </div>
@@ -68,7 +68,8 @@
         </div>
 
         <div class="check-box">
-            <p-checkbox name="groupname" value="val1" label="By Signing Up I agree with "></p-checkbox><label style="margin-left: 3px; cursor: pointer; font-family: 'Inter'; font-weight: 400; font-size: 15px; line-height: 18px; text-decoration-line: underline; color: #0266D6;">Terms and Conditions</label>
+            <p-checkbox name="groupname" value="val1" label="By Signing Up I agree with "></p-checkbox>
+            <label>Terms and Conditions</label>
         </div>
 
         <div class="button-area">

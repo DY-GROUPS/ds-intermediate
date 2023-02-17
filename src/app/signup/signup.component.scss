@@ -1,4 +1,4 @@
-.login-container{
+.signup-container{
 
     display: flex;
     flex-direction: column;
@@ -22,6 +22,8 @@
 
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin-top: 51px;
         flex-grow: 1;
         width: 488px;
@@ -54,12 +56,13 @@
 
             div{
                 
-                margin-left: 5px;
+                margin-left: 10px;
 
                 a{
                     font-weight: 600;
                     text-decoration-line: underline; 
                     color: #4A8998;
+                    cursor: pointer;
                 }
 
             }
@@ -74,7 +77,6 @@
             flex-direction: row;
             justify-content: space-between;
             width: 400px;
-            margin-left: 44px;
 
             div{
 
@@ -90,7 +92,6 @@
             display: flex;
             flex-direction: column;
             width: 400px;
-            margin-left: 44px;
             margin-top: 20px;
 
             .email-title {
@@ -179,10 +180,20 @@
 
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
             width: 375px;
-            margin-left: 44px;
             margin-top: 20px;
+
+            label {
+                margin-left: 3px; 
+                margin-top: 2px; 
+                cursor: pointer; 
+                font-family: 'Inter'; 
+                font-weight: 400; 
+                font-size: 15px; 
+                line-height: 18px; 
+                text-decoration-line: underline; 
+                color: #0266D6;
+            }
             
 
         }
@@ -191,7 +202,6 @@
 
             width: 400px;
             height: 48px;
-            margin-left: 44px;
             margin-top: 24px;
             background-color: #4A8998;
             color: #FFFFFF;
@@ -243,8 +253,8 @@
         .left{
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            margin-left: 32px;
+            justify-content: space-around;
+            padding-left: 40px;
             width: 253px;
 
             .water-mark{
@@ -252,7 +262,7 @@
                 font-family: Inter;
                 font-size: 13px;
                 font-weight: 400;
-                line-height: 16px;
+                line-height: 20px;
                 color: rgba(0, 0, 0, 0.35);
 
             }
@@ -274,7 +284,7 @@
 
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-right: 32px;
             width: 230px;
 

@@ -11,11 +11,11 @@ import { settingPopupScreen } from '../ds-components/ds-types';
 export class HomeComponent implements OnInit {
 
   title = 'dream-stakes';
-  currentMainView: number = MainViews.settings;
+  currentMainView: number = MainViews.enterScreen;
   rightPanal: boolean = false;
   _MainViews = MainViews;
-  showSettingsDialog: boolean = true;
-  popupScreen = settingPopupScreen.changePayPal;
+  showSettingsDialog: boolean = false;
+  popupScreen = settingPopupScreen.addNewCard;
   showCaption = 'hidden';
   
   
@@ -35,12 +35,21 @@ export class HomeComponent implements OnInit {
       else
         this.rightPanal = false;
 			
+		});
+
+    this.interconnect.createListener('home/changeSettingPopup', (_connection, command) => {
+
+			this.popupScreen = command.view;
+      this.showCaption = command.caption;
+      this.showSettingsDialog = true;
+			
 		})
 
   }
 
   closeDialog(){
     this.showSettingsDialog = false;
+    this.showCaption = 'hidden';
   }
 
 }
