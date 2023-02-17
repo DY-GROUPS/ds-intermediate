@@ -55,3 +55,10 @@ export enum KeyLockerViews {
     bidPlaced = 'bidPlaced',
     contractWon = 'contractWon'
 }
+
+export enum settingPopupScreen {
+    addNewCard = 'add-new-card',
+    changePayPal = 'change-paypal',
+    almostDone = 'almost-done',
+    somethingWentWrong = 'something-went-wrong'
+}

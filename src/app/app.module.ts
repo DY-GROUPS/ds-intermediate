@@ -18,7 +18,11 @@ import { RightPanalComponent } from './ui-containers/right-panal/right-panal.com
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { KeyLockerComponent } from './key-locker/key-locker.component';
 import { AgGridModule } from 'ag-grid-angular';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SettingsComponent } from './settings/settings.component';
+import { SignUpComponent } from './signup/signup.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SettingsPopupComponent } from './ds-components/settings-popup/settings-popup.component';
 
 // -------------------------------- PrimeNG ----------------------------------------
 import {InputTextModule} from 'primeng/inputtext';
@@ -27,10 +31,8 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {TabViewModule} from 'primeng/tabview';
 import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
+import {ButtonModule} from 'primeng/button';
 
-import { SettingsComponent } from './settings/settings.component';
-import { LoginComponent } from './login/login.component';
-import { SignInComponent } from './sign-in/sign-in.component';
 
 
 
@@ -48,8 +50,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
     UserProfileComponent,
     KeyLockerComponent,
     SettingsComponent,
-    LoginComponent,
-    SignInComponent
+    SignUpComponent,
+    SignInComponent,
+    SettingsPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     AgGridModule,
     ChartModule,
     DragDropModule,
-    ProgressBarModule
+    ProgressBarModule,
+    ButtonModule
   ],
   providers: [
     AuthGuard

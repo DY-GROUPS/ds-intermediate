@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Interconnect } from 'ng-interconnect';
 import { MainViews } from '../app.types';
+import { settingPopupScreen } from '../ds-components/ds-types';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,10 @@ export class HomeComponent implements OnInit {
   currentMainView: number = MainViews.enterScreen;
   rightPanal: boolean = false;
   _MainViews = MainViews;
+  showSettingsDialog: boolean = false;
+  popupScreen = settingPopupScreen.addNewCard;
+  showCaption = 'hidden';
+  
   
   constructor(
 	  private interconnect: Interconnect
@@ -30,8 +35,21 @@ export class HomeComponent implements OnInit {
       else
         this.rightPanal = false;
 			
+		});
+
+    this.interconnect.createListener('home/changeSettingPopup', (_connection, command) => {
+
+			this.popupScreen = command.view;
+      this.showCaption = command.caption;
+      this.showSettingsDialog = true;
+			
 		})
 
+  }
+
+  closeDialog(){
+    this.showSettingsDialog = false;
+    this.showCaption = 'hidden';
   }
 
 }

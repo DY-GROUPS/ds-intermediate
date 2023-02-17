@@ -1,4 +1,4 @@
-.signin-container{
+.signup-container{
 
     display: flex;
     flex-direction: column;
@@ -22,6 +22,8 @@
 
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin-top: 51px;
         flex-grow: 1;
         width: 488px;
@@ -40,35 +42,49 @@
             margin-bottom: 24px;
         }
 
-        .icon-area{
+        .sub-text{
 
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
+            font-family: Poppins;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 70px;
 
-            .icon{
+            div{
+                
+                margin-left: 10px;
 
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                margin-bottom: 40px;
-                width: 165px;
+                a{
+                    font-weight: 600;
+                    text-decoration-line: underline; 
+                    color: #4A8998;
+                    cursor: pointer;
+                }
+
             }
+            
 
-            .text{
+            
+        }
+
+        .name{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 400px;
+
+            div{
 
                 font-family: Inter;
-                font-weight: 400;
                 font-size: 15px;
+                font-weight: 800;
                 line-height: 18px;
-                color: #000000;
-                margin-bottom: 48px;
-                
-
-                
             }
-
         }
 
         .email, .password{
@@ -76,7 +92,6 @@
             display: flex;
             flex-direction: column;
             width: 400px;
-            margin-left: 44px;
             margin-top: 20px;
 
             .email-title {
@@ -109,6 +124,13 @@
 
             }
 
+            .ui-inputtext{
+
+                width: 400px;
+                
+            }
+            
+
             .pi {
             
                 position: relative;
@@ -124,7 +146,7 @@
                 display: flex;
                 width: 438px;
             }
-
+            
             .ui-inputgroup .ui-inputgroup-addon {
     
                 position: relative;
@@ -154,12 +176,32 @@
 
         }
 
-       
+        .check-box{
+
+            display: flex;
+            flex-direction: row;
+            width: 375px;
+            margin-top: 20px;
+
+            label {
+                margin-left: 3px; 
+                margin-top: 2px; 
+                cursor: pointer; 
+                font-family: 'Inter'; 
+                font-weight: 400; 
+                font-size: 15px; 
+                line-height: 18px; 
+                text-decoration-line: underline; 
+                color: #0266D6;
+            }
+            
+
+        }
+
         button{
 
             width: 400px;
             height: 48px;
-            margin-left: 44px;
             margin-top: 24px;
             background-color: #4A8998;
             color: #FFFFFF;
@@ -171,7 +213,7 @@
             line-height: 19px;
         }
 
-        .sign-up{
+        .sign-in{
 
             display: flex;
             justify-content: center;
@@ -186,14 +228,16 @@
                 
                 margin-right: 10px;
 
-            }
-
-            a{
+                a{
                 
-                text-decoration-line: underline; 
-                color: #0266D6;
+                    text-decoration-line: underline; 
+                    color: #0266D6;
+                }
+    
+
             }
 
+           
         }
 
     }

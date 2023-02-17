@@ -1,0 +1,127 @@
+<div class="settings-popup">
+
+    <div class="popup-container">
+
+        <div class="header">
+
+            <div [style.visibility]="caption" class="caption">
+                Add new Card
+            </div>
+    
+            <div class="close-btn" (click)="close()">
+                <img src="./assets/settings/close-btn.png">
+            </div>
+            
+        </div>
+
+        <div class="content">
+
+            <div class="add-new-card" *ngIf="screen == popupScreen.addNewCard">
+
+                <div class="input-wrapper">
+        
+                    <span class="button-label">Card number</span>
+        
+                    <div class="ui-inputgroup">
+                        <input type="text" pInputText placeholder="0000 0000 0000 0000" class="common-txt">   
+                        <span class="ui-inputgroup-addon" style="padding-top: 17px;">
+                            <img src="./assets/popup-btns/cc.png" style="width: 22px; height: 15px;">
+                        </span>  
+                    </div>
+        
+                </div>
+        
+        
+                <div style="display: flex; justify-content: space-between;">
+        
+                    <div class="input-wrapper" style="width: 200px;">
+        
+                        <span class="button-label">Expiry date</span>
+        
+                        <div class="ui-inputgroup">
+        
+                            <input type="text" pInputText placeholder="MM/YY" class="common-txt">   
+                            <span class="ui-inputgroup-addon">
+                                <img src="./assets/popup-btns/calender.png" style="width: 18px; height: 19px; position: relative; top: 9px;">
+                            </span> 
+        
+                        </div>
+        
+                    </div>
+        
+                    <div class="input-wrapper" style="width: 200px;">
+        
+                        <span class="button-label">CVC/CVV</span>
+        
+                        <div  class="ui-inputgroup">
+                            <input type="text" pInputText placeholder="..." class="common-txt">   
+                            <span class="ui-inputgroup-addon">
+                                <img src="./assets/popup-btns/info.png" style="width: 16px; height: 16px; position: relative; top: 10px;">
+                            </span> 
+                        </div>
+             
+                    </div>
+        
+                </div>
+        
+        
+                <div class="input-wrapper">
+        
+                    <span class="button-label">Cardholder name</span>
+        
+                    <div class="ui-inputgroup" style="margin-bottom: 22px;">
+                        <input type="text" pInputText placeholder="Enter cardholder’s full name" style="width: 100%;" class="common-txt">   
+                        <span class="ui-inputgroup-addon" style="padding-top: 19px;">
+                            <img src="./assets/popup-btns/cc.png" style="width: 22px; height: 15px;">
+                        </span>  
+                    </div>
+        
+                </div>
+
+                <div style="margin-top: 30px; margin-bottom: 25px;">
+                    <p-button label="Add card" class="p-button-warning"></p-button>
+                </div>
+        
+            </div>
+        
+            <div class="change-paypal" *ngIf="screen == popupScreen.changePayPal">
+
+                <div class="title">Let’s Verify It’s You</div>
+
+                <div class="info">You are trying to edit your Paypal account. Choose a verification method so we can make sure it’s you.</div>
+                
+                <div class="btn-area">
+        
+                    <button type="button">Verify by SMS</button>
+                    <button type="button">Verify by Email</button>
+        
+                </div>
+        
+            </div>
+
+            <div class="almost-done" *ngIf="screen == popupScreen.almostDone">
+
+                <div class="title">Almost Done...</div>
+
+                <div class="info">Thank you  for verifying your phone. We will now send an email withfurther instructions.</div>
+                
+                <div class="btn-area">
+        
+                    <button type="button">OK</button>
+                    
+
+                </div>
+
+            </div>
+
+            <div class="something-went-wrong" *ngIf="screen == popupScreen.somethingWentWrong">
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

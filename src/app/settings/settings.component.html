@@ -214,17 +214,17 @@
 
               <div class="text1">Paypal</div>
               <div class="text2">i*******d@gmail.com</div>
-              <div class="text3">Change</div>
+              <div class="text3" (click)="showPopup(settingPopupScreen.changePayPal, 'hidden')">Change</div>
 
             </div>
 
             <div class="visa-card">
               <div class="text1">Visa card</div>
               <div class="text2">8*** 5*** 4*** 7***</div>
-              <div class="text3">Change</div>
+              <div class="text3" (click)="showPopup(settingPopupScreen.changePayPal, 'hidden')">Change</div>
             </div>
 
-            <div class="add-new">Add a new visa card</div>
+            <div class="add-new" (click)="showPopup(settingPopupScreen.addNewCard, 'visible')">Add a new visa card</div>
 
           </div>
 
@@ -233,5 +233,5 @@
 		</p-tabPanel>
 
 	</p-tabView>
-
+  
 </div>

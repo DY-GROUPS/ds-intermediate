@@ -30,4 +30,7 @@
     <app-right-panal></app-right-panal>
   </div>
 
+  <app-settings-popup *ngIf="showSettingsDialog" [screen]="popupScreen" [caption]="showCaption" (closeDialog)="closeDialog()"></app-settings-popup>
+  
+
 </div>
