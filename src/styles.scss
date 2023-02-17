@@ -11,24 +11,21 @@ body {
 
     ::-webkit-scrollbar {
   
-            width: 5px;
-      }
+        width: 5px;
+    }
       
-      ::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
 
+        background: transparent;
         
-            background: rgba(0, 0, 0, 0.2);
-           
-            
-      }
-       
-      ::-webkit-scrollbar-thumb {
-            
-            background:#4A8998; 
-            border-radius: 10px;
-            
-      }
-
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        
+        background:#4A8998; 
+        border-radius: 10px;
+        
+    }
 
     .ui-dialog-visible {
         padding-bottom: 22px !important;
@@ -356,7 +353,85 @@ body {
         
     }
     
+    .login-container{
 
+        .ui-inputtext{
 
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            color: rgba(0, 0, 0, 0.35);
+            height: 48px;
+            width: 180px;
+            
+        }
+
+        .ui-corner-all {
+            border-radius: 8px;
+        }
+
+ 
+        p-checkbox {
+
+            .ui-chkbox-label {
+
+                font-family: Inter;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 18px;
+                color: #000000;
+            }
+
+            .ui-chkbox .ui-chkbox-box{
+
+                border: 1px solid #0266D6;
+
+            }
+            .ui-chkbox .ui-chkbox-box:not(.ui-state-disabled):hover {
+                border: 1px solid #0266D6;
+            }
+    
+            .ui-chkbox .ui-chkbox-box.ui-state-focus {
+                outline: 0 none;
+                outline-offset: 0;
+                -webkit-box-shadow: 0 0 0 0.2em  #0266D6;
+                -moz-box-shadow: 0 0 0 0.2em  #0266D6;
+                box-shadow: 0 0 0 0.2em  #0266D6;
+                border-color:  #0266D6;
+            }
+            .ui-chkbox .ui-chkbox-box.ui-state-active {
+                border-color: #0266D6 !important;
+                background-color: #0266D6;
+                color: white;
+            }
+            .ui-chkbox .ui-chkbox-box.ui-state-active:not(.ui-state-disabled):hover {
+                border-color: #0266D6 !important;
+                background-color: #0266D6;
+                color: white;
+            }
+            .ui-corner-all {
+                border-radius: 5px;
+            }
+            
+        }
+
+    }
+
+    .signin-container{
+
+        .ui-inputtext{
+
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            color: rgba(0, 0, 0, 0.35);
+            height: 48px;
+            width: 400px;
+            
+        }
+       
+    }
 
 }

@@ -27,6 +27,7 @@ export class DashboardComponent implements OnInit {
   timerSec = 59;
 
   arrowUp;
+  dragPosition = { x: 0, y: 0 };
 
   cards: ICard[] = [
     {
@@ -271,15 +272,32 @@ export class DashboardComponent implements OnInit {
     var slideButtonPosition = slideButton.getBoundingClientRect();
     var arrowIconPosition = arrowIcon.getBoundingClientRect();
   
+   
     var slideButtonPositionCount = slideButtonPosition.x + slideButtonPosition.width;
     var arrowIconPositionCount = arrowIconPosition.x + arrowIconPosition.width;
-  
-    if (slideButtonPositionCount == arrowIconPositionCount) {
-       this.isOk = true;
-    }
-    else {
-      this.isOk = false;
-    }
+
+    var centerPosition = slideButtonPositionCount - (slideButtonPosition.width /2)
+
+    if (arrowIconPositionCount > centerPosition) {
+
+        this.dragPosition = {
+            x: 100,
+            y: 0,
+        };
+        
+        this.isOk = true;
+
+        }
+
+        else {
+
+            this.dragPosition = {
+                x: 0,
+                y: 0,
+            };
+
+            this.isOk = false;
+        }
   }
 
   clockTicking(){
@@ -327,5 +345,16 @@ export class DashboardComponent implements OnInit {
     }
   
   }
+
+  changePosition() {
+
+    this.dragPosition = {
+      x: 100,
+      y: 0,
+    };
+
+    console.log(this.dragPosition)
+  }
+
 
 }

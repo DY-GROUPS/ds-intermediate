@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { AuthGuard } from './auth.guard';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +29,8 @@ import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
 
 import { SettingsComponent } from './settings/settings.component';
+import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 
@@ -43,7 +47,9 @@ import { SettingsComponent } from './settings/settings.component';
     RightPanalComponent,
     UserProfileComponent,
     KeyLockerComponent,
-    SettingsComponent
+    SettingsComponent,
+    LoginComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +66,9 @@ import { SettingsComponent } from './settings/settings.component';
     DragDropModule,
     ProgressBarModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

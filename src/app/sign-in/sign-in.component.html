@@ -1,0 +1,99 @@
+<div class="signin-container">
+
+    <div class="logo">
+        <img src="./assets/LOGO@3xDecision 2 1.png">
+    </div>
+
+    <div class="content">
+
+        <div class="title">Sign In</div>
+
+        <div class="icon-area">
+
+            <div class="icon">
+
+                <div><img src="./assets/login/Facebook.png"></div>
+                <div><img src="./assets/login/apple.png"></div>
+                <div><img src="./assets/login/google.png"></div>
+
+            </div>
+
+            <div class="text">or sign in with your email</div>
+
+        </div>
+
+
+        <div class="email">
+
+            <div class="email-title">Email Address</div>
+
+            <input type="text" #email pInputText [(ngModel)]= "userEmail" name="userEmail" />
+            
+        </div>
+
+        <div class="password">
+
+            <div class="password-title">
+
+                <div>Password</div>
+
+                <div>
+                    <a>Forgot Password?</a>
+                </div>
+
+            </div>
+
+            <div class="ui-inputgroup">
+
+                <input type="password" #pwd pInputText [(ngModel)]= "userPassword" name="userPassword" />
+                
+                <span class="ui-inputgroup-addon"><i class="pi pi-eye-slash" (click)="showPassword()" #icon></i></span>  
+     
+            </div>
+
+            
+            
+        </div>
+
+
+        <div class="button-area">
+            <button type="button"  [routerLink]="''" (click)="login()">Sign In</button>
+        </div>
+
+        <div class="sign-up">
+
+            <div>New to App?</div> 
+
+            <div>
+
+                <a>Sign Up</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <div class="left">
+
+            <div class="water-mark">© {{year}} dreamstakes com</div>
+
+            <div><a> Contact Us</a></div> 
+            
+        </div>
+        
+        <div class="right">
+            <div>
+                <a>Terms & Conditions</a>
+            </div>
+            <div>
+                <a>Privacy Policy</a>
+            </div>
+        </div>
+
+    </div>
+
+    
+</div>
