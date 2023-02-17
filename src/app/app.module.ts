@@ -18,7 +18,7 @@ import { RightPanalComponent } from './ui-containers/right-panal/right-panal.com
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { KeyLockerComponent } from './key-locker/key-locker.component';
 import { AgGridModule } from 'ag-grid-angular';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './sign-in/sign-in.component';
