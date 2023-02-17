@@ -19,6 +19,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { KeyLockerComponent } from './key-locker/key-locker.component';
 import { AgGridModule } from 'ag-grid-angular';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { SettingsComponent } from './settings/settings.component';
+import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SettingsPopupComponent } from './ds-components/settings-popup/settings-popup.component';
 
 // -------------------------------- PrimeNG ----------------------------------------
 import {InputTextModule} from 'primeng/inputtext';
@@ -28,9 +32,6 @@ import {TabViewModule} from 'primeng/tabview';
 import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
 
-import { SettingsComponent } from './settings/settings.component';
-import { LoginComponent } from './login/login.component';
-import { SignInComponent } from './sign-in/sign-in.component';
 
 
 
@@ -49,7 +50,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     KeyLockerComponent,
     SettingsComponent,
     LoginComponent,
-    SignInComponent
+    SignInComponent,
+    SettingsPopupComponent
   ],
   imports: [
     BrowserModule,

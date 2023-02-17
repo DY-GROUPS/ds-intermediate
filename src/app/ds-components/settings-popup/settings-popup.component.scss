@@ -1,0 +1,21 @@
+.settings-popup {
+
+    position: absolute;
+    z-index: 99999999999999999;
+    top: 0px;
+    left: 0px;
+    
+    .test1 {
+        width: 150px;
+        height: 150px;
+        background-color: aqua;
+    }
+    
+    .test2 {
+        width: 800px;
+        height: 150px;
+        background-color: aqua;
+    }
+
+}
+
