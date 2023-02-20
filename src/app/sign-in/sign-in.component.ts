@@ -83,31 +83,12 @@ export class SignInComponent implements OnInit {
     }
 
     loginWithGoogle(): void {
-        this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
-          .then(() => this.authService.isValidaded = true);
+        
+        this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((user: SocialUser) => {
+          console.log(user);
+          this.authService.isValidaded = true
+        });
 
-          this.user ={
-            provider:"GoogleLoginProvider" ,
-            id: "928099441098-e8mqe4ds01l0i495094cge2d3cg27g05.apps.googleusercontent.com",
-            email: this.userEmail,
-            name: "string",
-            photoUrl: "string",
-            firstName:" string",
-            lastName: "string",
-            authToken: "string",
-            idToken:" string",
-            authorizationCode: "string"
-          };
-        //   this.user.password =this.userPassword;
-          console.log(this.user)
-  
-        //   this.socialAuthService.authState.subscribe((user) => {
-        //       this.user = user;
-        //       this.loggedIn = (user != null);
-  
-        //     console.log(this.user)
-        //   });
-
-      }
+    }
 
 }
