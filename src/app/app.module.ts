@@ -24,6 +24,8 @@ import { SignUpComponent } from './signup/signup.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SettingsPopupComponent } from './ds-components/settings-popup/settings-popup.component';
 
+import { SocialLoginModule, GoogleLoginProvider } from 'angularx-social-login';
+
 // -------------------------------- PrimeNG ----------------------------------------
 import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
@@ -32,6 +34,7 @@ import {TabViewModule} from 'primeng/tabview';
 import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {ButtonModule} from 'primeng/button';
+
 
 
 
@@ -68,9 +71,22 @@ import {ButtonModule} from 'primeng/button';
     ChartModule,
     DragDropModule,
     ProgressBarModule,
-    ButtonModule
+    ButtonModule,
+    SocialLoginModule
   ],
   providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: true, //keeps the user signed in
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('928099441098-e8mqe4ds01l0i495094cge2d3cg27g05.apps.googleusercontent.com') //  client id
+          }
+        ]
+      }
+    },
     AuthGuard
   ],
   bootstrap: [AppComponent]

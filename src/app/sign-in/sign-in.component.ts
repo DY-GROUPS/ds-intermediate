@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -17,16 +19,34 @@ export class SignInComponent implements OnInit {
     userEmail : string = "example@gmail.com";
     userPassword : string ='123';
 
+    user: SocialUser;
+    loggedIn: boolean;
+
+
+
   
     constructor(
 
-        public authService: AuthService
+        public authService: AuthService,
+        public router: Router,
+        private socialAuthService: SocialAuthService
 
     ) { }
 
     ngOnInit(): void {
 
-        this.year =  new Date().getFullYear();
+        this.year =  new Date().getFullYear;
+
+        // this.user.email = "example@gmail.com";
+        // // this.user.password =this.userPassword;
+
+        // this.socialAuthService.authState.subscribe((user) => {
+        //     this.user = user;
+        //     this.loggedIn = (user != null);
+
+        //   console.log(this.user.email)
+        // });
+        
     }
 
     login(){
@@ -61,5 +81,33 @@ export class SignInComponent implements OnInit {
         eyeIcon.classList.toggle("pi-eye");
             
     }
+
+    loginWithGoogle(): void {
+        this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
+          .then(() => this.authService.isValidaded = true);
+
+          this.user ={
+            provider:"GoogleLoginProvider" ,
+            id: "928099441098-e8mqe4ds01l0i495094cge2d3cg27g05.apps.googleusercontent.com",
+            email: this.userEmail,
+            name: "string",
+            photoUrl: "string",
+            firstName:" string",
+            lastName: "string",
+            authToken: "string",
+            idToken:" string",
+            authorizationCode: "string"
+          };
+        //   this.user.password =this.userPassword;
+          console.log(this.user)
+  
+        //   this.socialAuthService.authState.subscribe((user) => {
+        //       this.user = user;
+        //       this.loggedIn = (user != null);
+  
+        //     console.log(this.user)
+        //   });
+
+      }
 
 }
