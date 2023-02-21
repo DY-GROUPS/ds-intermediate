@@ -1,15 +1,15 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SocialAuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 import { AuthService } from '../auth.service';
+
+declare var google: any;
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent implements OnInit, AfterViewInit {
 
     @ViewChild('pwd') pwd: ElementRef;
     @ViewChild('email') email: ElementRef;
@@ -19,8 +19,12 @@ export class SignInComponent implements OnInit {
     userEmail : string = "example@gmail.com";
     userPassword : string ='123';
 
-    user: SocialUser;
+    // user: SocialUser;
     loggedIn: boolean;
+
+    googleLoginOptions = {
+        scope: 'profile email'
+    }
 
 
 
@@ -28,8 +32,7 @@ export class SignInComponent implements OnInit {
     constructor(
 
         public authService: AuthService,
-        public router: Router,
-        private socialAuthService: SocialAuthService
+        public router: Router
 
     ) { }
 
@@ -47,6 +50,31 @@ export class SignInComponent implements OnInit {
         //   console.log(this.user.email)
         // });
         
+    }
+
+    ngAfterViewInit(){
+
+        google.accounts.id.initialize({
+            client_id: "42499149520-0f60ebohbh0tb3cp0gc4ss673b8f5spr.apps.googleusercontent.com",
+            callback: (response: any) => this.handleGoogleSignIn(response)
+          });
+          google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { size: "large", type: "icon", shape: "pill" }  // customization attributes
+        );
+
+    }
+
+    handleGoogleSignIn(response: any) {
+        console.log(response.credential);
+    
+        // This next is for decoding the idToken to an object if you want to see the details.
+        let base64Url = response.credential.split('.')[1];
+        let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        console.log(JSON.parse(jsonPayload));
     }
 
     login(){
@@ -82,13 +110,13 @@ export class SignInComponent implements OnInit {
             
     }
 
-    loginWithGoogle(): void {
+    // loginWithGoogle(): void {
         
-        this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((user: SocialUser) => {
-          console.log(user);
-          this.authService.isValidaded = true
-        });
+    //     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID, this.googleLoginOptions).then((user: SocialUser) => {
+    //       console.log(user);
+    //       this.authService.isValidaded = true
+    //     });
 
-    }
+    // }
 
 }
