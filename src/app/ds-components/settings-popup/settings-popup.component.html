@@ -4,8 +4,12 @@
 
         <div class="header">
 
-            <div [style.visibility]="caption" class="caption">
+            <div *ngIf="!showBackBtn" [style.visibility]="caption" class="caption">
                 Add new Card
+            </div>
+
+            <div class="back-btn" *ngIf="showBackBtn">
+                <img src="./assets/settings/back.png">
             </div>
     
             <div class="close-btn" (click)="close()">
@@ -92,8 +96,8 @@
                 
                 <div class="btn-area">
         
-                    <button type="button">Verify by SMS</button>
-                    <button type="button">Verify by Email</button>
+                    <button type="button" (click)="showPopup(popupScreen.smsVerify, false, true)">Verify by SMS</button>
+                    <button type="button" (click)="showPopup(popupScreen.emailVerify, false, true)">Verify by Email</button>
         
                 </div>
         
@@ -116,6 +120,72 @@
 
             <div class="something-went-wrong" *ngIf="screen == popupScreen.somethingWentWrong">
 
+
+            </div>
+
+            <div class="sms-email-verify" *ngIf="screen == popupScreen.smsVerify">
+                
+                <div class="title">
+                    Verification Code Sent To:
+                </div>
+
+                <div class="middle-txt">
+                    +1 - 5** *** *88
+                </div>
+
+                <div class="code">
+                    Enter Code
+                </div>
+
+                <div class="input-group">
+
+                    <input id="input" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" pInputText> 
+                    <input id="input" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" pInputText> 
+                    <input id="input" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" pInputText> 
+                    <input id="input" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" pInputText> 
+                    
+                </div>
+
+                <div class="btn-area">
+                    <button pButton type="button" label="Submit Code"></button>
+                </div>
+
+                <div class="footer">
+                    You can resend the code in just a few seconds: 17
+                </div>
+
+            </div>
+
+            <div class="sms-email-verify" *ngIf="screen == popupScreen.emailVerify">
+                
+                <div class="title">
+                    Verification Code Sent To:
+                </div>
+
+                <div class="middle-txt">
+                    an********ts@gmail.com
+                </div>
+
+                <div class="code">
+                    Enter Code
+                </div>
+
+                <div class="input-group">
+
+                    <input id="input" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" pInputText> 
+                    <input id="input" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" pInputText> 
+                    <input id="input" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" pInputText> 
+                    <input id="input" type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" pInputText> 
+                    
+                </div>
+
+                <div class="btn-area">
+                    <button pButton type="button" label="Submit Code"></button>
+                </div>
+
+                <div class="footer">
+                    You can resend the code in just a few seconds: 17
+                </div>
 
             </div>
 

@@ -24,6 +24,8 @@
 
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
             padding: 16px 19px 0px 19px;
     
@@ -42,6 +44,17 @@
                 height: 20px;
                 cursor: pointer;
     
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .back-btn {
+
+                width: 32px;
+                height: 32px;
+
                 img{
                     width: 100%;
                     height: 100%;
@@ -280,6 +293,104 @@
             }
 
             .something-went-wrong{
+
+            }
+
+            .sms-email-verify{
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                width: 495px;
+                height: 460px;
+
+
+
+                .title {
+
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 22px;
+                    line-height: 30px;
+                    color: #393A3D;
+
+                }
+
+                .middle-txt {
+
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #393A3D;
+                    margin-top: -20px;
+
+                }
+
+                .code {
+
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 22px;
+                    line-height: 30px;
+                    color: #393A3D;
+                    margin-top: -20px;
+
+                }
+
+                .input-group {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 252px;
+                    height: 69px;
+
+                    input {
+                        width: 48px;
+                        height: 100%;
+                        border: 1px solid #B5B6BA;
+                        border-radius: 4px;
+                        text-align: center;
+                    }
+                }
+
+                .btn-area {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 243px;
+                    height: 46px;
+
+                    button {
+                        font-family: 'Be Vietnam Pro';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 16px;
+                        line-height: 24px;
+                        text-align: center;
+                        color: #FCFCFC;
+                        background: #F9A369;
+                        border: none;
+                    }
+                }
+
+                .footer {
+
+                    font-family: 'Open Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 15px;
+                    line-height: 20px;
+                    color: #BBBBBB;
+
+                }
+
+                
 
             }
         
