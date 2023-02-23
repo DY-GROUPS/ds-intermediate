@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   showSettingsDialog: boolean = false;
   popupScreen = settingPopupScreen.addNewCard;
   showCaption = 'hidden';
+  showBackBtn: boolean = false;
   
   
   constructor(
@@ -41,6 +42,7 @@ export class HomeComponent implements OnInit {
 
 			this.popupScreen = command.view;
       this.showCaption = command.caption;
+      this.showBackBtn = command.showBackBtn;
       this.showSettingsDialog = true;
 			
 		})
@@ -50,6 +52,7 @@ export class HomeComponent implements OnInit {
   closeDialog(){
     this.showSettingsDialog = false;
     this.showCaption = 'hidden';
+    this.showBackBtn = false;
   }
 
 }
