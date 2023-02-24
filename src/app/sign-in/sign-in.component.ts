@@ -62,7 +62,7 @@ export class SignInComponent implements OnInit, AfterViewInit {
         });
 
         google.accounts.id.renderButton(
-            document.getElementById("buttonDiv"),
+            document.getElementById("google-btn"),
             { size: "large", type: "icon", shape: "pill" }  // customization attributes
         );
 
