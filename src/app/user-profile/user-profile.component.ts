@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ICard, IPopupConfigs, IPopupCpmmands } from '../ds-components/ds-types';
+import { ICard, IPopupConfigs, IPopupCpmmands, IUser } from '../ds-components/ds-types';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -49,7 +50,13 @@ export class UserProfileComponent implements OnInit {
   width: number = 500;
   height: number = 500;
 
-  constructor() { }
+  currentUser: IUser;
+
+  constructor(private profileService: ProfileService) { 
+
+    this.currentUser = profileService.getUser();
+    
+  }
 
   ngOnInit(): void {
 

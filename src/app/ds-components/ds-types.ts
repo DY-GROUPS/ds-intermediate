@@ -60,5 +60,15 @@ export enum settingPopupScreen {
     addNewCard = 'add-new-card',
     changePayPal = 'change-paypal',
     almostDone = 'almost-done',
-    somethingWentWrong = 'something-went-wrong'
+    somethingWentWrong = 'something-went-wrong',
+    smsVerify = 'sms-verify',
+    emailVerify = 'email-verify'
+}
+
+export interface IUser {
+    displayName: string,
+    fullName: string,
+    email: string,
+    profileImage: string,
+    
 }
