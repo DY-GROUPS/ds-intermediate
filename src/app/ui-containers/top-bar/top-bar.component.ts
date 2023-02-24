@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IMessageStream, Interconnect } from 'ng-interconnect';
 import { MainViews } from 'src/app/app.types';
-import { user  } from '../../profile.service';
+import { ProfileService  } from '../../profile.service';
 
 @Component({
     selector: 'app-top-bar',
@@ -18,7 +18,7 @@ export class TopBarComponent implements OnInit {
 
     selectedIndex;
 
-    currentUser = user;
+    currentUser;
 
     constructor(
         private interconnect: Interconnect,

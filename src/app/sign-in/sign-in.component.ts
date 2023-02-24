@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { user } from '../profile.service';
+import { ProfileService } from '../profile.service';
 
 declare var google: any;
 
@@ -34,6 +34,7 @@ export class SignInComponent implements OnInit, AfterViewInit {
 
         public authService: AuthService,
         public router: Router,
+        public profileservice: ProfileService,
         private zone: NgZone
 
     ) { }
@@ -79,14 +80,10 @@ export class SignInComponent implements OnInit, AfterViewInit {
         }).join(''));
 
         var userData = (JSON.parse(jsonPayload));
+        // console.log(userData);
 
-        user.userEmail = userData.email;
-        user.userName = userData.given_name;
-        user.userSurname = userData;
-        user.userProfilePicture = userData.picture;
+        this.profileservice.setUser(userData);
 
-        console.log(userData)
-        
         this.authService.isValidaded = true;
 
         this.zone.run(() => {
@@ -106,7 +103,6 @@ export class SignInComponent implements OnInit, AfterViewInit {
         if ( this.userEmail == email && this.userPassword == password ){
 
             this.authService.isValidaded = true;
-            user.userEmail = this.userEmail;
 
         }
 
