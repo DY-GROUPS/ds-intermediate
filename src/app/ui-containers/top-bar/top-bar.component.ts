@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IMessageStream, Interconnect } from 'ng-interconnect';
 import { MainViews } from 'src/app/app.types';
-import { ProfileService,  user  } from '../../profile.service';
+import { user  } from '../../profile.service';
 
 @Component({
     selector: 'app-top-bar',
