@@ -88,13 +88,14 @@
             box-shadow: 8px 10px 54px rgba(15, 13, 35, 0.03);
             border-radius: 16px;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
             padding-left: 16px;
             padding-right: 16px;
 
             img {
                 width: 32px;
                 height: 32px;
+                border-radius: 100px;
             }
 
             label {

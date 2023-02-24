@@ -6,32 +6,24 @@ import { IUser } from './ds-components/ds-types';
 })
 export class ProfileService {
 
-    userEmail;
-    userDisplayName;
-    userFulname;
-    userProfilePicture;
+	public currentUser: IUser;
 
     constructor() { }
 
-    setUser (userDetails :IUser) {
+    setUser (userDetails :IUser): void {
 
-        this.userEmail = userDetails.email;
-        this.userDisplayName = userDetails.given_name;
-        this.userFulname = userDetails.name;
-        this.userProfilePicture = userDetails.picture;
-
-        console.log(userDetails);
+		this.currentUser = {
+			displayName: userDetails.displayName,
+			email: userDetails.email,
+			fullName: userDetails.fullName,
+			profileImage: userDetails.profileImage
+		}
         
     }
 
-    // getUser (){
-
-    //     var email = this.userEmail;
-    //     var name = this.userName;
-    //     var Fullname = this.userFulname ;
-    //     var picture = this.userProfilePicture;
-        
-    // }
+    getUser(): IUser{
+        return this.currentUser;
+    }
     
 
 }
