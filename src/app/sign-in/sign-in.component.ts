@@ -1,6 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { ProfileService, user } from '../profile.service';
 
 declare var google: any;
 
@@ -16,7 +17,7 @@ export class SignInComponent implements OnInit, AfterViewInit {
     @ViewChild('icon') icon: ElementRef;
 
     year;
-    userEmail : string = "example@gmail.com";
+    userEmail: string ='example@gmail.com';
     userPassword : string ='123';
 
     // user: SocialUser;
@@ -32,7 +33,9 @@ export class SignInComponent implements OnInit, AfterViewInit {
     constructor(
 
         public authService: AuthService,
-        public router: Router
+        public router: Router,
+        public profileservice: ProfileService,
+        private zone: NgZone
 
     ) { }
 
@@ -57,8 +60,9 @@ export class SignInComponent implements OnInit, AfterViewInit {
         google.accounts.id.initialize({
             client_id: "42499149520-0f60ebohbh0tb3cp0gc4ss673b8f5spr.apps.googleusercontent.com",
             callback: (response: any) => this.handleGoogleSignIn(response)
-          });
-          google.accounts.id.renderButton(
+        });
+
+        google.accounts.id.renderButton(
             document.getElementById("buttonDiv"),
             { size: "large", type: "icon", shape: "pill" }  // customization attributes
         );
@@ -74,7 +78,23 @@ export class SignInComponent implements OnInit, AfterViewInit {
         let jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
           return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
-        console.log(JSON.parse(jsonPayload));
+
+        var userData = (JSON.parse(jsonPayload));
+
+        user.userEmail = userData.email;
+        user.userName = userData.given_name;
+        user.userProfilePicture = userData.picture;
+
+        console.log(userData)
+        
+        this.authService.isValidaded = true;
+
+        this.zone.run(() => {
+            this.router.navigate(['']);
+        });
+        
+        
+        
     }
 
     login(){
@@ -86,6 +106,7 @@ export class SignInComponent implements OnInit, AfterViewInit {
         if ( this.userEmail == email && this.userPassword == password ){
 
             this.authService.isValidaded = true;
+            user.userEmail = this.userEmail;
 
         }
 
@@ -110,13 +131,5 @@ export class SignInComponent implements OnInit, AfterViewInit {
             
     }
 
-    // loginWithGoogle(): void {
-        
-    //     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID, this.googleLoginOptions).then((user: SocialUser) => {
-    //       console.log(user);
-    //       this.authService.isValidaded = true
-    //     });
-
-    // }
 
 }
