@@ -64,3 +64,11 @@ export enum settingPopupScreen {
     smsVerify = 'sms-verify',
     emailVerify = 'email-verify'
 }
+
+export interface IUser {
+    given_name: string,
+    name: string,
+    email: string,
+    picture: string,
+    
+}
