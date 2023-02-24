@@ -66,9 +66,9 @@ export enum settingPopupScreen {
 }
 
 export interface IUser {
-    given_name: string,
-    name: string,
+    displayName: string,
+    fullName: string,
     email: string,
-    picture: string,
+    profileImage: string,
     
 }

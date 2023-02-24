@@ -3,12 +3,12 @@
     <div class="profile">
 
         <div class="pro-pic">
-            <img class="pic" src="./assets/profile/pro-pic.png">
+            <img class="pic" [src]="currentUser.profileImage">
             <img class="icon" src="./assets/profile/edit.png">
         </div>
 
         <div class="name">
-            William Fancyson
+            {{ currentUser.fullName }}
         </div>
 
         <div class="username">

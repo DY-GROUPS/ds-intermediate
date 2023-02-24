@@ -12,8 +12,8 @@
     <div class="section-3">
 
         <div class="profile" (click)="userChangeView(_MainViews.userProfile, true, false)">
-            <label>{{currentUser.userName}}</label>
-            <img src = {{currentUser.userProfilePicture}}>
+            <label>{{currentUser.displayName}}</label>
+            <img [src]="currentUser.profileImage">
         </div>
 
         <div class="notifications">

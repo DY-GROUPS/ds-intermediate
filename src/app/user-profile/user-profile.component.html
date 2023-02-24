@@ -30,13 +30,14 @@
 
             <div class="pic">
 
-                <img src="./assets/profile/pro-pic.png">
+                <img [src]="currentUser.profileImage">
+                
             </div>
 
             <div class="info">
 
                 <div class="username">
-                    William Fancyson
+                    {{currentUser.fullName}}
                 </div>
 
                 <div class="desc">
@@ -90,7 +91,7 @@
                 
                 <div class="image-area">
 
-                    <img src="./assets/profile/pro-pic.png">
+                    <img [src]="currentUser.profileImage">
 
                 </div>
 

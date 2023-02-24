@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IMessageStream, Interconnect } from 'ng-interconnect';
 import { MainViews } from 'src/app/app.types';
+import { IUser } from 'src/app/ds-components/ds-types';
 import { ProfileService  } from '../../profile.service';
 
 @Component({
@@ -18,17 +19,20 @@ export class TopBarComponent implements OnInit {
 
     selectedIndex;
 
-    currentUser;
+    currentUser: IUser;
 
     constructor(
         private interconnect: Interconnect,
         public profileservice: ProfileService
     ) {
 
-    this.changeView = interconnect.connectToListener('leftbar/changeView', 'topbar');
+        this.changeView = interconnect.connectToListener('leftbar/changeView', 'topbar');
         if (this.changeView['then']) {
             this.changeView['then']((notifier) => this.changeView = notifier);
         }
+
+
+        this.currentUser = profileservice.getUser();
 
     }
 

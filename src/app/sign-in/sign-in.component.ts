@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { IUser } from '../ds-components/ds-types';
 import { ProfileService } from '../profile.service';
 
 declare var google: any;
@@ -70,7 +71,6 @@ export class SignInComponent implements OnInit, AfterViewInit {
     }
 
     handleGoogleSignIn(response: any) {
-        console.log(response.credential);
     
         // This next is for decoding the idToken to an object if you want to see the details.
         let base64Url = response.credential.split('.')[1];
@@ -79,17 +79,22 @@ export class SignInComponent implements OnInit, AfterViewInit {
           return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
 
-        var userData = (JSON.parse(jsonPayload));
-        // console.log(userData);
+        let userData = JSON.parse(jsonPayload);
 
-        this.profileservice.setUser(userData);
+        let currentUser: IUser = {
+            displayName: userData.given_name,
+            email: userData.email,
+            fullName: userData.name,
+            profileImage: userData.picture
+        }
+
+        this.profileservice.setUser(currentUser);
 
         this.authService.isValidaded = true;
 
         this.zone.run(() => {
             this.router.navigate(['']);
         });
-        
         
         
     }
@@ -115,7 +120,6 @@ export class SignInComponent implements OnInit, AfterViewInit {
     }
 
     showPassword(){
-
 
         const password = this.pwd.nativeElement;
         const eyeIcon = this.icon.nativeElement;
