@@ -24,6 +24,8 @@ import { SignUpComponent } from './signup/signup.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SettingsPopupComponent } from './ds-components/settings-popup/settings-popup.component';
 
+import { FacebookLoginProvider, SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+
 // -------------------------------- PrimeNG ----------------------------------------
 import {InputTextModule} from 'primeng/inputtext';
 import {DropdownModule} from 'primeng/dropdown';
@@ -69,10 +71,25 @@ import {ButtonModule} from 'primeng/button';
     ChartModule,
     DragDropModule,
     ProgressBarModule,
-    ButtonModule
+    ButtonModule,
+    SocialLoginModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(
+              '6183749555025381'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })
