@@ -12,16 +12,19 @@
 
             <div class="icon">
 
-                <div><img src="./assets/login/Facebook.png" (click)="loginWithFacebook()" style="cursor: pointer;"></div>
-                <div><img src="./assets/login/apple.png"></div>
+                <!-- <div><img src="./assets/login/Facebook.png" (click)="loginWithFacebook()" style="cursor: pointer;"></div> -->
+                <div id="fb-root">
+                    <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                </div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0&appId=6183749555025381&autoLogAppEvents=1" nonce="NBjLGVnm"></script>
+               
+                <!-- <div><img src="./assets/login/apple.png"></div>
 
                 <div class="google">
-                    <!-- <img src="./assets/login/google.png" (click)="loginWithGoogle()"> -->
-                    <!-- <button (click)="loginWithGoogle()"></button> -->
 
                     <div id="google-btn"></div>
                     
-                </div>
+                </div> -->
 
             </div>
 

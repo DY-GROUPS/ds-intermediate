@@ -75,21 +75,7 @@ import {ButtonModule} from 'primeng/button';
     SocialLoginModule
   ],
   providers: [
-    AuthGuard,
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider(
-              '6183749555025381'
-            )
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    }
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
