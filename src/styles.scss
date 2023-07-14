@@ -33,6 +33,10 @@ body {
         
     }
 
+    input:focus-visible {
+        outline: none;
+    }
+
     .ui-dialog-visible {
         padding-bottom: 22px !important;
 

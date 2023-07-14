@@ -3,5 +3,6 @@ export enum MainViews {
     dashboard   = 1,
     keyLocker = 2,
     settings = 3,
-    userProfile = 4
+    userProfile = 4,
+    message = 5
 }

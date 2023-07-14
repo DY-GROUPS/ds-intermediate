@@ -34,6 +34,7 @@ import {TabViewModule} from 'primeng/tabview';
 import {ChartModule} from 'primeng/chart';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {ButtonModule} from 'primeng/button';
+import { MessageComponent } from './message/message.component';
 
 
 
@@ -55,7 +56,8 @@ import {ButtonModule} from 'primeng/button';
     SettingsComponent,
     SignUpComponent,
     SignInComponent,
-    SettingsPopupComponent
+    SettingsPopupComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
