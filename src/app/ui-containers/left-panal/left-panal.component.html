@@ -20,6 +20,11 @@
             <img [src]="lockerBtn">
             <label>Key Locker</label>
         </div>
+
+        <div id="5" class="main-btns" (click)="userChangeView(_MainViews.message, false, true)">
+            <img [src]="messageBtn">
+            <label>Messages</label>
+        </div>
     
         <div  id="3" class="main-btns" (click)="userChangeView(_MainViews.settings, true, false)">
             <img [src]="settingsBtn">

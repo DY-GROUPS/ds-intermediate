@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
+// import { SocialAuthService, SocialAuthServiceConfig} from 'angularx-social-login';
+// import { FacebookLoginProvider } from 'angularx-social-login';
 import { AuthService } from '../auth.service';
 import { IUser } from '../ds-components/ds-types';
 import { ProfileService } from '../profile.service';
@@ -36,7 +38,8 @@ export class SignInComponent implements OnInit, AfterViewInit {
         public authService: AuthService,
         public router: Router,
         public profileservice: ProfileService,
-        private zone: NgZone
+        private zone: NgZone,
+        // private socialAuthService: SocialAuthService
 
     ) { }
 
@@ -98,6 +101,11 @@ export class SignInComponent implements OnInit, AfterViewInit {
         
         
     }
+    
+    // loginWithFacebook(): void {
+    //     this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then(x => console.log(x));
+    // }
+    
 
     login(){
 
@@ -130,6 +138,7 @@ export class SignInComponent implements OnInit, AfterViewInit {
         eyeIcon.classList.toggle("pi-eye");
             
     }
+
 
 
 }
