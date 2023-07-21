@@ -17,6 +17,9 @@ export class LeftPanalComponent implements OnInit {
   dashboardBtn = './assets/btn-icons/user.png';
   lockerBtn = './assets/btn-icons/icons8_key 1.png';
   settingsBtn = './assets/btn-icons/settings.png';
+  messageBtn = './assets/btn-icons/mail_black.png';
+
+  
 
   constructor(private interconnect: Interconnect, private elem: ElementRef) {
 
@@ -43,6 +46,7 @@ export class LeftPanalComponent implements OnInit {
       this.dashboardBtn = './assets/btn-icons/user.png';
       this.lockerBtn = './assets/btn-icons/icons8_key 1.png';
       this.settingsBtn = './assets/btn-icons/settings.png';
+      this.messageBtn = './assets/btn-icons/mail_black.png';
 
       // Remove selected items
       Array.from(this.elem.nativeElement.querySelectorAll('.main-btns')).forEach((btn: any) => btn.classList.remove('select'));
@@ -84,6 +88,7 @@ export class LeftPanalComponent implements OnInit {
             this.dashboardBtn = './assets/btn-icons/user.png';
             this.lockerBtn = './assets/btn-icons/icons8_key 1.png';
             this.settingsBtn = './assets/btn-icons/settings.png';
+            this.messageBtn = './assets/btn-icons/mail_black.png';
           break;
 
           case this._MainViews.dashboard:
@@ -91,6 +96,7 @@ export class LeftPanalComponent implements OnInit {
             this.enterBtn = './assets/btn-icons/icons8_enter 1-gray.png';
             this.lockerBtn = './assets/btn-icons/icons8_key 1.png';
             this.settingsBtn = './assets/btn-icons/settings.png';
+            this.messageBtn = './assets/btn-icons/mail_black.png';
           break;
 
           case this._MainViews.keyLocker:
@@ -98,13 +104,23 @@ export class LeftPanalComponent implements OnInit {
             this.enterBtn = './assets/btn-icons/icons8_enter 1-gray.png';
             this.lockerBtn = './assets/btn-icons/locker-white.png';
             this.settingsBtn = './assets/btn-icons/settings.png';
+            this.messageBtn = './assets/btn-icons/mail_black.png';
+          break;
+
+          case this._MainViews.message:
+            this.dashboardBtn = './assets/btn-icons/user.png';
+            this.enterBtn = './assets/btn-icons/icons8_enter 1-gray.png';
+            this.lockerBtn = './assets/btn-icons/icons8_key 1.png';
+            this.settingsBtn = './assets/btn-icons/settings.png';
+            this.messageBtn = './assets/btn-icons/mail 1.png';
           break;
 
           case this._MainViews.settings:
             this.dashboardBtn = './assets/btn-icons/user.png';
             this.enterBtn = './assets/btn-icons/icons8_enter 1-gray.png';
-            this.lockerBtn = '/assets/btn-icons/icons8_key 1.png';
+            this.lockerBtn = './assets/btn-icons/icons8_key 1.png';
             this.settingsBtn = './assets/btn-icons/settings-white.png';
+            this.messageBtn = './assets/btn-icons/mail_black.png';
           break;
 
         }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Interconnect } from 'ng-interconnect';
 import { MainViews } from '../app.types';
 import { settingPopupScreen } from '../ds-components/ds-types';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
   
   
   constructor(
-	  private interconnect: Interconnect
+	  private interconnect: Interconnect,
+    private chat: ChatService
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +47,9 @@ export class HomeComponent implements OnInit {
       this.showBackBtn = command.showBackBtn;
       this.showSettingsDialog = true;
 			
-		})
+		});
+
+    this.chat.join();
 
   }
 
