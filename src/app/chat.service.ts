@@ -9,7 +9,7 @@ import { ProfileService } from './profile.service';
 export class ChatService {
 
   public message$: BehaviorSubject<string> = new BehaviorSubject('');
-  username = "yashodha";
+  username;
   adminChatID;
   connectedUsers = [];
   currentUser;
@@ -18,8 +18,8 @@ export class ChatService {
     public profileservice: ProfileService
   ) {
 
-    // this.currentUser = profileservice.getUser();
-    // this.username = this.currentUser.displayName;
+    this.currentUser = profileservice.getUser();
+    this.username = this.currentUser.displayName;
   }
 
   // https://chat-system-4hbl.onrender.com/
